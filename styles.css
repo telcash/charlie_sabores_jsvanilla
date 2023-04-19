@@ -1,6 +1,9 @@
-body {
+*{
     margin: 0;
     padding: 0;
+}
+
+body {
     width: 100%;
     text-align: center;
 }
@@ -16,5 +19,36 @@ body {
 
 header{
     display: flex;
+    flex-flow: column wrap;
+}
+
+.nav {
+    display: flex;
     flex-flow: row wrap;
+    align-items: center;
+}
+
+.navButton{
+    width: 48px;
+}
+.navButton img{
+    width: 100%;
+}
+
+.mainLogo {
+    flex: 1;
+}
+
+.searchBar {
+    flex: 5;
+}
+
+.navLinks {
+    display: none;
+}
+
+.navLinks a{
+    background-color: grey;
+    text-decoration: none;
+    text-align: left;
 }
