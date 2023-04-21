@@ -51,12 +51,27 @@ header{
 
 section{
     width: 100%;
-    position: relative;
 }
 
-section img{
+.slide{
+    display: none;
+}
+
+.slide img{
     height: auto;
     max-width: 100%;
+}
+
+.arrowLeft {
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 50%;
+}
+
+.arrowRight{
+    position: absolute;
+    margin-right: 25px;
+    margin-top: 50%;
 }
 
 .tagImg {
