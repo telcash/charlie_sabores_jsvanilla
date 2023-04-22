@@ -1,11 +1,11 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     width: 100%;
-    text-align: center;
 }
 
 #wrapper{
@@ -53,6 +53,11 @@ section{
     width: 100%;
 }
 
+.mainSlider{
+
+    position: relative;
+}
+
 .slide{
     display: none;
 }
@@ -62,22 +67,33 @@ section{
     max-width: 100%;
 }
 
-.arrowLeft {
+.arrowLeft, .arrowRight {
+    border: 0;
+    cursor: pointer;
     position: absolute;
-    margin-left: 25px;
-    margin-top: 50%;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .arrowRight{
-    position: absolute;
-    margin-right: 25px;
-    margin-top: 50%;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 .tagImg {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
     position: absolute;
-    margin-left: 25px;
-    margin-top: 25px;
+    top: 0;
  }
 
 aside{
