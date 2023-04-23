@@ -13,6 +13,7 @@ window.onload = () =>{
     arrowLeft.addEventListener("click", showPrevSlide);
     let arrowRight = document.querySelector(".arrowRight");
     arrowRight.addEventListener("click", showNextSlide);
+
 }
 
 function navMenu(){
