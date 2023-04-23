@@ -1,10 +1,7 @@
-const cssLink = document.createElement('link');
-cssLink.setAttribute("rel", "stylesheet");
-cssLink.setAttribute("href", "styles/footer.css");
 
 const footerTemplate = document.createElement('template');
 footerTemplate.innerHTML = `
-<div class="appFooter">
+<div class="wrapper">
     <div class="socialNetworks">
         <a href="#"><img src="img/red_social_test.png" alt=""></a>
         <a href="#"><img src="img/red_social_test.png" alt=""></a>
@@ -30,8 +27,8 @@ footerTemplate.innerHTML = `
     </div>
 </div>
 `;
-
 class FooterComponent extends HTMLElement {
+    
     constructor(){
         super();
         
@@ -41,6 +38,11 @@ class FooterComponent extends HTMLElement {
         this.attachShadow({
             mode: 'open'
         })
+
+        const cssLink = document.createElement('link');
+        cssLink.setAttribute("rel", "stylesheet");
+        cssLink.setAttribute("href", "styles/footer.css");
+
         this.shadowRoot.appendChild(cssLink);
         this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
     }

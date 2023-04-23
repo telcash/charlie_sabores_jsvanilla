@@ -6,56 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/script.js"></script>
     <script src="scripts/footer.js"></script>
+    <script src="scripts/main_slider.js"></script>
+    <script src="scripts/header.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Document</title>
+    <title>Index</title>
 </head>
 <body>
-    <style>
 
-    </style>
     <div id="wrapper">
         
         <header>
-            <nav class="nav">
-
-                <div class="navButton"><img src="img/nav_logo.png" alt=""></div>
-                <div class="mainLogo">Logo</div>
-                <div class="searchBar">Barra de busqueda</div>
-                
-            </nav>
-            <div class="navLinks">
-                <a href="#">Recetas</a>
-                <a href="#">Artículos</a>
-                <a href="#">Contacto</a>
-            </div>
+            <app-header></app-header>
         </header>
-
         <section>
-            <div class="mainSlider">
-                <div class="slide">
-                    <a class="tagImg" href="#">Link imagen</a>
-                    <img src="img/slider_img_test_1.jpeg" alt="">
-                </div>
-                <div class="slide">
-                    <a class="tagImg" href="#">Link imagen</a>
-                    <img src="img/slider_img_test_2.jpeg" alt="">
-                    
-                </div>
-                <div class="slide">
-                    <a class="tagImg" href="#">Link imagen</a>
-                    <img src="img/slider_img_test_3.jpeg" alt="">
-                </div>
-                <a class="arrowLeft">&#10094;</a>
-                <a class="arrowRight">&#10095;</a>
-            </div>
+            <app-main-slider></app-main-slider>
         </section>
-
-
-        
-
         <aside>Aside</aside>
-        <app-footer></app-footer>
+        <footer>
+            <app-footer></app-footer>
+        </footer>
 
     </div>
+
 </body>
 </html>

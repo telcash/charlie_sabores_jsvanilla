@@ -1,4 +1,4 @@
-.appfooter{
+.wrapper{
     display: flex;
     flex-flow: column wrap;
 }
