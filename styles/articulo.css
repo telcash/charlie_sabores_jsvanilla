@@ -1,0 +1,12 @@
+.wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.artImg{
+    flex:1;
+}
+
+.info{
+    flex: 2;
+}
