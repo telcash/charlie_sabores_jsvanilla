@@ -6,7 +6,7 @@ articuloTemplate.innerHTML=`
     </div>
     <div class="info">
         <h3>Titulo del artículo</h3>
-        <p>Sinopsis del artículo</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis corporis maiores repudiandae laudantium, possimus, unde delectus quia veritatis nulla quod placeat! In cumque dolor voluptas, corporis nemo adipisci? Aspernatur, architecto</p>
     </div>
 </div>
 `;

@@ -1,12 +1,32 @@
 .wrapper{
     display: flex;
     flex-flow: row nowrap;
+    gap: 0;
+    max-height: 115px;
+    margin-left:10px;
+    margin-right: 10px;
 }
 
 .artImg{
-    flex:1;
+    background-color: white;
+    padding: 5px;
+}
+
+.artImg img{
+    max-width: 105px;
+    height: auto;
 }
 
 .info{
-    flex: 2;
+    display: grid;
+    grid-template-rows: 1fr 70px;
+    flex: 1;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+p{
+    font-size: 12px;
+    overflow: hidden;
 }

@@ -7,15 +7,15 @@ mainSliderTemplate.innerHTML=`
 <div class="wrapper">
     <div class="slide">
         <a class="tagImg" href="#">Sorpréndelos en su día con esta deliciosa torta de chocolate libre de gluten</a>
-        <img src="img/slider_img_test_1.jpeg" alt="">
+        <img src="img/chocolate_mousse_cake.jpeg" alt="Chocolate mousse cake">
     </div>
     <div class="slide">
         <a class="tagImg" href="#">Un texto descriptivo corto que explique un poco la imagen</a>
-        <img src="img/slider_img_test_2.jpeg" alt="">
+        <img src="img/red_velvet_cheesecake.jpeg" alt="Red velvet cheesecake">
     </div>
     <div class="slide">
         <a class="tagImg" href="#">Un texto descriptivo corto que explique un poco la imagen</a>
-        <img src="img/slider_img_test_3.jpeg" alt="">
+        <img src="img/kitchenaid_professional_5_plus.jpg" alt="Kitchenaid Professional 5 plus">
     </div>
     <div>
         <a class="arrowLeft">&#10094;</a>
