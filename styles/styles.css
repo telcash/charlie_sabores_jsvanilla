@@ -15,12 +15,7 @@ body {
     width: 95%;
 }
 
-header, section, aside, footer{
+header, section, aside, article, footer{
     width: 100%;
     position: relative;
-}
-
-aside{
-    height: 100px;
-    border: 1px solid orange;
 }
