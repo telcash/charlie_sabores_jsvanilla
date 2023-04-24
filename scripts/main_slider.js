@@ -6,15 +6,15 @@ const mainSliderTemplate = document.createElement('template');
 mainSliderTemplate.innerHTML=`
 <div class="wrapper">
     <div class="slide">
-        <a class="tagImg" href="#">Link imagen</a>
+        <a class="tagImg" href="#">Sorpréndelos en su día con esta deliciosa torta de chocolate libre de gluten</a>
         <img src="img/slider_img_test_1.jpeg" alt="">
     </div>
     <div class="slide">
-        <a class="tagImg" href="#">Link imagen</a>
+        <a class="tagImg" href="#">Un texto descriptivo corto que explique un poco la imagen</a>
         <img src="img/slider_img_test_2.jpeg" alt="">
     </div>
     <div class="slide">
-        <a class="tagImg" href="#">Link imagen</a>
+        <a class="tagImg" href="#">Un texto descriptivo corto que explique un poco la imagen</a>
         <img src="img/slider_img_test_3.jpeg" alt="">
     </div>
     <div>

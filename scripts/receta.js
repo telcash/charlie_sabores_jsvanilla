@@ -5,6 +5,7 @@ recetaTemplate.innerHTML=`
         <img src="img/receta_test.jpeg">
     </div>
     <div class="recetaInfo">
+        <h3>Titulo</h3>
         <p>Descripcion</p>
         <a href="#">Ir a la página</a>
     </div>
