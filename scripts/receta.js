@@ -21,11 +21,16 @@ class RecetaComponent extends HTMLElement{
             mode: 'open'
         })
 
+        const commonCssLink = document.createElement('link');
+        commonCssLink.setAttribute("rel", "stylesheet");
+        commonCssLink.setAttribute("href", "styles/styles.css");
+        this.shadowRoot.appendChild(commonCssLink);
+
         const cssLink = document.createElement('link');
         cssLink.setAttribute("rel", "stylesheet");
         cssLink.setAttribute("href", "styles/receta.css");
-
         this.shadowRoot.appendChild(cssLink);
+
         this.shadowRoot.appendChild(recetaTemplate.content.cloneNode(true));
     }
 }

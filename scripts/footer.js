@@ -31,13 +31,18 @@ class FooterComponent extends HTMLElement {
 
         const scriptLink = document.createElement('script');
         scriptLink.setAttribute("src", "scripts/ext_web.js");
+        this.shadowRoot.appendChild(scriptLink);
+
+        const commonCssLink = document.createElement('link');
+        commonCssLink.setAttribute("rel", "stylesheet");
+        commonCssLink.setAttribute("href", "styles/styles.css");
+        this.shadowRoot.appendChild(commonCssLink);
 
         const cssLink = document.createElement('link');
         cssLink.setAttribute("rel", "stylesheet");
         cssLink.setAttribute("href", "styles/footer.css");
-
-        this.shadowRoot.appendChild(scriptLink);
         this.shadowRoot.appendChild(cssLink);
+
         this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
     }
 }

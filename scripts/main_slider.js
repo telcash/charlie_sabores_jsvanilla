@@ -33,12 +33,17 @@ class MainSliderComponent extends HTMLElement{
         this.attachShadow({
             mode: 'open'
         })
+        
+        const commonCssLink = document.createElement('link');
+        commonCssLink.setAttribute("rel", "stylesheet");
+        commonCssLink.setAttribute("href", "styles/styles.css");
+        this.shadowRoot.appendChild(commonCssLink);
 
         const cssLink = document.createElement('link');
         cssLink.setAttribute("rel", "stylesheet");
         cssLink.setAttribute("href", "styles/main_slider.css");
-
         this.shadowRoot.appendChild(cssLink);
+
         this.shadowRoot.appendChild(mainSliderTemplate.content.cloneNode(true));
 
         slides = this.shadowRoot.querySelectorAll(".slide");

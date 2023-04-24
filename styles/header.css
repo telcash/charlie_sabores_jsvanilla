@@ -5,43 +5,85 @@
 }
 
 .nav {
-    max-height: 50px;
+    flex: 1;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
+    align-content: space-evenly;
     align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.navButton{
-    width: 48px;
-}
 .navButton img{
+    height: auto;
+    max-width: 33px;
+}
+
+.mainLogo img{
+    height: auto;
+    max-width: 33px;
+    padding-top: 4px;
+}
+
+.searchBar {
+    display: flex;
+    flex: 1;
+    flex-flow: row-reverse nowrap;
+    border: 1px solid grey;
+}
+
+.searchBarFocus {
+    outline-offset: 2px;
+    outline-color: grey;
+    outline-style:dotted;
+    outline-width: 2px;
+}
+
+input{
+    all: unset;
     width: 100%;
 }
 
-.mainLogo {
-    flex: 1;
+input:focus{
+    outline: none;
+}
+
+button {
+    all: unset;
+}
+
+button img {
+    height: auto;
+    max-width: 25px;
+    padding: 2px;
 }
 
 .navLinks {
-    display: none;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 50px;
+    background-color:white;
+    overflow-x: hidden;
+    transition: width 0.5s;
 }
 
 .navLinks a{
-    background-color: grey;
     text-decoration: none;
     text-align: left;
+    text-transform: uppercase;
+    padding: 4px;
+    color: black;
+    font-size: large;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid grey;
 }
 
-/*Revisar estos parámetros para ajustar estilos*/
-.overlay{  
-    height: 100%;
-    width: 95%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 50px;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+.navLinks a:hover{
+    color: red;
 }
