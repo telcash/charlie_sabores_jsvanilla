@@ -1,4 +1,5 @@
 /*
+
 HTML template
 
 <div class="wrapper">
@@ -48,8 +49,6 @@ class HeaderComponent extends HTMLElement{
         this.wrapper.setAttribute("class","wrapper");
 
         this.navToggle = new Event('navListToggle', {bubbles: true, composed: true});
-
-        console.log("creamos un header ...");
     }
 
     connectedCallback(){

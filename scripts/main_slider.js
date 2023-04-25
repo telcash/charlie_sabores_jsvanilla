@@ -1,9 +1,7 @@
-let activeSlide = 0;
-let slides;
-let timeoutId;
+/*
 
-const mainSliderTemplate = document.createElement('template');
-mainSliderTemplate.innerHTML=`
+HTML template:
+
 <div class="wrapper">
     <div class="slide">
         <a class="tagImg" href="#">Sorpréndelos en su día con esta deliciosa torta de chocolate libre de gluten</a>
@@ -22,11 +20,55 @@ mainSliderTemplate.innerHTML=`
         <a class="arrowRight">&#10095;</a>
     </div>
 </div>
-`;
+
+*/
+
+
+let activeSlide = 0;
+let timeoutId;
+let containers = [];
 
 class MainSliderComponent extends HTMLElement{
+
+    css;
+    commonCss;
+    wrapper;
+    slides;
+
     constructor(){
         super();
+
+        this.css = document.createElement('link');
+        this.css.setAttribute("rel", "stylesheet");
+        this.css.setAttribute("href", "styles/main_slider.css");
+
+        this.commonCss = document.createElement('link');
+        this.commonCss.setAttribute("rel", "stylesheet");
+        this.commonCss.setAttribute("href", "styles/styles.css");
+
+        this.wrapper = document.createElement('div');
+        this.wrapper.setAttribute("class","wrapper");
+
+        this.slides = [
+            {
+                nombre: "Chocolate Mousse Cake",
+                img: "img/chocolate_mousse_cake.jpeg",
+                enlace: "#",
+                descripcion: "Sorpréndelos en su día con esta deliciosa torta de chocolate libre de gluten"
+            },
+            {
+                nombre: "Red Velvet Cheesecake",
+                img: "img/red_velvet_cheesecake.jpeg",
+                enlace: "#",
+                descripcion: "Una deliciosa combinación de dos postres clásicos"
+            },
+            {
+                nombre: "Kitchenaid Professional 5 plus",
+                img: "img/kitchenaid_professional_5_plus.jpg",
+                enlace: "#",
+                descripcion: "Un versátil ayudante para toda la vida"
+            }
+        ]
     }
 
     connectedCallback(){
@@ -34,25 +76,39 @@ class MainSliderComponent extends HTMLElement{
             mode: 'open'
         })
         
-        const commonCssLink = document.createElement('link');
-        commonCssLink.setAttribute("rel", "stylesheet");
-        commonCssLink.setAttribute("href", "styles/styles.css");
-        this.shadowRoot.appendChild(commonCssLink);
+        this.shadowRoot.appendChild(this.css);
+        this.shadowRoot.appendChild(this.commonCss);
 
-        const cssLink = document.createElement('link');
-        cssLink.setAttribute("rel", "stylesheet");
-        cssLink.setAttribute("href", "styles/main_slider.css");
-        this.shadowRoot.appendChild(cssLink);
+        let i = 0;
+        for(const slide of this.slides){
+            containers[i] = this.wrapper.appendChild(document.createElement('div'));
+            containers[i].setAttribute("class","slide");
 
-        this.shadowRoot.appendChild(mainSliderTemplate.content.cloneNode(true));
+            const a = containers[i].appendChild(document.createElement('a'));
+            a.setAttribute("class","tagImg");
+            a.setAttribute("href", slide.enlace);
+            a.innerText = slide.descripcion;
 
-        slides = this.shadowRoot.querySelectorAll(".slide");
+            const img = containers[i].appendChild(document.createElement('img'));
+            img.setAttribute("src", slide.img);
+            img.setAttribute("alt", slide.nombre);
+            i++;
+        }
+
+        const div = this.wrapper.appendChild(document.createElement('div'));
+
+        const arrowLeft = div.appendChild(document.createElement('a'));
+        arrowLeft.setAttribute("class","arrowLeft");
+        arrowLeft.innerHTML = "&#10094;";
+
+        const arrowRight = div.appendChild(document.createElement('a'));
+        arrowRight.setAttribute("class","arrowRight");
+        arrowRight.innerHTML = "&#10095;";
+
+        this.shadowRoot.appendChild(this.wrapper);
         
         showSlide(activeSlide);
-        
-        let arrowLeft = this.shadowRoot.querySelector(".arrowLeft");
         arrowLeft.addEventListener("click", showPrevSlide);
-        let arrowRight = this.shadowRoot.querySelector(".arrowRight");
         arrowRight.addEventListener("click", showNextSlide);
     }
     
@@ -62,11 +118,11 @@ function showSlide(slideIndex){
 
     clearTimeout(timeoutId);
 
-    for(let i=0;i<slides.length;i++){
+    for(let i=0;i<containers.length;i++){
         if(i===slideIndex){
-            slides[i].style.display = "block";
+            containers[i].style.display = "block";
         } else {
-            slides[i].style.display = "none";
+            containers[i].style.display = "none";
         }
     }
     
@@ -77,7 +133,7 @@ function showSlide(slideIndex){
 function showNextSlide() {
 
     activeSlide++;
-    if(activeSlide >= slides.length){
+    if(activeSlide >= containers.length){
         activeSlide = 0;
     }
     showSlide(activeSlide);
@@ -86,7 +142,7 @@ function showNextSlide() {
 function showPrevSlide(){
     activeSlide--;
     if(activeSlide < 0){
-        activeSlide = (slides.length) - 1;
+        activeSlide = (containers.length) - 1;
     }
     showSlide(activeSlide);
 }

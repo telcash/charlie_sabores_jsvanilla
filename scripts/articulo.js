@@ -1,5 +1,6 @@
 /* 
 Plantilla HTML:
+
 <div class="wrapper">
     <div class="imgContainer">
         <img src="img/articulo_test.jpeg" alt="">
