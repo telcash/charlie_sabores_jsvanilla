@@ -28,6 +28,7 @@ class HeaderComponent extends HTMLElement{
     css;
     commonCss;
     wrapper;
+    navToggle;
     
     constructor(){
         super();
@@ -45,6 +46,10 @@ class HeaderComponent extends HTMLElement{
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
+
+        this.navToggle = new Event('navListToggle', {bubbles: true, composed: true});
+
+        console.log("creamos un header ...");
     }
 
     connectedCallback(){
@@ -95,7 +100,11 @@ class HeaderComponent extends HTMLElement{
 
         this.shadowRoot.appendChild(this.wrapper);
         
-        navButton.addEventListener("click", navListToggle);
+        navButton.addEventListener('click', () => {
+            navButton.dispatchEvent(this.navToggle);
+            navListToggle();
+        })
+
 
         input.addEventListener('focusin', ()=>{
             form.classList.add("searchBarFocus");
@@ -107,6 +116,7 @@ class HeaderComponent extends HTMLElement{
 }
 
 function navListToggle(){
+    
     if(navList.style.width === "100%"){
         navList.style.width = "0%";
     } else{

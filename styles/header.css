@@ -2,7 +2,6 @@
     display: flex;
     flex-flow: column wrap;
     width: 97%;
-    overflow-y: hidden;
 }
 
 .nav {
