@@ -1,0 +1,29 @@
+.wrapper{
+    width: 100%;
+}
+
+ul{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+
+li{
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 4px;
+    color: black;
+    font-size: large;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid grey;
+}
+
+a:hover{
+    color: red;
+}
