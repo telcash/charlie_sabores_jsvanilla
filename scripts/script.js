@@ -7,9 +7,9 @@ window.onload = () =>{
 }
 
 function toggleScroll(){
-    if(body.style.overflowY === "hidden"){
-        body.style.overflowY = "visible";
+    if(body.style.overflow === "hidden"){
+        body.style.overflow = "visible";
     } else {
-        body.style.overflowY = "hidden";
+        body.style.overflow = "hidden";
     }
 }
