@@ -7,12 +7,12 @@
     margin-right: 10px;
 }
 
-.artImg{
+.imgContainer{
     background-color: white;
     padding: 5px;
 }
 
-.artImg img{
+.imgContainer img{
     max-width: 105px;
     height: auto;
 }
