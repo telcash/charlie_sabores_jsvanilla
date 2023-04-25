@@ -1,18 +1,59 @@
 /*
+
 HTML template:
 
 <div class="wrapper">
-    <div class="imgContainer">
-        <img src="img/ext_web_logo.jpeg" alt="">
+    <div class="webSite">
+        <div class="imgContainer">
+            <img src="img/ext_web_logo.jpeg" alt="">
+        </div>
+        <p>Descripción sitio externo</p>
     </div>
-    <p>Descripción sitio externo</p>
 </div>
 
  */
 
 class ExtWebComponent extends HTMLElement{
+
+    css;
+    commonCss;
+    wrapper;
+    websites;
+
     constructor(){
         super();
+
+        this.css = document.createElement('link');
+        this.css.setAttribute("rel", "stylesheet");
+        this.css.setAttribute("href", "styles/ext_web.css");
+
+        this.commonCss = document.createElement('link');
+        this.commonCss.setAttribute("rel", "stylesheet");
+        this.commonCss.setAttribute("href", "styles/styles.css");
+
+        this.wrapper = document.createElement('div');
+        this.wrapper.setAttribute("class","wrapper");
+
+        this.websites = [
+            {
+                nombre: "Sitio web externo",
+                descripcion: "Este sitio te podría interesar",
+                img: "img/ext_web_logo.jpeg",
+                enlace:"#"
+            },
+            {
+                nombre: "Sitio web externo",
+                descripcion: "Este sitio te podría interesar",
+                img: "img/ext_web_logo.jpeg",
+                enlace:"#"
+            },
+            {
+                nombre: "Sitio web externo",
+                descripcion: "Este sitio te podría interesar",
+                img: "img/ext_web_logo.jpeg",
+                enlace:"#"
+            }
+        ]
     }
 
     connectedCallback(){
@@ -20,30 +61,26 @@ class ExtWebComponent extends HTMLElement{
             mode: 'open'
         })
 
-        const commonCssLink = document.createElement('link');
-        commonCssLink.setAttribute("rel", "stylesheet");
-        commonCssLink.setAttribute("href", "styles/styles.css");
-        this.shadowRoot.appendChild(commonCssLink);
-        
-        const cssLink = document.createElement('link');
-        cssLink.setAttribute("rel", "stylesheet");
-        cssLink.setAttribute("href", "styles/ext_web.css");
-        this.shadowRoot.appendChild(cssLink);
+        this.shadowRoot.appendChild(this.css);
+        this.shadowRoot.appendChild(this.commonCss);
 
-        const wrapper = document.createElement('div');
-        wrapper.setAttribute("class","wrapper");
+        for(const web of this.websites){
+    
+            const webSite = this.wrapper.appendChild(document.createElement('div'));
+            webSite.setAttribute("class","webSite");
 
-        const imgContainer = wrapper.appendChild(document.createElement('div'));
-        imgContainer.setAttribute("class","imgContainer");
+            const imgContainer = webSite.appendChild(document.createElement('div'));
+            imgContainer.setAttribute("class","imgContainer");
 
-        const img = imgContainer.appendChild(document.createElement('img'));
-        img.src = this.hasAttribute("img") ? this.getAttribute("img") : "img/default/ext_web_site.png";
-        img.alt = this.hasAttribute("alt") ? this.getAttribute("alt") : "";
+            const img = imgContainer.appendChild(document.createElement('img'));
+            img.src = web.img;
+            img.alt = web.nombre;
 
-        const descripcion = wrapper.appendChild(document.createElement('p'));
-        descripcion.innerText = this.hasAttribute("desc") ? this.getAttribute("desc") : "Este sitio web te puede interesar...";
+            const descripcion = webSite.appendChild(document.createElement('p'));
+            descripcion.innerText = web.descripcion;
+        }        
 
-        this.shadowRoot.appendChild(wrapper);
+        this.shadowRoot.appendChild(this.wrapper);
     }
 }
 

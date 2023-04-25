@@ -1,0 +1,8 @@
+.wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+a{
+    margin: 2px;
+}

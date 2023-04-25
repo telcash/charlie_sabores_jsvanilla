@@ -2,16 +2,3 @@
     display: flex;
     flex-flow: column wrap;
 }
-.socialNetworks{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-.socialNetworks a{
-    margin: 2px;
-}
-.externalWebsites {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-}

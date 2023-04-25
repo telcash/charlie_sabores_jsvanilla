@@ -1,59 +1,48 @@
-/* 
+/*
+
 HTML template:
 
 <div class="wrapper">
-    <div class="socialNetworks">
-        <a href="#"><img src="img/red_social_test.png" alt=""></a>
-        <a href="#"><img src="img/red_social_test.png" alt=""></a>
-        <a href="#"><img src="img/red_social_test.png" alt=""></a>
-        <a href="#"><img src="img/red_social_test.png" alt=""></a>
-        <a href="#"><img src="img/red_social_test.png" alt=""></a>
-    </div>
+    <app-social-networks></app-social-networks>
     <a>Contactanos</a>
     <a>Políticas</a>
-    <div class="externalWebsites">
-        <app-ext-web></app-ext-web>
-        <app-ext-web></app-ext-web>
-        <app-ext-web></app-ext-web>
-    </div>
+    <app-ext-web></app-ext-web>
 </div> 
+
 */
 
 class FooterComponent extends HTMLElement {
     
+    scriptsSrcs;
+    scripts;
+    css;
+    commonCss;
+    wrapper;
     networks;
 
     constructor(){
         
         super();
 
-        this.networks = [
-            {
-                nombre: "Facebook",
-                img: "img/icon_redes_sociales/icon_facebook.png",
-                enlace:"#"
-            },
-            {
-                nombre: "Instagram",
-                img: "img/icon_redes_sociales/icon_instagram.png",
-                enlace:"#"
-            },
-            {
-                nombre: "Pinterest",
-                img: "img/icon_redes_sociales/icon_pinterest.png",
-                enlace:"#"
-            },
-            {
-                nombre: "Twitter",
-                img: "img/icon_redes_sociales/icon_twitter.png",
-                enlace:"#"
-            },
-            {
-                nombre: "Youtube",
-                img: "img/icon_redes_sociales/icon_youtube.png",
-                enlace:"#"
-            }
-        ]
+        this.scriptsSrcs = ["scripts/ext_web.js","scripts/social_networks.js"];
+        this.scripts = [];
+        for(const src of this.scriptsSrcs){
+            const script = document.createElement('script');
+            script.setAttribute("src",src);
+            this.scripts.push(script);
+        }
+
+        this.css = document.createElement('link');
+        this.css.setAttribute("rel", "stylesheet");
+        this.css.setAttribute("href", "styles/footer.css");
+
+        this.commonCss = document.createElement('link');
+        this.commonCss.setAttribute("rel", "stylesheet");
+        this.commonCss.setAttribute("href", "styles/styles.css");
+
+        this.wrapper = document.createElement('div');
+        this.wrapper.setAttribute("class","wrapper");
+
     }
 
     connectedCallback(){
@@ -61,78 +50,25 @@ class FooterComponent extends HTMLElement {
             mode: 'open'
         })
 
-        const scriptLink = document.createElement('script');
-        scriptLink.setAttribute("src", "scripts/ext_web.js");
-        this.shadowRoot.appendChild(scriptLink);
-
-        const commonCssLink = document.createElement('link');
-        commonCssLink.setAttribute("rel", "stylesheet");
-        commonCssLink.setAttribute("href", "styles/styles.css");
-        this.shadowRoot.appendChild(commonCssLink);
-
-        const cssLink = document.createElement('link');
-        cssLink.setAttribute("rel", "stylesheet");
-        cssLink.setAttribute("href", "styles/footer.css");
-        this.shadowRoot.appendChild(cssLink);
-
-        const wrapper = document.createElement('div');
-        wrapper.setAttribute("class","wrapper");
-
-        const socialNetworks = wrapper.appendChild(document.createElement('div'));
-        socialNetworks.setAttribute("class","socialNetworks");
-
-
-        for(const network of this.networks){
-
-            const enlace = socialNetworks.appendChild(document.createElement('a')); 
-            enlace.setAttribute("href",network.enlace);
-            
-            const img = enlace.appendChild(document.createElement('img'));
-            img.setAttribute("src",network.img);
-            img.setAttribute("alt",network.nombre);
+        for(const script of this.scripts){
+            this.shadowRoot.appendChild(script);
         }
+        this.shadowRoot.appendChild(this.css);
+        this.shadowRoot.appendChild(this.commonCss);
 
-        const contact = wrapper.appendChild(document.createElement('a'));
+        this.wrapper.appendChild(document.createElement('app-social-networks'));
+
+        const contact = this.wrapper.appendChild(document.createElement('a'));
         contact.setAttribute("href","contacto.html");
         contact.innerText="Contáctanos";
 
-        const policies = wrapper.appendChild(document.createElement('a'));
+        const policies = this.wrapper.appendChild(document.createElement('a'));
         policies.setAttribute("href","politicas.html");
         policies.innerText="Políticas";
 
-        const externalWebsites = wrapper.appendChild(document.createElement('div'));
-        externalWebsites.setAttribute("class","externalWebsites");
+        this.wrapper.appendChild(document.createElement('app-ext-web'));
 
-        const extWebsites = [
-            {
-                nombre: "Sitio web externo",
-                descripcion: "Este sitio te podría interesar",
-                img: "img/ext_web_logo.jpeg",
-                enlace:"#"
-            },
-            {
-                nombre: "Sitio web externo",
-                descripcion: "Este sitio te podría interesar",
-                img: "img/ext_web_logo.jpeg",
-                enlace:"#"
-            },
-            {
-                nombre: "Sitio web externo",
-                descripcion: "Este sitio te podría interesar",
-                img: "img/ext_web_logo.jpeg",
-                enlace:"#"
-            }
-        ]
-
-        for(const web of extWebsites){
-    
-            const website = externalWebsites.appendChild(document.createElement('app-ext-web'));
-            website.setAttribute("img",web.img);
-            website.setAttribute("alt",web.nombre);
-            website.setAttribute("desc",web.descripcion);
-        }
-
-        this.shadowRoot.appendChild(wrapper);
+        this.shadowRoot.appendChild(this.wrapper);
     }
 
 }
