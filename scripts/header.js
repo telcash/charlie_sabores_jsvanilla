@@ -25,7 +25,7 @@ HTML template
 let navList;
 
 class HeaderComponent extends HTMLElement{
-    script;
+    scripts;
     css;
     commonCss;
     wrapper;
@@ -34,8 +34,13 @@ class HeaderComponent extends HTMLElement{
     constructor(){
         super();
 
-        this.script = document.createElement('script');
-        this.script.setAttribute("src","scripts/nav_list.js");
+        this.scriptsSrcs = ["scripts/nav_list.js"];
+        this.scripts = [];
+        for(const src of this.scriptsSrcs){
+            const script = document.createElement('script');
+            script.setAttribute("src",src);
+            this.scripts.push(script);
+        }
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
@@ -56,7 +61,9 @@ class HeaderComponent extends HTMLElement{
             mode: 'open'
         })
         
-        this.shadowRoot.appendChild(this.script);
+        for(const script of this.scripts){
+            this.shadowRoot.appendChild(script);
+        }
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 

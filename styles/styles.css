@@ -4,17 +4,21 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html{
+    text-size-adjust: 100%;
+}
+
 body {
     height: 100%;
     width: 100%;
+    background-color: rgb(249,239,236);
 }
 
 #wrapper{
     display: flex;
     flex-flow: column wrap;
-    row-gap: 5px;
     margin: auto;
-    width: 95%;
+    width: 100%;
 }
 
 header, section, aside, article, footer{
@@ -25,7 +29,6 @@ header, section, aside, article, footer{
 article, aside{
     padding-top: 40px;
     padding-bottom: 20px;
-    background-image: linear-gradient(to top, rgba(255,0,0,1),rgba(255,0,0,0));
 }
 
 article h2{

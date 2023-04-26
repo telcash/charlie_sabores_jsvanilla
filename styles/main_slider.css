@@ -8,6 +8,7 @@
 .container{
     display: block;
     width: 100%;
+    height: auto;
 }
 
 .container img{
@@ -16,26 +17,35 @@
 }
 
 .descSlide {
-    height: 25%;
-    max-width: 100%;
+    width: 100%;
     position: absolute;
     bottom: 0;
-    padding-left: 10px;
-    padding-right: 10px;
     padding-bottom: 10px;
-    padding-top: 20px;
-    background-image: linear-gradient(to top, rgba(255,0,0,1),rgba(255,0,0,0));
+    background-image: linear-gradient(to top, rgba(81,17,22,1), 75%, rgba(81,17,22,0));
 }
 
 .descSlide a {
     display: block;
-    padding-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 100px;
+    padding-bottom: 10px;
     text-decoration: none;
     color: white;
-    font-size: x-large;
-    font-weight: bolder;
+    font-size: 5vw;
+    font-weight: bold;
     text-align: left;
+    overflow: hidden;
+    border-bottom: 3px solid rgb(215,58,21);
  }
+
+.autorCard{
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    color: white;
+}
 
 .arrowLeft, .arrowRight {
     border: 0;

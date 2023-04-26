@@ -6,6 +6,7 @@ HTML template:
     <div class="container">
         <div class="descSlide">
             <a href="#/">Un texto descriptivo corto que explique un poco la imagen</a>
+            <app-autor-card></app-autor-card>
         </div>
         <a href="#/"><img src="" alt=""></a>
     </div>
@@ -24,6 +25,8 @@ let containers;
 
 class MainSliderComponent extends HTMLElement{
 
+    scriptsSrcs;
+    scripts;
     css;
     commonCss;
     wrapper;
@@ -31,6 +34,14 @@ class MainSliderComponent extends HTMLElement{
 
     constructor(){
         super();
+
+        this.scriptsSrcs = ["scripts/autor_card.js"];
+        this.scripts = [];
+        for(const src of this.scriptsSrcs){
+            const script = document.createElement('script');
+            script.setAttribute("src",src);
+            this.scripts.push(script);
+        }
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
@@ -46,19 +57,19 @@ class MainSliderComponent extends HTMLElement{
         this.slides = [
             {
                 nombre: "Chocolate Mousse Cake",
-                img: "img/recetas/chocolate_mousse_cake.jpeg",
+                img: "img/recetas/chocolate_mousse_cake_vertical.jpeg",
                 enlace: "#/",
-                descripcion: "Sorpréndelos en su día con esta deliciosa torta de chocolate libre de gluten"
+                descripcion: "Sorpréndelos en su día con esta deliciosa torta de chocolate"
             },
             {
                 nombre: "Red Velvet Cheesecake",
-                img: "img/recetas/red_velvet_cheesecake.jpeg",
+                img: "img/recetas/red_velvet_cheesecake_vertical.jpeg",
                 enlace: "#/",
                 descripcion: "Una deliciosa combinación de dos postres clásicos"
             },
             {
                 nombre: "Kitchenaid Professional 5 plus",
-                img: "img/articulos/kitchenaid_professional_5_plus.jpg",
+                img: "img/articulos/kitchenaid_professional_5_plus_vertical.jpg",
                 enlace: "#/",
                 descripcion: "Un versátil ayudante para toda la vida"
             }
@@ -70,6 +81,10 @@ class MainSliderComponent extends HTMLElement{
             mode: 'open'
         })
         
+        for(const script of this.scripts){
+            this.shadowRoot.appendChild(script);
+        }
+
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 
@@ -84,6 +99,9 @@ class MainSliderComponent extends HTMLElement{
             let a = descSlide.appendChild(document.createElement('a'));
             a.setAttribute("href", slide.enlace);
             a.innerText = slide.descripcion;
+
+            const autorCard = descSlide.appendChild(document.createElement('app-autor-card'));
+            autorCard.setAttribute("class","autorCard");
 
             a = container.appendChild(document.createElement('a'));
             a.setAttribute("href", slide.enlace);

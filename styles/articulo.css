@@ -19,16 +19,18 @@
 }
 
 .info{
-    display: grid;
-    grid-template-rows: 1fr 70px;
+    display: flex;
+    flex-flow: column nowrap;
     flex: 1;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 5px;
 }
 
+h4{
+
+}
+
 p{
-    font-size: 12px;
-    overflow: hidden;
-    padding-top: 5px;
+
 }

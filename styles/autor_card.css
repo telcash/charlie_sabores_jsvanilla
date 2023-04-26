@@ -1,0 +1,21 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: space-around;
+}
+
+img {
+    max-width: 25px;
+    height: auto
+}
+
+.imgAutor {
+    border-radius: 50%;
+}
+
+h6{
+    padding-left: 5px;
+    flex: 1;
+}
