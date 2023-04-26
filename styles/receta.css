@@ -4,6 +4,7 @@
     margin-left:10px;
     margin-right: 10px;
     background-color: white;
+    cursor: pointer;
 }
 
 .imgContainer{
@@ -22,16 +23,11 @@ img{
     flex-flow: column wrap;
 }
 
-p, a, h4{
+p, h4{
     padding-top: 10px;
 }
 
 p{
     flex:5;
     line-height: 1.5;
-}
-
-a {
-    text-align: right;
-    flex: 1;
 }

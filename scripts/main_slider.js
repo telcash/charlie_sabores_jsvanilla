@@ -4,10 +4,10 @@ HTML template:
 
 <div class="wrapper">
     <div class="container">
-        <div class="tagImg">
-            <a href="#">Un texto descriptivo corto que explique un poco la imagen</a>
+        <div class="descSlide">
+            <a href="#/">Un texto descriptivo corto que explique un poco la imagen</a>
         </div>
-        <a><img src="" alt=""></a>
+        <a href="#/"><img src="" alt=""></a>
     </div>
     <div>
         <a class="arrowLeft">&#10094;</a>
@@ -47,19 +47,19 @@ class MainSliderComponent extends HTMLElement{
             {
                 nombre: "Chocolate Mousse Cake",
                 img: "img/recetas/chocolate_mousse_cake.jpeg",
-                enlace: "#",
+                enlace: "#/",
                 descripcion: "Sorpréndelos en su día con esta deliciosa torta de chocolate libre de gluten"
             },
             {
                 nombre: "Red Velvet Cheesecake",
                 img: "img/recetas/red_velvet_cheesecake.jpeg",
-                enlace: "#",
+                enlace: "#/",
                 descripcion: "Una deliciosa combinación de dos postres clásicos"
             },
             {
                 nombre: "Kitchenaid Professional 5 plus",
                 img: "img/articulos/kitchenaid_professional_5_plus.jpg",
-                enlace: "#",
+                enlace: "#/",
                 descripcion: "Un versátil ayudante para toda la vida"
             }
         ]

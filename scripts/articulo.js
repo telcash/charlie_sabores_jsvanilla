@@ -15,45 +15,60 @@ Plantilla HTML:
 */
 
 class ArticuloComponent extends HTMLElement{
+
+    css;
+    commonCss;
+    wrapper;
+    url;
+
     constructor(){
         super();
-    }
 
+        this.css = document.createElement('link');
+        this.css.setAttribute("rel", "stylesheet");
+        this.css.setAttribute("href", "styles/articulo.css");
+
+        this.commonCss = document.createElement('link');
+        this.commonCss.setAttribute("rel", "stylesheet");
+        this.commonCss.setAttribute("href", "styles/styles.css");
+
+        this.wrapper = document.createElement('div');
+        this.wrapper.setAttribute("class","wrapper");
+
+        this.url = this.hasAttribute("url") ? this.getAttribute("url") : "#/";
+    }
+    
     connectedCallback(){
         this.attachShadow({
             mode: 'open'
         })
-
-        const commonCssLink = document.createElement('link');
-        commonCssLink.setAttribute("rel", "stylesheet");
-        commonCssLink.setAttribute("href", "styles/styles.css");
-        this.shadowRoot.appendChild(commonCssLink);
-
-        const cssLink = document.createElement('link');
-        cssLink.setAttribute("rel", "stylesheet");
-        cssLink.setAttribute("href", "styles/articulo.css");
-        this.shadowRoot.appendChild(cssLink);
-
-        const wrapper = document.createElement('div');
-        wrapper.setAttribute("class","wrapper");
-
-        const imgContainer = wrapper.appendChild(document.createElement('div'));
+        this.shadowRoot.appendChild(this.css);
+        this.shadowRoot.appendChild(this.commonCss);
+        
+        //const enlace = this.wrapper.appendChild(document.createElement('a'));
+        //enlace.href = this.hasAttribute("href") ? this.getAttribute("href") : "#"; 
+        
+        const imgContainer = this.wrapper.appendChild(document.createElement('div'));
         imgContainer.setAttribute("class","imgContainer");
-
+        
         const img = imgContainer.appendChild(document.createElement('img'));
         img.src = this.hasAttribute("img") ? this.getAttribute("img") : "img/default/articulo.png";
         img.alt = this.hasAttribute("alt") ? this.getAttribute("alt") : "";
-
-        const info = wrapper.appendChild(document.createElement('div'));
+        
+        const info = this.wrapper.appendChild(document.createElement('div'));
         info.setAttribute("class","info");
         
         const titulo = info.appendChild(document.createElement('h4'));
         titulo.innerText = this.hasAttribute("title") ? this.getAttribute("title") : "Artículo de interés";
-
+        
         const descripcion = info.appendChild(document.createElement('p'));
         descripcion.innerText = this.hasAttribute("desc") ? this.getAttribute("desc") : "Esta info te puede interesar...";
-
-        this.shadowRoot.appendChild(wrapper);
+        
+        
+        this.shadowRoot.appendChild(this.wrapper);
+        this.wrapper.addEventListener("click", () => {
+            window.location = this.url;
+        })
     }
 }
 
