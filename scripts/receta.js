@@ -55,7 +55,7 @@ class RecetaComponent extends HTMLElement{
 
         const enlace = info.appendChild(document.createElement('a'));
         enlace.href = this.hasAttribute("href") ? this.getAttribute("href") : "#"; 
-
+        enlace.innerHTML = "Ver página";
 
         this.shadowRoot.appendChild(wrapper);
     }

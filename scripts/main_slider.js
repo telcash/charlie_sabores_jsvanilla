@@ -3,17 +3,11 @@
 HTML template:
 
 <div class="wrapper">
-    <div class="slide">
-        <a class="tagImg" href="#">Sorpréndelos en su día con esta deliciosa torta de chocolate libre de gluten</a>
-        <img src="img/chocolate_mousse_cake.jpeg" alt="Chocolate mousse cake">
-    </div>
-    <div class="slide">
-        <a class="tagImg" href="#">Un texto descriptivo corto que explique un poco la imagen</a>
-        <img src="img/red_velvet_cheesecake.jpeg" alt="Red velvet cheesecake">
-    </div>
-    <div class="slide">
-        <a class="tagImg" href="#">Un texto descriptivo corto que explique un poco la imagen</a>
-        <img src="img/kitchenaid_professional_5_plus.jpg" alt="Kitchenaid Professional 5 plus">
+    <div class="container">
+        <div class="tagImg">
+            <a href="#">Un texto descriptivo corto que explique un poco la imagen</a>
+        </div>
+        <a><img src="" alt=""></a>
     </div>
     <div>
         <a class="arrowLeft">&#10094;</a>
@@ -52,19 +46,19 @@ class MainSliderComponent extends HTMLElement{
         this.slides = [
             {
                 nombre: "Chocolate Mousse Cake",
-                img: "img/chocolate_mousse_cake.jpeg",
+                img: "img/recetas/chocolate_mousse_cake.jpeg",
                 enlace: "#",
                 descripcion: "Sorpréndelos en su día con esta deliciosa torta de chocolate libre de gluten"
             },
             {
                 nombre: "Red Velvet Cheesecake",
-                img: "img/red_velvet_cheesecake.jpeg",
+                img: "img/recetas/red_velvet_cheesecake.jpeg",
                 enlace: "#",
                 descripcion: "Una deliciosa combinación de dos postres clásicos"
             },
             {
                 nombre: "Kitchenaid Professional 5 plus",
-                img: "img/kitchenaid_professional_5_plus.jpg",
+                img: "img/articulos/kitchenaid_professional_5_plus.jpg",
                 enlace: "#",
                 descripcion: "Un versátil ayudante para toda la vida"
             }
@@ -81,15 +75,20 @@ class MainSliderComponent extends HTMLElement{
 
         let i = 0;
         for(const slide of this.slides){
-            const div = this.wrapper.appendChild(document.createElement('div'));
-            div.setAttribute("class","slideContainer");
+            const container = this.wrapper.appendChild(document.createElement('div'));
+            container.setAttribute("class","container");
 
-            const a = div.appendChild(document.createElement('a'));
-            a.setAttribute("class","tagImg");
+            const descSlide = container.appendChild(document.createElement('div'));
+            descSlide.setAttribute("class","descSlide");
+
+            let a = descSlide.appendChild(document.createElement('a'));
             a.setAttribute("href", slide.enlace);
             a.innerText = slide.descripcion;
 
-            const img = div.appendChild(document.createElement('img'));
+            a = container.appendChild(document.createElement('a'));
+            a.setAttribute("href", slide.enlace);
+
+            const img = a.appendChild(document.createElement('img'));
             img.setAttribute("src", slide.img);
             img.setAttribute("alt", slide.nombre);
             i++;
@@ -107,7 +106,7 @@ class MainSliderComponent extends HTMLElement{
 
         this.shadowRoot.appendChild(this.wrapper);
         
-        containers = this.shadowRoot.querySelectorAll(".slideContainer");
+        containers = this.shadowRoot.querySelectorAll(".container");
 
         showSlide(activeSlide);
         arrowLeft.addEventListener("click", showPrevSlide);
@@ -128,7 +127,7 @@ function showSlide(slideIndex){
         }
     }
     
-    timeoutId = setTimeout(showNextSlide, 5000)
+    //timeoutId = setTimeout(showNextSlide, 5000)
 
 }
 

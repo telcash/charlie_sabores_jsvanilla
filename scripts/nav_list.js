@@ -33,6 +33,10 @@ class NavListComponent extends HTMLElement{
 
         this.options = [
             {
+                nombre: "Inicio",
+                url: "index.html"
+            },
+            {
                 nombre: "Recetas",
                 url: "recetas.html"
             },

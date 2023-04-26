@@ -1,32 +1,33 @@
 .wrapper{
     display: flex;
     flex-flow: row nowrap;
-    gap: 0;
     max-height: 115px;
     margin-left:10px;
     margin-right: 10px;
+    background-color: white;
 }
 
 .imgContainer{
-    background-color: white;
     padding: 5px;
 }
 
 .imgContainer img{
-    max-width: 105px;
+    max-width: 95px;
     height: auto;
+    padding: 5px;
 }
 
 .info{
     display: grid;
     grid-template-rows: 1fr 70px;
     flex: 1;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
 }
 
 p{
     font-size: 12px;
     overflow: hidden;
+    padding-top: 5px;
 }

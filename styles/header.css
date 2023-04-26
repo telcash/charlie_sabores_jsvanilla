@@ -20,10 +20,6 @@
     cursor: pointer;
 }
 
-.mainLogo{
-    cursor: pointer;
-}
-
 .mainLogo img{
     height: auto;
     max-width: 33px;

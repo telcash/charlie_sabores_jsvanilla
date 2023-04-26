@@ -67,14 +67,17 @@ class HeaderComponent extends HTMLElement{
         navButton.setAttribute("class","navButton");
 
         let img = navButton.appendChild(document.createElement('img'));
-        img.src = "img/nav_logo.png";
+        img.src = "img/icons/nav_logo.png";
         img.alt = "Icono barra de navegacion";
 
         const mainLogo = nav.appendChild(document.createElement('div'));
         mainLogo.setAttribute("class","mainLogo");
 
-        img = mainLogo.appendChild(document.createElement('img'));
-        img.src = "img/main_logo.jpeg";
+        const a = mainLogo.appendChild(document.createElement('a'));
+        a.setAttribute("href","index.html");
+
+        img = a.appendChild(document.createElement('img'));
+        img.src = "img/icons/main_logo.jpeg";
         img.alt = "Logo principal";
 
         const form = nav.appendChild(document.createElement('form'));
@@ -86,7 +89,7 @@ class HeaderComponent extends HTMLElement{
         button.setAttribute("onclick","notImplemented()");
 
         img = button.appendChild(document.createElement('img'));
-        img.src = "img/search_icon.png";
+        img.src = "img/icons/search_icon.png";
         img.alt = "Botón de busqueda";
 
         const input = form.appendChild(document.createElement('input'));

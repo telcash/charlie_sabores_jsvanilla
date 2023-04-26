@@ -30,27 +30,27 @@ class SocialNetworksComponent extends HTMLElement{
         this.networks = [
             {
                 nombre: "Facebook",
-                img: "img/icon_redes_sociales/icon_facebook.png",
+                img: "img/icons/redes_sociales/icon_facebook.png",
                 enlace:"#"
             },
             {
                 nombre: "Instagram",
-                img: "img/icon_redes_sociales/icon_instagram.png",
+                img: "img/icons/redes_sociales/icon_instagram.png",
                 enlace:"#"
             },
             {
                 nombre: "Pinterest",
-                img: "img/icon_redes_sociales/icon_pinterest.png",
+                img: "img/icons/redes_sociales/icon_pinterest.png",
                 enlace:"#"
             },
             {
                 nombre: "Twitter",
-                img: "img/icon_redes_sociales/icon_twitter.png",
+                img: "img/icons/redes_sociales/icon_twitter.png",
                 enlace:"#"
             },
             {
                 nombre: "Youtube",
-                img: "img/icon_redes_sociales/icon_youtube.png",
+                img: "img/icons/redes_sociales/icon_youtube.png",
                 enlace:"#"
             }
         ]
