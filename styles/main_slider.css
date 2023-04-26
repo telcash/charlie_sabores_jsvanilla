@@ -5,12 +5,12 @@
     position: relative;
 }
 
-.slide{
+.slideContainer{
     display: block;
     width: 100%;
 }
 
-.slide img{
+.slideContainer img{
     height: auto;
     max-width: 100%;
 }

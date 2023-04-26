@@ -6,22 +6,24 @@ ul{
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
+    padding-top: 15px;
 }
 
 li{
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-decoration: none;
+    border-bottom: 1px solid grey;
 }
 
 a{
     text-decoration: none;
     text-align: left;
     text-transform: uppercase;
-    padding: 4px;
+    padding-left: 12px;
     color: black;
     font-size: large;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-bottom: 1px solid grey;
 }
 
 a:hover{

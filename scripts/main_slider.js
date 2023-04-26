@@ -26,7 +26,7 @@ HTML template:
 
 let activeSlide = 0;
 let timeoutId;
-let containers = [];
+let containers;
 
 class MainSliderComponent extends HTMLElement{
 
@@ -81,15 +81,15 @@ class MainSliderComponent extends HTMLElement{
 
         let i = 0;
         for(const slide of this.slides){
-            containers[i] = this.wrapper.appendChild(document.createElement('div'));
-            containers[i].setAttribute("class","slide");
+            const div = this.wrapper.appendChild(document.createElement('div'));
+            div.setAttribute("class","slideContainer");
 
-            const a = containers[i].appendChild(document.createElement('a'));
+            const a = div.appendChild(document.createElement('a'));
             a.setAttribute("class","tagImg");
             a.setAttribute("href", slide.enlace);
             a.innerText = slide.descripcion;
 
-            const img = containers[i].appendChild(document.createElement('img'));
+            const img = div.appendChild(document.createElement('img'));
             img.setAttribute("src", slide.img);
             img.setAttribute("alt", slide.nombre);
             i++;
@@ -107,6 +107,8 @@ class MainSliderComponent extends HTMLElement{
 
         this.shadowRoot.appendChild(this.wrapper);
         
+        containers = this.shadowRoot.querySelectorAll(".slideContainer");
+
         showSlide(activeSlide);
         arrowLeft.addEventListener("click", showPrevSlide);
         arrowRight.addEventListener("click", showNextSlide);
