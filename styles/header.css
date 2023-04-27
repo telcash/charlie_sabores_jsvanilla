@@ -15,4 +15,5 @@
     background-color:white;
     overflow-x: hidden;
     transition: width 0.5s;
+    color: black;
 }

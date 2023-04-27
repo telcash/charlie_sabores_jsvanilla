@@ -31,27 +31,27 @@ class SocialNetworksComponent extends HTMLElement{
             {
                 nombre: "Facebook",
                 img: "img/icons/redes_sociales/icon_facebook.png",
-                enlace:"#"
+                enlace:"#/"
             },
             {
                 nombre: "Instagram",
                 img: "img/icons/redes_sociales/icon_instagram.png",
-                enlace:"#"
+                enlace:"#/"
             },
             {
                 nombre: "Pinterest",
                 img: "img/icons/redes_sociales/icon_pinterest.png",
-                enlace:"#"
+                enlace:"#/"
             },
             {
                 nombre: "Twitter",
                 img: "img/icons/redes_sociales/icon_twitter.png",
-                enlace:"#"
+                enlace:"#/"
             },
             {
                 nombre: "Youtube",
                 img: "img/icons/redes_sociales/icon_youtube.png",
-                enlace:"#"
+                enlace:"#/"
             }
         ]
     }

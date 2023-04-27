@@ -8,14 +8,16 @@ Plantilla HTML:
     <div class="info">
         <h4>Titulo</h4>
         <p>Descripcion</p>
-        <a href="#">Ir a la página</a>
     </div>
-</div>
-
+    <div class="autorCard">
+        <app-autor-card></app-autor-card>
+    </div>
+        
 */
 
 class RecetaComponent extends HTMLElement{
 
+    scriptAutorCard;
     css;
     commonCss;
     wrapper;
@@ -23,6 +25,9 @@ class RecetaComponent extends HTMLElement{
 
     constructor(){
         super();
+
+        this.scriptAutorCard = document.createElement('script');
+        this.scriptAutorCard.setAttribute("src","scripts/autor_card.js");
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
@@ -61,7 +66,12 @@ class RecetaComponent extends HTMLElement{
         const descripcion = info.appendChild(document.createElement('p'));
         descripcion.innerText = this.hasAttribute("desc") ? this.getAttribute("desc") : "Disfruta esta receta...";
 
+        const autorCard = this.wrapper.appendChild(document.createElement('div'));
+        autorCard.setAttribute("class","autorCard");
+        autorCard.appendChild(document.createElement('app-autor-card'));
+
         this.shadowRoot.appendChild(this.wrapper);
+        
         this.wrapper.addEventListener("click", () => {
             window.location = this.url;
         })

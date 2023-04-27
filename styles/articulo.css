@@ -25,12 +25,16 @@
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 5px;
+    min-height: 0;
 }
 
 h4{
-
-}
+    font-size: 4vw;
+    padding-bottom: 1vw;
+}   
 
 p{
-
+    font-size: 3vw;
+    overflow: hidden;
+    white-space:break-spaces;
 }

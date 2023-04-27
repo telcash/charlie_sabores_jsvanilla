@@ -11,6 +11,7 @@
 
 a{
     all: unset;
+    cursor: pointer;
     font-size: 10px;
     text-transform: uppercase;
     padding-right: 15px;

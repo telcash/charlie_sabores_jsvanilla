@@ -1,4 +1,5 @@
 /*
+
 HTML template:
 
 <div class="wrapper">
@@ -49,6 +50,8 @@ class NavListComponent extends HTMLElement{
                 url: "contacto.html"
             }
         ]
+
+        console.log("constructor nav bar listo")
     }
 
     connectedCallback(){
@@ -70,6 +73,8 @@ class NavListComponent extends HTMLElement{
         }
         
         this.shadowRoot.appendChild(this.wrapper);
+
+        console.log("connectedcallback nav bar listo");
     }
 }
 

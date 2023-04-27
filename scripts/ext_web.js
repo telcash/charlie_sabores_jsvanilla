@@ -36,22 +36,22 @@ class ExtWebComponent extends HTMLElement{
 
         this.websites = [
             {
-                nombre: "Sitio web externo",
-                descripcion: "Este sitio te podría interesar",
-                img: "img/ext_web_logo.jpeg",
-                enlace:"#"
+                nombre: "De rechupete",
+                descripcion: "Recetas de cocina que siempre salen",
+                img: "img/icons/ext_websites/derechupete_logo.png",
+                enlace:"https://www.recetasderechupete.com"
             },
             {
-                nombre: "Sitio web externo",
-                descripcion: "Este sitio te podría interesar",
-                img: "img/ext_web_logo.jpeg",
-                enlace:"#"
+                nombre: "Nestle cocina",
+                descripcion: "Platos de temporada sencillos y sabrosos. Entra y descubre la Cocina Nestlé",
+                img: "img/icons/ext_websites/nestle_cocina.png",
+                enlace:"https://www.nestlecocina.es/"
             },
             {
-                nombre: "Sitio web externo",
-                descripcion: "Este sitio te podría interesar",
-                img: "img/ext_web_logo.jpeg",
-                enlace:"#"
+                nombre: "Mercadona",
+                descripcion: "Siempre precios bajos. Tu supermercado de confianza.",
+                img: "img/icons/ext_websites/mercadona.png",
+                enlace:"https://www.mercadona.es"
             }
         ]
     }
@@ -68,6 +68,9 @@ class ExtWebComponent extends HTMLElement{
     
             const webSite = this.wrapper.appendChild(document.createElement('div'));
             webSite.setAttribute("class","webSite");
+            webSite.addEventListener("click", () => {
+                window.open(web.enlace);
+            })
 
             const imgContainer = webSite.appendChild(document.createElement('div'));
             imgContainer.setAttribute("class","imgContainer");
@@ -81,6 +84,7 @@ class ExtWebComponent extends HTMLElement{
         }        
 
         this.shadowRoot.appendChild(this.wrapper);
+
     }
 }
 

@@ -9,9 +9,6 @@ window.onload = () =>{
     header = document.querySelector("header");
     sticky = header.offsetTop;
     content = header.nextElementSibling;
-    console.log(content);
-    header.style.paddingTop
-
 }
 
 window.onscroll = () =>{

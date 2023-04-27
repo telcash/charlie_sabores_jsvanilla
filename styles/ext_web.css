@@ -1,9 +1,33 @@
 .wrapper{
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
 }
 
 .webSite{
+    max-width: 100%;
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.imgContainer{
+    max-width: 100%;
+}
+
+img{
+    max-width: 120px;
+    height:auto;
+    background-color: white;
+    border: 5px solid white;
+}
+
+p{
+    font-size: 3vw;
+    font-weight: lighter;
+    color: white;
+    padding: 20px;
+    padding-top: 10px;
 }

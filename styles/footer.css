@@ -1,4 +1,31 @@
 .wrapper{
+    max-width: 100%;
     display: flex;
     flex-flow: column wrap;
+    background-color: rgb(61,61,61);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.socialNetworks{
+    max-width: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.navList{
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+
+
+.extWeb{
+    max-width: 100%;
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
 }

@@ -3,10 +3,9 @@
 HTML template:
 
 <div class="wrapper">
-    <app-social-networks></app-social-networks>
-    <a>Contactanos</a>
-    <a>Políticas</a>
-    <app-ext-web></app-ext-web>
+    <app-social-networks class="socialNetworks"></app-social-networks>
+    <app-nav-list class="navList"></app-nav-list>
+    <app-ext-web class="extWeb"></app-ext-web>
 </div> 
 
 */
@@ -24,7 +23,7 @@ class FooterComponent extends HTMLElement {
         
         super();
 
-        this.scriptsSrcs = ["scripts/ext_web.js","scripts/social_networks.js"];
+        this.scriptsSrcs = ["scripts/ext_web.js","scripts/social_networks.js","scripts/nav_list.js"];
         this.scripts = [];
         for(const src of this.scriptsSrcs){
             const script = document.createElement('script');
@@ -56,17 +55,14 @@ class FooterComponent extends HTMLElement {
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 
-        this.wrapper.appendChild(document.createElement('app-social-networks'));
+        const socialNetworks = this.wrapper.appendChild(document.createElement('app-social-networks'));
+        socialNetworks.setAttribute("class","socialNetworks");
 
-        const contact = this.wrapper.appendChild(document.createElement('a'));
-        contact.setAttribute("href","contacto.html");
-        contact.innerText="Contáctanos";
+        const navList = this.wrapper.appendChild(document.createElement('app-nav-list'));
+        navList.setAttribute("class","navList");
 
-        const policies = this.wrapper.appendChild(document.createElement('a'));
-        policies.setAttribute("href","politicas.html");
-        policies.innerText="Políticas";
-
-        this.wrapper.appendChild(document.createElement('app-ext-web'));
+        const extWeb = this.wrapper.appendChild(document.createElement('app-ext-web'));
+        extWeb.setAttribute("class","extWeb");
 
         this.shadowRoot.appendChild(this.wrapper);
     }
