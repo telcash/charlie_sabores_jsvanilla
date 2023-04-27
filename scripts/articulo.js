@@ -45,9 +45,6 @@ class ArticuloComponent extends HTMLElement{
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
         
-        //const enlace = this.wrapper.appendChild(document.createElement('a'));
-        //enlace.href = this.hasAttribute("href") ? this.getAttribute("href") : "#"; 
-        
         const imgContainer = this.wrapper.appendChild(document.createElement('div'));
         imgContainer.setAttribute("class","imgContainer");
         

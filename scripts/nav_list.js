@@ -51,7 +51,6 @@ class NavListComponent extends HTMLElement{
             }
         ]
 
-        console.log("constructor nav bar listo")
     }
 
     connectedCallback(){
@@ -62,19 +61,18 @@ class NavListComponent extends HTMLElement{
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 
-        const ul = this.wrapper.appendChild(document.createElement('ul'))
+        const lista = this.wrapper.appendChild(document.createElement('ul'));
 
         for(const option of this.options){
-            const li = ul.appendChild(document.createElement('li'));
-            const a = document.createElement('a');
-            a.href = option.url;
-            a.innerText = option.nombre;
-            li.appendChild(a);
+            const item = lista.appendChild(document.createElement('li'));
+            const enlace = document.createElement('a');
+            enlace.href = option.url;
+            enlace.innerText = option.nombre;
+            item.appendChild(enlace);
         }
         
         this.shadowRoot.appendChild(this.wrapper);
 
-        console.log("connectedcallback nav bar listo");
     }
 }
 

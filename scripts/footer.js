@@ -23,7 +23,7 @@ class FooterComponent extends HTMLElement {
         
         super();
 
-        this.scriptsSrcs = ["scripts/ext_web.js","scripts/social_networks.js","scripts/nav_list.js"];
+        this.scriptsSrcs = ["scripts/ext_web.js","scripts/social_networks.js"];
         this.scripts = [];
         for(const src of this.scriptsSrcs){
             const script = document.createElement('script');
@@ -41,7 +41,6 @@ class FooterComponent extends HTMLElement {
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
-
     }
 
     connectedCallback(){
@@ -66,7 +65,6 @@ class FooterComponent extends HTMLElement {
 
         this.shadowRoot.appendChild(this.wrapper);
     }
-
 }
 
 customElements.define('app-footer', FooterComponent);

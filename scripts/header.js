@@ -16,7 +16,7 @@ HTML template
 
 */
 
-let navList2; 
+let navList; 
 let navBar;
 let topBar;
 
@@ -51,8 +51,6 @@ class HeaderComponent extends HTMLElement{
         this.wrapper.setAttribute("class","wrapper");
 
         this.addEventListener('navButtonClicked', navListToggle);
-
-        console.log("constructor header listo");
     }
 
     connectedCallback(){
@@ -74,23 +72,21 @@ class HeaderComponent extends HTMLElement{
         navBar.setAttribute("class","navBar");
         navBar.appendChild(document.createElement('app-nav-bar'));
 
-        navList2 = this.wrapper.appendChild(document.createElement('div'));
-        navList2.setAttribute("class","navList");
-        navList2.appendChild(document.createElement('app-nav-list'));
+        navList = this.wrapper.appendChild(document.createElement('div'));
+        navList.setAttribute("class","navList");
+        navList.appendChild(document.createElement('app-nav-list'));
 
         this.shadowRoot.appendChild(this.wrapper);
-
-        console.log("connected header listo");
 
     }
 }
 
 function navListToggle(){
     
-    if(navList2.style.width === "100%"){
-        navList2.style.width = "0%";
+    if(navList.style.width === "100%"){
+        navList.style.width = "0%";
     } else{
-        navList2.style.width = "100%";
+        navList.style.width = "100%";
     }
 }
 
