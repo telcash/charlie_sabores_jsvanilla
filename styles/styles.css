@@ -12,6 +12,12 @@ body {
     height: 100%;
     width: 100%;
     background-color: rgb(249,239,236);
+
+}
+
+header{
+    background: #555;
+    color: #f1f1f1;
 }
 
 #wrapper{
@@ -22,8 +28,8 @@ body {
 }
 
 header, section, aside, article, footer{
-    width: 100%;
     position: relative;
+    width: 100%;
 }
 
 article, aside{
@@ -41,4 +47,11 @@ article h2{
     border-top: 5px solid rgb(215,58,21);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.sticky{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
