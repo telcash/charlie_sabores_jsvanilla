@@ -22,22 +22,12 @@ let topBar;
 
 class HeaderComponent extends HTMLElement{
     
-    scriptsSrcs;
-    scripts;
     css;
     commonCss;
     wrapper;
     
     constructor(){
         super();
-
-        this.scriptsSrcs = ["scripts/nav_list.js","scripts/nav_bar.js","scripts/top_bar.js"];
-        this.scripts = [];
-        for(const src of this.scriptsSrcs){
-            const script = document.createElement('script');
-            script.setAttribute("src",src);
-            this.scripts.push(script);
-        }
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
@@ -58,9 +48,6 @@ class HeaderComponent extends HTMLElement{
             mode: 'open'
         })
         
-        for(const script of this.scripts){
-            this.shadowRoot.appendChild(script);
-        }
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 

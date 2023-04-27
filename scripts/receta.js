@@ -17,7 +17,6 @@ Plantilla HTML:
 
 class RecetaComponent extends HTMLElement{
 
-    scriptAutorCard;
     css;
     commonCss;
     wrapper;
@@ -25,9 +24,6 @@ class RecetaComponent extends HTMLElement{
 
     constructor(){
         super();
-
-        this.scriptAutorCard = document.createElement('script');
-        this.scriptAutorCard.setAttribute("src","scripts/autor_card.js");
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");

@@ -25,8 +25,6 @@ let containers;
 
 class MainSliderComponent extends HTMLElement{
 
-    scriptsSrcs;
-    scripts;
     css;
     commonCss;
     wrapper;
@@ -34,14 +32,6 @@ class MainSliderComponent extends HTMLElement{
 
     constructor(){
         super();
-
-        this.scriptsSrcs = ["scripts/autor_card.js"];
-        this.scripts = [];
-        for(const src of this.scriptsSrcs){
-            const script = document.createElement('script');
-            script.setAttribute("src",src);
-            this.scripts.push(script);
-        }
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
@@ -80,10 +70,6 @@ class MainSliderComponent extends HTMLElement{
         this.attachShadow({
             mode: 'open'
         })
-        
-        for(const script of this.scripts){
-            this.shadowRoot.appendChild(script);
-        }
 
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);

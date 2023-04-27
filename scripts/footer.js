@@ -12,8 +12,6 @@ HTML template:
 
 class FooterComponent extends HTMLElement {
     
-    scriptsSrcs;
-    scripts;
     css;
     commonCss;
     wrapper;
@@ -22,14 +20,6 @@ class FooterComponent extends HTMLElement {
     constructor(){
         
         super();
-
-        this.scriptsSrcs = ["scripts/ext_web.js","scripts/social_networks.js"];
-        this.scripts = [];
-        for(const src of this.scriptsSrcs){
-            const script = document.createElement('script');
-            script.setAttribute("src",src);
-            this.scripts.push(script);
-        }
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
@@ -47,10 +37,6 @@ class FooterComponent extends HTMLElement {
         this.attachShadow({
             mode: 'open'
         })
-
-        for(const script of this.scripts){
-            this.shadowRoot.appendChild(script);
-        }
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 
