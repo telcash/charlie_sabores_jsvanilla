@@ -13,7 +13,8 @@ body {
     width: 100%;
     background-color: a;
     background-color: rgb(249,239,236);
-
+    opacity: 0;
+    transition: opacity 0.25s;
 }
 #wrapper{
     display: flex;

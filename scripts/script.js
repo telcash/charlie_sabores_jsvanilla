@@ -5,6 +5,7 @@ let content;
 
 window.onload = () =>{
     body = document.querySelector("body");
+    body.style.opacity = 1;
     header = document.querySelector("header");
     sticky = header.offsetTop;
     content = header.nextElementSibling;
