@@ -11,9 +11,10 @@ html{
 body {
     height: 100%;
     width: 100%;
+    background-color: a;
     background-color: rgb(249,239,236);
-}
 
+}
 #wrapper{
     display: flex;
     flex-flow: column wrap;
@@ -38,7 +39,7 @@ article h2{
     padding-left: 5px;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-top: 5px solid rgb(215,58,21);
+    border-top: 5px solid black;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

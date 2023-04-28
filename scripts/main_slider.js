@@ -115,6 +115,11 @@ class MainSliderComponent extends HTMLElement{
         showSlide(activeSlide);
         arrowLeft.addEventListener("click", showPrevSlide);
         arrowRight.addEventListener("click", showNextSlide);
+
+        window.addEventListener("resize",() =>{
+            console.log("resize");
+            showSlide(activeSlide);
+        })
     }
     
 }
@@ -122,16 +127,19 @@ class MainSliderComponent extends HTMLElement{
 function showSlide(slideIndex){
 
     clearTimeout(timeoutId);
-
     for(let i=0;i<containers.length;i++){
         if(i===slideIndex){
-            containers[i].style.display = "block";
+            if(window.innerWidth >= 1024){
+                containers[i].style.display = "flex";
+            } else{
+                containers[i].style.display = "block";
+            }
         } else {
             containers[i].style.display = "none";
         }
     }
     
-    //timeoutId = setTimeout(showNextSlide, 5000)
+    timeoutId = setTimeout(showNextSlide, 5000)
 
 }
 

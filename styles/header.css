@@ -14,23 +14,20 @@
     top: 82px;
     background-color:white;
     overflow-x: hidden;
-    transition: width 0.5s;
     color: black;
+    transition: width 0.5s;
 }
 
 @media only screen and (max-width: 800px){
-    
 }
 
-
-@media only screen and (min-width: 801px){
+@media only screen and (min-width: 800px){
     .navList{
         width: 100%;
         height: auto;
         position: relative;
         top: 0;
         overflow-x: auto;
-        transition: none;
     }
 }  
 

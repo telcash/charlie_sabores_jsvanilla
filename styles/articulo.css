@@ -13,6 +13,7 @@
 }
 
 .imgContainer img{
+    border-radius: 50%;
     max-width: 95px;
     height: auto;
     padding: 5px;

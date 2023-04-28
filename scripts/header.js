@@ -62,14 +62,24 @@ class HeaderComponent extends HTMLElement{
         navList = this.wrapper.appendChild(document.createElement('div'));
         navList.setAttribute("class","navList");
         navList.appendChild(document.createElement('app-nav-list'));
-
+        
+        
+        
         this.shadowRoot.appendChild(this.wrapper);
 
+
+        window.addEventListener('resize', ()=>{
+            if(window.innerWidth > 800){
+                navList.style.width = "100%";
+            }else{
+                navList.style.width = "0%";
+            }
+        })
     }
 }
 
 function navListToggle(){
-    
+
     if(navList.style.width === "100%"){
         navList.style.width = "0%";
     } else{
