@@ -46,16 +46,16 @@ class MainSliderComponent extends HTMLElement{
 
         this.slides = [
             {
-                nombre: "Chocolate Mousse Cake",
+                nombre: "Tarta de mousse de chocolate",
                 img: "img/recetas/chocolate_mousse_cake_vertical.jpeg",
                 enlace: "#/",
-                descripcion: "Sorpréndelos en su día con esta deliciosa torta de chocolate"
+                descripcion: "Una combinación de mousse, tarta y cobertura de chocolate adornada con merengues."
             },
             {
-                nombre: "Red Velvet Cheesecake",
+                nombre: "Tarta de Queso Red Velvet",
                 img: "img/recetas/red_velvet_cheesecake_vertical.jpeg",
                 enlace: "#/",
-                descripcion: "Una deliciosa combinación de dos postres clásicos"
+                descripcion: "Esta ingeniosa tarta combina dos postres clásicos: tarta de terciopelo rojo y tarta de queso."
             },
             {
                 nombre: "Kitchenaid Professional 5 plus",

@@ -7,6 +7,7 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/articulo.js"></script>
     <script src="scripts/autor_card.js"></script>
+    <script src="scripts/container_receta.js"></script>
     <script src="scripts/ext_web.js"></script>
     <script src="scripts/footer.js"></script>
     <script src="scripts/header.js"></script>
@@ -43,14 +44,7 @@
             </app-articulo>
         </article>
         <aside>
-            <app-receta title="Tarta de Nutella"
-                desc="Para transformar la Nutella en un relleno cremoso, sabíamos que tendríamos que aumentar su riqueza y transformar su textura espesa."     
-                img="img/recetas/tarta_nutella.jpg">
-            </app-receta>
-            <app-receta title="Bollo de Pretzel"
-                desc="Recurrimos a una inmersión en una solución de bicarbonato de sodio y agua hirviendo para ayudar a crear el exterior característico de los bollos de pretzel"
-                img="img/recetas/bollos_pretzel.jpeg">
-            </app-receta>
+            <app-container-receta max="3"></app-container-receta>
         </aside>
         <footer>
             <app-footer></app-footer>

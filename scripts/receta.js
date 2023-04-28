@@ -36,13 +36,15 @@ class RecetaComponent extends HTMLElement{
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
 
-        this.url = this.hasAttribute("url") ? this.getAttribute("url") : "#/";
     }
-
+    
     connectedCallback(){
         this.attachShadow({
             mode: 'open'
         })
+
+        this.url = this.hasAttribute("url") ? this.getAttribute("url") : "#/";
+        
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 
@@ -51,16 +53,17 @@ class RecetaComponent extends HTMLElement{
 
         const img = imgContainer.appendChild(document.createElement('img'));
         img.src = this.hasAttribute("img") ? this.getAttribute("img") : "img/default/receta.png";
-        img.alt = this.hasAttribute("alt") ? this.getAttribute("alt") : "";
+        img.alt = this.hasAttribute("alt") ? this.getAttribute("alt") 
+            :(this.hasAttribute("nombre") ? this.getAttribute(nombre) : "");
 
         const info = this.wrapper.appendChild(document.createElement('div'));
         info.setAttribute("class","info");
 
-        const titulo = info.appendChild(document.createElement('h4'));
-        titulo.innerText = this.hasAttribute("title") ? this.getAttribute("title") : "Receta";
+        const nombre = info.appendChild(document.createElement('h4'));
+        nombre.innerText = this.hasAttribute("nombre") ? this.getAttribute("nombre") : "Receta";
 
         const descripcion = info.appendChild(document.createElement('p'));
-        descripcion.innerText = this.hasAttribute("desc") ? this.getAttribute("desc") : "Disfruta esta receta...";
+        descripcion.innerText = this.hasAttribute("descripcion") ? this.getAttribute("descripcion") : "Disfruta esta receta...";
 
         const autorCard = this.wrapper.appendChild(document.createElement('div'));
         autorCard.setAttribute("class","autorCard");

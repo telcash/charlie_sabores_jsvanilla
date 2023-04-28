@@ -1,9 +1,5 @@
 .wrapper{
     width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    margin-left:10px;
-    margin-right: 10px;
     background-color: white;
     cursor: pointer;
 }

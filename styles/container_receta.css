@@ -1,0 +1,29 @@
+.wrapper{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin-left:10px;
+    margin-right: 10px;
+}
+
+.receta{
+    max-width: 100%;
+    margin: 10px;
+}
+
+@media only screen and (max-width: 800px){
+    
+}
+
+
+@media only screen and (min-width: 800px){
+
+
+}  
+
+@media only screen and (min-width: 1024px){
+    .wrapper{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
