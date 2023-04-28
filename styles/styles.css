@@ -12,12 +12,6 @@ body {
     height: 100%;
     width: 100%;
     background-color: rgb(249,239,236);
-
-}
-
-header{
-    background: #555;
-    color: #f1f1f1;
 }
 
 #wrapper{
@@ -54,4 +48,18 @@ article h2{
     position: fixed;
     top: 0;
     width: 100%;
+}
+
+@media only screen and (max-width: 800px){
+    
+}
+
+
+@media only screen and (min-width: 800px){
+
+
+}  
+
+@media only screen and (min-width: 1024px){
+    
 }

@@ -18,16 +18,21 @@
     cursor: pointer;
 }
 
+.mainLogo{
+    margin-left: 10px;
+    padding-top: 4px;
+}
+
 .mainLogo img{
     height: auto;
     max-width: 33px;
-    padding-top: 4px;
 }
 
 .searchBar {
     display: flex;
     flex: 1;
     flex-flow: row-reverse nowrap;
+    margin-left: 25px;
     border: 1px solid grey;
 }
 
@@ -58,4 +63,32 @@ button img {
     height: auto;
     max-width: 25px;
     padding: 2px;
+}
+
+@media only screen and (max-width: 800px){
+
+}
+
+@media only screen and (min-width: 801px){
+    .navButton {
+        display: none;
+    }
+    .mainLogo{
+        padding-top: 6px;
+    }
+    .mainLogo img{
+        max-width: 45px;
+    }
+    button img {
+        max-width: 33px;
+    }
+    .searchBar{
+        margin-left: 120px;
+    }
+}  
+
+@media only screen and (min-width: 1024px){
+    .searchBar{
+        margin-left: 300px;
+    }
 }

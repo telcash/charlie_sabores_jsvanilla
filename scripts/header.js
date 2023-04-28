@@ -3,10 +3,10 @@
 HTML template
 
 <div class="wrapper">
-    <div>
+    <div class="topBar">
         <app-top-bar></app-top-bar>
     </div>
-    <div class="nav">
+    <div class="navBar">
         <app-nav-bar></app-nav-bar>
     </div>
     <div class="navList">
