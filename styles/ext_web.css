@@ -38,7 +38,12 @@ p{
 
 
 @media only screen and (min-width: 800px){
-
+.wrapper{
+    flex-flow: row nowrap;
+}
+.webSite{
+    flex-flow: column nowrap;
+}
 
 }  
 
