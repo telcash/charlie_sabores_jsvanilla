@@ -5,17 +5,19 @@ let content;
 
 window.onload = () =>{
     body = document.querySelector("body");
-    body.addEventListener('navButtonClicked', toggleScroll);
     header = document.querySelector("header");
     sticky = header.offsetTop;
     content = header.nextElementSibling;
+    body.addEventListener('navButtonClicked', toggleScrollBar);
 }
 
 window.onscroll = () =>{
-    stickyHeader();
+    if (header !== undefined){
+        stickyHeader();
+    }
 }
 
-function toggleScroll(){
+function toggleScrollBar(){
     if(body.style.overflow === "hidden"){
         body.style.overflow = "visible";
     } else {

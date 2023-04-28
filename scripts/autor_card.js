@@ -51,12 +51,12 @@ class AutorCardComponent extends HTMLElement{
         nombre.innerHTML = this.hasAttribute("name") ? this.getAttribute("name") : "Anónimo";
 
         const bookmark = this.wrapper.appendChild(document.createElement('img'));
-        bookmark.setAttribute("src","img/icons/bookmark_red.png")
+        bookmark.setAttribute("src","img/icons/bookmark_black.png")
 
         this.shadowRoot.appendChild(this.wrapper);
         
         bookmark.addEventListener('click', () => {
-            bookmark.src = !this.marked ? "img/icons/bookmark_red_solid.png" : "img/icons/bookmark_red.png";
+            bookmark.src = !this.marked ? "img/icons/bookmark_black_solid.png" : "img/icons/bookmark_black.png";
             this.marked = !this.marked;
         })
     }
