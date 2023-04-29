@@ -4,12 +4,12 @@ let sticky;
 let content;
 
 window.onload = () =>{
-    body = document.querySelector("body");
-    body.style.opacity = 1;
+    wrapper = document.querySelector("#wrapper");
+    wrapper.style.opacity = 1;
     header = document.querySelector("header");
     sticky = header.offsetTop;
     content = header.nextElementSibling;
-    body.addEventListener('navButtonClicked', toggleScrollBar);
+    wrapper.addEventListener('navButtonClicked', toggleScrollBar);
 }
 
 window.onscroll = () =>{

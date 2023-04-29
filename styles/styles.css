@@ -4,23 +4,26 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    height: 100%;
-    width: 100%;
+#wrapper{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    max-width: 100%;
+    margin: auto;
     background-color: rgb(249,239,236);
     text-size-adjust: 100%;
     opacity: 0;
     transition: opacity 0.25s;
 }
-#wrapper{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    width: 100%;
-}
 
 header, section, aside, article, footer{
     max-width: 100%;
+}
+
+section{
+    background-color: white;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 aside, article {
@@ -46,5 +49,8 @@ aside, article {
 }  
 
 @media only screen and (min-width: 1024px){
-    
+
+    #wrapper, header, section, aside, article, footer{
+        max-width: 1024px;
+    }
 }

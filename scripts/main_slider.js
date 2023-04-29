@@ -3,26 +3,19 @@
 HTML template:
 
 <div class="wrapper">
-    <div class="container">
-        <div class="descSlide">
-            <a href="#/">Un texto descriptivo corto que explique un poco la imagen</a>
-            <app-autor-card></app-autor-card>
-        </div>
-        <a href="#/"><img src="" alt=""></a>
-    </div>
-    <div>
-        <a class="arrowLeft">&#10094;</a>
-        <a class="arrowRight">&#10095;</a>
-    </div>
-</div>
-
-
-<div class="wrapper">
-        <a class= "imgContainer" href="recetas.html"><img src="img/recetas/chocolate_mousse_cake_vertical.jpeg" alt=""></a>
-        <a class= "desc" href="#/">Un texto descriptivo corto que explique un poco la imagen</a>
+    <div class="slide">
+        <a class= "img" href="#/">
+            <img src="" alt="">
+        </a>
+        <a class= "descripcion" href="#/">
+            <h6>Un texto descriptivo corto que explique un poco la imagen</h6>
+        </a>
         <a class= "left" href="#/">&#10094;</a>
-        <a class= "right" href="index.html">&#10095;</a>
-        <app-autor-card class="autorCard"></app-autor-card>
+        <a class= "right" href="index.html">&#10095</a>
+        <div class="autorCard">
+            <app-autor-card class="autorCard"></app-autor-card>
+        </div>
+    </div>
 </div>
 
 */
@@ -30,14 +23,34 @@ HTML template:
 
 let activeSlide = 0;
 let timeoutId;
-let containers;
+let slides;
+
+const items = [
+    {
+        img: "img/recetas/chocolate_mousse_cake_vertical.jpeg",
+        alt:"Tarta de mousse de chocolate",
+        url: "#/",
+        descripcion: "Una combinación de mousse, tarta y cobertura de chocolate adornada con merengues."
+    },
+    {
+        img: "img/recetas/red_velvet_cheesecake_vertical.jpg",
+        alt: "Tarta de Queso Red Velvet",
+        url: "#/",
+        descripcion: "Esta ingeniosa tarta combina dos postres clásicos: tarta de terciopelo rojo y tarta de queso."
+    },
+    {
+        img: "img/articulos/kitchenaid_professional_5_plus_vertical.jpg",
+        alt: "Kitchenaid Professional 5 plus",
+        url: "#/",
+        descripcion: "Un versátil ayudante para toda la vida"
+    }
+]
 
 class MainSliderComponent extends HTMLElement{
 
     css;
     commonCss;
     wrapper;
-    slides;
 
     constructor(){
         super();
@@ -53,26 +66,7 @@ class MainSliderComponent extends HTMLElement{
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
 
-        this.slides = [
-            {
-                nombre: "Tarta de mousse de chocolate",
-                img: "img/recetas/chocolate_mousse_cake_vertical.jpeg",
-                enlace: "#/",
-                descripcion: "Una combinación de mousse, tarta y cobertura de chocolate adornada con merengues."
-            },
-            {
-                nombre: "Tarta de Queso Red Velvet",
-                img: "img/recetas/red_velvet_cheesecake_vertical.jpeg",
-                enlace: "#/",
-                descripcion: "Esta ingeniosa tarta combina dos postres clásicos: tarta de terciopelo rojo y tarta de queso."
-            },
-            {
-                nombre: "Kitchenaid Professional 5 plus",
-                img: "img/articulos/kitchenaid_professional_5_plus_vertical.jpg",
-                enlace: "#/",
-                descripcion: "Un versátil ayudante para toda la vida"
-            }
-        ]
+        
     }
 
     connectedCallback(){
@@ -83,52 +77,60 @@ class MainSliderComponent extends HTMLElement{
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 
-        let i = 0;
-        for(const slide of this.slides){
-            const container = this.wrapper.appendChild(document.createElement('div'));
-            container.setAttribute("class","container");
 
-            const descSlide = container.appendChild(document.createElement('div'));
-            descSlide.setAttribute("class","descSlide");
+        for(const item of items){
+            const slide = this.wrapper.appendChild(document.createElement('div'));
+            slide.setAttribute("class","slide");
 
-            let a = descSlide.appendChild(document.createElement('a'));
-            a.setAttribute("href", slide.enlace);
-            a.innerText = slide.descripcion;
+            const enlace = slide.appendChild(document.createElement('a'));
+            enlace.setAttribute("class","img");
+            enlace.setAttribute("href",item.url);
 
-            const autorCard = descSlide.appendChild(document.createElement('app-autor-card'));
+            const img = enlace.appendChild(document.createElement('img'));
+            img.setAttribute("src", item.img);
+            img.setAttribute("alt", item.alt);
+
+            const descripcion = slide.appendChild(document.createElement('a'));
+            descripcion.setAttribute("class","descripcion");
+            descripcion.setAttribute("href",item.url);
+            const h6 = descripcion.appendChild(document.createElement('h6'));
+            h6.innerText = item.descripcion;
+
+            const left = slide.appendChild(document.createElement('a'));
+            left.setAttribute("class","left");
+            left.innerHTML = "&#10094;";
+            left.addEventListener("click", showPrevSlide);
+    
+            const right = slide.appendChild(document.createElement('a'));
+            right.setAttribute("class","right");
+            right.innerHTML = "&#10095;";
+            right.addEventListener("click", showNextSlide);
+            
+            
+            const autorCard = slide.appendChild(document.createElement('div'));
             autorCard.setAttribute("class","autorCard");
+            autorCard.appendChild(document.createElement('app-autor-card'));
 
-            a = container.appendChild(document.createElement('a'));
-            a.setAttribute("href", slide.enlace);
-
-            const img = a.appendChild(document.createElement('img'));
-            img.setAttribute("src", slide.img);
-            img.setAttribute("alt", slide.nombre);
-            i++;
+            const vacio1 = slide.appendChild(document.createElement('div'));
+            vacio1.setAttribute("class","vacio1");
+            const vacio2 = slide.appendChild(document.createElement('div'));
+            vacio2.setAttribute("class","vacio2");
+            const vacio3 = slide.appendChild(document.createElement('div'));
+            vacio3.setAttribute("class","vacio3");
         }
-
-        const div = this.wrapper.appendChild(document.createElement('div'));
-
-        const arrowLeft = div.appendChild(document.createElement('a'));
-        arrowLeft.setAttribute("class","arrowLeft");
-        arrowLeft.innerHTML = "&#10094;";
-
-        const arrowRight = div.appendChild(document.createElement('a'));
-        arrowRight.setAttribute("class","arrowRight");
-        arrowRight.innerHTML = "&#10095;";
-
-        this.shadowRoot.appendChild(this.wrapper);
         
-        containers = this.shadowRoot.querySelectorAll(".container");
+        this.shadowRoot.appendChild(this.wrapper);
+
+        slides = this.shadowRoot.querySelectorAll(".slide");
 
         showSlide(activeSlide);
-        arrowLeft.addEventListener("click", showPrevSlide);
-        arrowRight.addEventListener("click", showNextSlide);
 
-        window.addEventListener("resize",() =>{
-            console.log("resize");
+        // para que es esto?????
+        // es para responsive ....
+        /* window.addEventListener("resize",() =>{
             showSlide(activeSlide);
-        })
+        }) */
+
     }
     
 }
@@ -136,15 +138,18 @@ class MainSliderComponent extends HTMLElement{
 function showSlide(slideIndex){
 
     clearTimeout(timeoutId);
-    for(let i=0;i<containers.length;i++){
+
+    for(let i=0;i<slides.length;i++){
         if(i===slideIndex){
-            if(window.innerWidth >= 1024){
-                containers[i].style.display = "flex";
-            } else{
-                containers[i].style.display = "block";
-            }
+            //if(window.innerWidth >= 1024){
+                slides[i].style.display = "grid";
+                //slides[i].style.gridTemplateRows = "6fr 4fr 25px";
+                //slides[i].style.gridTemplateColumns = "1fr 18fr 1fr";
+            //} else{
+            //    containers[i].style.display = "block";
+            //}
         } else {
-            containers[i].style.display = "none";
+            slides[i].style.display = "none";
         }
     }
     
@@ -155,7 +160,7 @@ function showSlide(slideIndex){
 function showNextSlide() {
 
     activeSlide++;
-    if(activeSlide >= containers.length){
+    if(activeSlide >= slides.length){
         activeSlide = 0;
     }
     showSlide(activeSlide);
@@ -164,7 +169,7 @@ function showNextSlide() {
 function showPrevSlide(){
     activeSlide--;
     if(activeSlide < 0){
-        activeSlide = (containers.length) - 1;
+        activeSlide = (slides.length) - 1;
     }
     showSlide(activeSlide);
 }

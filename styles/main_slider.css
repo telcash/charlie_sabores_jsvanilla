@@ -1,67 +1,88 @@
 .wrapper{
-
-}
-
-.container{
-    height: auto;
-    max-width: 1024px;
-}
-
-.container img{
-    height: auto;
     width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: white;
 }
 
-.descSlide {
+.slide{
+    display: grid;
+    grid-template-rows: 6fr 4fr 45px;
+    grid-template-columns: 1fr 18fr 1fr;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 10px;
+    height: auto;
+    margin:0;
+    padding: 0;
+}
+
+a{
+    all: unset;
+}
+
+.img{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.descripcion{
+    display: grid;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
     background-image: linear-gradient(to top, rgba(255,255,255,1), 75%, rgba(255,255,255,0));
 }
 
-.descSlide a {
-    display: block;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 100px;
-    padding-bottom: 10px;
-    text-decoration: none;
-    color: black;
-    font-size: 5vw;
-    font-weight: bold;
-    text-align: left;
+.descripcion h6{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 2.5vh;
+    align-self: center;
     overflow: hidden;
-    border-bottom: 3px solid black;
- }
+    white-space:break-spaces;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.left{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: center;
+    justify-self: end;
+    cursor: pointer;
+}
+
+.right{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    align-self: center;
+    justify-self: start;
+    cursor: pointer;
+}
 
 .autorCard{
-    display: block;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.arrowLeft, .arrowRight {
-    border: 0;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
+.vacio1, .vacio2, .vacio3{
+    display: none;
 }
 
-.arrowRight{
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
 
 @media only screen and (max-width: 800px){
     
@@ -70,27 +91,92 @@
 
 @media only screen and (min-width: 800px){
 
-
 }  
 
 @media only screen and (min-width: 1024px){
-    .wrapper{
-        max-width: 100%;
-    }
-    .container{
-        max-width: unset;
-        width: 100%;
-        display: flex;
-        flex-flow: row-reverse nowrap;
-    }
-    .container img{
+
+    .slide{
         width: 1024px;
+        height: 825px;
+        grid-template-rows: 25px 350px 350px 70px 30px;
+        grid-template-columns: 122px 30px 540px 30px 302px;
     }
 
-    .descSlide{
-        position: relative;
+    .img{
+        grid-row-start: 2;
+        grid-row-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 6;
     }
-    .arrowLeft, .arrowRight{
-        color: green;
+    
+    .descripcion{
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        background-image: none;
+        background-color: grey;
     }
+    
+    .descripcion h6{
+        color: white;
+        font-size: 2.5vh;
+    }
+    
+    img{
+        width: 600px;
+        height: 800px;
+    }
+    
+    .left{
+        grid-row-start: 2;
+        grid-row-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    
+    .right{
+        grid-row-start: 2;
+        grid-row-end: 6;
+        grid-column-start: 4;
+        grid-column-end: 5;
+    }
+    
+    .autorCard{
+        align-self: stretch;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        background-color: grey;
+        color: white;
+        border-top: 1px solid black;
+        padding-top: 10px;
+    }
+
+    .vacio1, .vacio2, .vacio3{
+        display: block;
+        background-color: grey;
+    }
+
+
+    .vacio1{
+        grid-row-start: 1;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .vacio2{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 2;
+        grid-column-end: 5;
+    }
+    .vacio3{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 5;
+        grid-column-end: 6;
+    }
+    
 }

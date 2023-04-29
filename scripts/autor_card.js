@@ -15,7 +15,9 @@ class AutorCardComponent extends HTMLElement{
     css;
     commonCss;
     wrapper;
-    marked;
+    checked;
+    imgChecked;
+    imgUnchecked;
 
     constructor(){
         super();
@@ -31,7 +33,9 @@ class AutorCardComponent extends HTMLElement{
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
 
-        this.marked = false;
+        this.checked = false;
+        this.imgChecked = this.hasAttribute("imgChecked") ? this.getAttribute("imgChecked") : "img/icons/bookmark_black_solid.png";
+        this.imgUnchecked = this.hasAttribute("imgUnchecked") ? this.getAttribute("imgUnchecked") : "img/icons/bookmark_black.png";
     }
 
     connectedCallback(){
@@ -51,13 +55,13 @@ class AutorCardComponent extends HTMLElement{
         nombre.innerHTML = this.hasAttribute("name") ? this.getAttribute("name") : "Anónimo";
 
         const bookmark = this.wrapper.appendChild(document.createElement('img'));
-        bookmark.setAttribute("src","img/icons/bookmark_black.png")
+        bookmark.setAttribute("src",this.imgUnchecked);
 
         this.shadowRoot.appendChild(this.wrapper);
         
         bookmark.addEventListener('click', () => {
-            bookmark.src = !this.marked ? "img/icons/bookmark_black_solid.png" : "img/icons/bookmark_black.png";
-            this.marked = !this.marked;
+            bookmark.src = !this.checked ? this.imgChecked : this.imgUnchecked;
+            this.checked = !this.checked;
         })
     }
 }
