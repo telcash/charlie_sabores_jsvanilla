@@ -16,6 +16,15 @@ HTML template:
     </div>
 </div>
 
+
+<div class="wrapper">
+        <a class= "imgContainer" href="recetas.html"><img src="img/recetas/chocolate_mousse_cake_vertical.jpeg" alt=""></a>
+        <a class= "desc" href="#/">Un texto descriptivo corto que explique un poco la imagen</a>
+        <a class= "left" href="#/">&#10094;</a>
+        <a class= "right" href="index.html">&#10095;</a>
+        <app-autor-card class="autorCard"></app-autor-card>
+</div>
+
 */
 
 
@@ -139,7 +148,7 @@ function showSlide(slideIndex){
         }
     }
     
-    timeoutId = setTimeout(showNextSlide, 5000)
+    //timeoutId = setTimeout(showNextSlide, 5000)
 
 }
 

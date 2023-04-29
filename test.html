@@ -5,9 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/autor_card.js"></script>
-    <link rel="stylesheet" href="styles/styles.css">
     <title>Document</title>
+    <style>
+        .wrapper{
+            width: 100%;
+            height: auto;
+            margin:0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: 88% 7.5% 4.5%;
+            grid-template-columns: 1fr 18fr 1fr;
+        }
+
+        a{
+            all: unset;
+        }
+
+        .imgContainer{
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .desc{
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            overflow: hidden;
+            white-space:break-spaces;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+        
+        .left{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            align-self: center;
+            justify-self: end;
+        }
+
+        .right{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            align-self: center;
+            justify-self: start;
+        }
+
+        .autorCard{
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+    </style>
 </head>
 <body>
+    <div class="wrapper">
+        <a class= "imgContainer" href="recetas.html"><img src="img/recetas/chocolate_mousse_cake_vertical.jpeg" alt=""></a>
+        <a class= "desc" href="#/">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos saepe, ullam amet eius inventore nulla assumenda. Iusto debitis in, quos, officiis cum ratione, a tenetur aliquam obcaecati consequatur eligendi?</a>
+        <a class= "left" href="#/">&#10094;</a>
+        <a class= "right" href="index.html">&#10095;</a>
+        <app-autor-card class="autorCard"></app-autor-card>
+    </div>
 </body>
 </html>
