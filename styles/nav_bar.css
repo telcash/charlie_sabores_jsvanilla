@@ -1,5 +1,8 @@
 .wrapper{
     width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .nav {
@@ -8,7 +11,9 @@
     flex-flow: row nowrap;
     align-content: space-evenly;
     align-items: center;
-    padding: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 
 }
 
@@ -32,7 +37,7 @@
     display: flex;
     flex: 1;
     flex-flow: row-reverse nowrap;
-    margin-left: 25px;
+    margin-left: 50px;
     border: 1px solid grey;
 }
 
@@ -69,7 +74,7 @@ button img {
 
 }
 
-@media only screen and (min-width: 801px){
+@media only screen and (min-width: 800px){
     .navButton {
         display: none;
     }
@@ -83,12 +88,12 @@ button img {
         max-width: 33px;
     }
     .searchBar{
-        margin-left: 120px;
+        margin-left: 200px;
     }
 }  
 
 @media only screen and (min-width: 1024px){
     .searchBar{
-        margin-left: 300px;
+        margin-left: 400px;
     }
 }
