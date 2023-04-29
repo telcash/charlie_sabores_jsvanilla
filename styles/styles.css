@@ -44,8 +44,9 @@ aside, article {
 
 
 @media only screen and (min-width: 800px){
-
-
+    #wrapper, header, section, aside, article, footer{
+        max-width: 800px;
+    }
 }  
 
 @media only screen and (min-width: 1024px){

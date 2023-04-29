@@ -24,6 +24,10 @@ HTML template:
 let activeSlide = 0;
 let timeoutId;
 let slides;
+let enlace;
+let img;
+let descripcion;
+let h6;
 
 const items = [
     {
@@ -70,6 +74,7 @@ class MainSliderComponent extends HTMLElement{
     }
 
     connectedCallback(){
+        console.log("Callback llamado ...");
         this.attachShadow({
             mode: 'open'
         })
@@ -77,90 +82,74 @@ class MainSliderComponent extends HTMLElement{
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 
+        const slide = this.wrapper.appendChild(document.createElement('div'));
+        slide.setAttribute("class","slide");
 
-        for(const item of items){
-            const slide = this.wrapper.appendChild(document.createElement('div'));
-            slide.setAttribute("class","slide");
-
-            const enlace = slide.appendChild(document.createElement('a'));
-            enlace.setAttribute("class","img");
-            enlace.setAttribute("href",item.url);
-
-            const img = enlace.appendChild(document.createElement('img'));
-            img.setAttribute("src", item.img);
-            img.setAttribute("alt", item.alt);
-
-            const descripcion = slide.appendChild(document.createElement('a'));
-            descripcion.setAttribute("class","descripcion");
-            descripcion.setAttribute("href",item.url);
-            const h6 = descripcion.appendChild(document.createElement('h6'));
-            h6.innerText = item.descripcion;
-
-            const left = slide.appendChild(document.createElement('a'));
-            left.setAttribute("class","left");
-            left.innerHTML = "&#10094;";
-            left.addEventListener("click", showPrevSlide);
-    
-            const right = slide.appendChild(document.createElement('a'));
-            right.setAttribute("class","right");
-            right.innerHTML = "&#10095;";
-            right.addEventListener("click", showNextSlide);
-            
-            
-            const autorCard = slide.appendChild(document.createElement('div'));
-            autorCard.setAttribute("class","autorCard");
-            autorCard.appendChild(document.createElement('app-autor-card'));
-
-            const vacio1 = slide.appendChild(document.createElement('div'));
-            vacio1.setAttribute("class","vacio1");
-            const vacio2 = slide.appendChild(document.createElement('div'));
-            vacio2.setAttribute("class","vacio2");
-            const vacio3 = slide.appendChild(document.createElement('div'));
-            vacio3.setAttribute("class","vacio3");
-        }
+        enlace = slide.appendChild(document.createElement('a'));
+        enlace.setAttribute("class","img");
+        
+        img = enlace.appendChild(document.createElement('img'));
+        
+        descripcion = slide.appendChild(document.createElement('a'));
+        descripcion.setAttribute("class","descripcion");
+        h6 = descripcion.appendChild(document.createElement('h6'));
+        
+        const left = slide.appendChild(document.createElement('a'));
+        left.setAttribute("class","left");
+        left.innerHTML = "&#10094;";
+        left.addEventListener("click", showPrevSlide);
+        
+        const right = slide.appendChild(document.createElement('a'));
+        right.setAttribute("class","right");
+        right.innerHTML = "&#10095;";
+        right.addEventListener("click", showNextSlide);
+        
+        
+        const autorCard = slide.appendChild(document.createElement('div'));
+        autorCard.setAttribute("class","autorCard");
+        autorCard.appendChild(document.createElement('app-autor-card'));
+        
+        const vacio1 = slide.appendChild(document.createElement('div'));
+        vacio1.setAttribute("class","vacio1");
+        const vacio2 = slide.appendChild(document.createElement('div'));
+        vacio2.setAttribute("class","vacio2");
+        const vacio3 = slide.appendChild(document.createElement('div'));
+        vacio3.setAttribute("class","vacio3");
+        
         
         this.shadowRoot.appendChild(this.wrapper);
 
-        slides = this.shadowRoot.querySelectorAll(".slide");
-
+        
         showSlide(activeSlide);
-
+        
         // para que es esto?????
         // es para responsive ....
         /* window.addEventListener("resize",() =>{
             showSlide(activeSlide);
         }) */
-
+        
     }
     
 }
 
 function showSlide(slideIndex){
-
-    clearTimeout(timeoutId);
-
-    for(let i=0;i<slides.length;i++){
-        if(i===slideIndex){
-            //if(window.innerWidth >= 1024){
-                slides[i].style.display = "grid";
-                //slides[i].style.gridTemplateRows = "6fr 4fr 25px";
-                //slides[i].style.gridTemplateColumns = "1fr 18fr 1fr";
-            //} else{
-            //    containers[i].style.display = "block";
-            //}
-        } else {
-            slides[i].style.display = "none";
-        }
-    }
     
-    //timeoutId = setTimeout(showNextSlide, 5000)
+    clearTimeout(timeoutId);
+    enlace.setAttribute("href",items[slideIndex].url);
+    img.setAttribute("src", items[slideIndex].img);
+    img.setAttribute("alt", items[slideIndex].alt);
+    descripcion.setAttribute("href",items[slideIndex].url);
+    h6.innerText = items[slideIndex].descripcion;
+    
+    timeoutId = setTimeout(showNextSlide, 5000)
 
 }
 
 function showNextSlide() {
 
     activeSlide++;
-    if(activeSlide >= slides.length){
+    console.log(activeSlide);
+    if(activeSlide >= items.length){
         activeSlide = 0;
     }
     showSlide(activeSlide);
@@ -169,7 +158,7 @@ function showNextSlide() {
 function showPrevSlide(){
     activeSlide--;
     if(activeSlide < 0){
-        activeSlide = (slides.length) - 1;
+        activeSlide = (items.length) - 1;
     }
     showSlide(activeSlide);
 }

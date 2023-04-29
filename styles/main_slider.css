@@ -7,11 +7,11 @@
 }
 
 .slide{
+    width: 100%;
+    height: auto;
     display: grid;
     grid-template-rows: 3fr 2fr 45px;
     grid-template-columns: 1fr 18fr 1fr;
-    width: 100%;
-    height: auto;
     margin:0;
     padding: 0;
 }
@@ -39,7 +39,8 @@ a{
 .descripcion h6{
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 2.5vh;
+    padding-top: 40px;
+    font-size: 2.5vw;
     align-self: center;
     overflow: hidden;
     white-space:break-spaces;
@@ -50,6 +51,10 @@ img{
     height: auto;
 }
 
+.left:hover, .right:hover{
+    color:red;
+}
+
 .left{
     grid-row-start: 1;
     grid-row-end: 3;
@@ -58,6 +63,7 @@ img{
     align-self: center;
     justify-self: end;
     cursor: pointer;
+    font-size: 20px;
 }
 
 .right{
@@ -68,6 +74,8 @@ img{
     align-self: center;
     justify-self: start;
     cursor: pointer;
+    user-select: none;
+    font-size: 20px;
 }
 
 .autorCard{
@@ -90,25 +98,21 @@ img{
 
 
 @media only screen and (min-width: 800px){
-
-}  
-
-@media only screen and (min-width: 1024px){
-
     .slide{
-        width: 1024px;
+        width: 800px;
         height: 420px;
         grid-template-rows: 20px 150px 150px 60px 40px;
-        grid-template-columns: 208px 30px 340px 30px 416px;
+        grid-template-columns: 133px 30px 340px 30px 267px;
     }
 
     .img{
+        max-width: 100%;
         grid-row-start: 2;
         grid-row-end: 6;
         grid-column-start: 2;
         grid-column-end: 6;
     }
-    
+
     .descripcion{
         grid-row-start: 3;
         grid-row-end: 4;
@@ -117,17 +121,18 @@ img{
         background-image: none;
         background-color: grey;
     }
-    
+
     .descripcion h6{
         color: white;
-        font-size: 2.5vh;
+        padding-top: 0;
+        font-size: 2vw;
     }
-    
+
     img{
         width: 400px;
         height: 400px;
     }
-    
+
     .left{
         grid-row-start: 2;
         grid-row-end: 6;
@@ -141,7 +146,7 @@ img{
         grid-column-start: 4;
         grid-column-end: 5;
     }
-    
+
     .autorCard{
         align-self: stretch;
         grid-row-start: 4;
@@ -151,14 +156,13 @@ img{
         background-color: grey;
         color: white;
         border-top: 1px solid black;
-        padding-top: 10px;
+        padding-top: 5px;
     }
 
     .vacio1, .vacio2, .vacio3{
         display: block;
         background-color: grey;
     }
-
 
     .vacio1{
         grid-row-start: 1;
@@ -177,6 +181,24 @@ img{
         grid-row-end: 3;
         grid-column-start: 5;
         grid-column-end: 6;
+    }
+}  
+
+@media only screen and (min-width: 1024px){
+
+    .slide{
+        width: 1024px;
+        height: 420px;
+        grid-template-rows: 20px 150px 150px 60px 40px;
+        grid-template-columns: 208px 30px 340px 30px 416px;
+    }
+
+    .descripcion h6{
+        font-size: 26px;
+    }
+    
+    .autorCard{
+        padding-top: 10px;
     }
     
 }
