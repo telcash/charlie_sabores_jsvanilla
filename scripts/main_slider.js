@@ -27,22 +27,22 @@ let slides;
 
 const items = [
     {
-        img: "img/recetas/chocolate_mousse_cake_vertical.jpeg",
+        img: "img/recetas/tarta_mousse_chocolate.jpeg",
         alt:"Tarta de mousse de chocolate",
         url: "#/",
         descripcion: "Una combinación de mousse, tarta y cobertura de chocolate adornada con merengues."
     },
     {
-        img: "img/recetas/red_velvet_cheesecake_vertical.jpg",
+        img: "img/recetas/tarta_queso_red_velvet.jpeg",
         alt: "Tarta de Queso Red Velvet",
         url: "#/",
         descripcion: "Esta ingeniosa tarta combina dos postres clásicos: tarta de terciopelo rojo y tarta de queso."
     },
     {
-        img: "img/articulos/kitchenaid_professional_5_plus_vertical.jpg",
+        img: "img/articulos/kitchenaid_professional_5_plus.jpg",
         alt: "Kitchenaid Professional 5 plus",
         url: "#/",
-        descripcion: "Un versátil ayudante para toda la vida"
+        descripcion: "Un versátil ayudante para todas tus preparaciones. Descubre todas sus funciones."
     }
 ]
 

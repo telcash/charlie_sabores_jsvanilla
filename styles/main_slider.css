@@ -8,7 +8,7 @@
 
 .slide{
     display: grid;
-    grid-template-rows: 6fr 4fr 45px;
+    grid-template-rows: 3fr 2fr 45px;
     grid-template-columns: 1fr 18fr 1fr;
     width: 100%;
     height: auto;
@@ -97,9 +97,9 @@ img{
 
     .slide{
         width: 1024px;
-        height: 825px;
-        grid-template-rows: 25px 350px 350px 70px 30px;
-        grid-template-columns: 122px 30px 540px 30px 302px;
+        height: 420px;
+        grid-template-rows: 20px 150px 150px 60px 40px;
+        grid-template-columns: 208px 30px 340px 30px 416px;
     }
 
     .img{
@@ -124,8 +124,8 @@ img{
     }
     
     img{
-        width: 600px;
-        height: 800px;
+        width: 400px;
+        height: 400px;
     }
     
     .left{
