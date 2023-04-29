@@ -77,7 +77,7 @@ const recetas = [
 
 
 
-class ContainerRecetaComponent extends HTMLElement{
+class ContainerRecetasComponent extends HTMLElement{
 
     css;
     commonCss;
@@ -92,7 +92,7 @@ class ContainerRecetaComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/container_receta.css");
+        this.css.setAttribute("href", "styles/container_recetas.css");
 
         this.commonCss = document.createElement('link');
         this.commonCss.setAttribute("rel", "stylesheet");
@@ -128,4 +128,4 @@ class ContainerRecetaComponent extends HTMLElement{
     }
 }
 
-customElements.define('app-container-receta', ContainerRecetaComponent);
+customElements.define('app-container-recetas', ContainerRecetasComponent);

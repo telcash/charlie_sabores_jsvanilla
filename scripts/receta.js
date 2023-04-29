@@ -12,7 +12,7 @@ Plantilla HTML:
     <div class="autorCard">
         <app-autor-card></app-autor-card>
     </div>
-        
+</div>   
 */
 
 class RecetaComponent extends HTMLElement{
@@ -55,7 +55,7 @@ class RecetaComponent extends HTMLElement{
         img.src = this.hasAttribute("img") ? this.getAttribute("img") : "img/default/receta.png";
         img.alt = this.hasAttribute("alt") ? this.getAttribute("alt") 
             :(this.hasAttribute("nombre") ? this.getAttribute(nombre) : "");
-
+            
         const info = this.wrapper.appendChild(document.createElement('div'));
         info.setAttribute("class","info");
 

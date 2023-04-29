@@ -4,45 +4,28 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html{
-    text-size-adjust: 100%;
-}
-
 body {
     height: 100%;
     width: 100%;
-    background-color: a;
     background-color: rgb(249,239,236);
+    text-size-adjust: 100%;
     opacity: 0;
     transition: opacity 0.25s;
 }
 #wrapper{
     display: flex;
     flex-flow: column wrap;
-    margin: auto;
+    justify-content: center;
     width: 100%;
 }
 
 header, section, aside, article, footer{
-    position: relative;
-    width: 100%;
+    max-width: 100%;
 }
 
-article, aside{
-    padding-top: 40px;
-    padding-bottom: 20px;
-}
-
-article h2{
-    background-color: white;
-    margin-left:10px;
-    margin-right: 10px;
-    padding-left: 5px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-top: 5px solid black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+aside, article {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .sticky{

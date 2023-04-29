@@ -2,8 +2,6 @@
     display: flex;
     flex-flow: row nowrap;
     max-height: 115px;
-    margin-left:10px;
-    margin-right: 10px;
     background-color: white;
     cursor: pointer;
 }

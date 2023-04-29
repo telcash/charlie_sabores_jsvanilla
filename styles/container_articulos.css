@@ -1,0 +1,23 @@
+.wrapper{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.articulo{
+    width: 100%;
+}
+
+@media only screen and (max-width: 800px){
+    
+}
+
+
+@media only screen and (min-width: 800px){
+
+}  
+
+@media only screen and (min-width: 1024px){
+
+}

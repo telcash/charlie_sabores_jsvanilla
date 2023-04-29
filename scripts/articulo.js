@@ -50,17 +50,17 @@ class ArticuloComponent extends HTMLElement{
         
         const img = imgContainer.appendChild(document.createElement('img'));
         img.src = this.hasAttribute("img") ? this.getAttribute("img") : "img/default/articulo.png";
-        img.alt = this.hasAttribute("alt") ? this.getAttribute("alt") : "";
+        img.alt = this.hasAttribute("alt") ? this.getAttribute("alt") 
+            :(this.hasAttribute("nombre") ? this.getAttribute(nombre) : "");
         
         const info = this.wrapper.appendChild(document.createElement('div'));
         info.setAttribute("class","info");
         
-        const titulo = info.appendChild(document.createElement('h4'));
-        titulo.innerText = this.hasAttribute("title") ? this.getAttribute("title") : "Artículo de interés";
+        const nombre = info.appendChild(document.createElement('h4'));
+        nombre.innerText = this.hasAttribute("nombre") ? this.getAttribute("nombre") : "Artículo de interés";
         
         const descripcion = info.appendChild(document.createElement('p'));
-        descripcion.innerText = this.hasAttribute("desc") ? this.getAttribute("desc") : "Esta info te puede interesar...";
-        
+        descripcion.innerText = this.hasAttribute("descripcion") ? this.getAttribute("descripcion") : "Esta info te puede interesar...";
         
         this.shadowRoot.appendChild(this.wrapper);
         this.wrapper.addEventListener("click", () => {
