@@ -19,6 +19,8 @@ HTML template
 let navList; 
 let navBar;
 let topBar;
+let screenSmall;
+let toggleOn = false;
 
 class HeaderComponent extends HTMLElement{
     
@@ -44,6 +46,7 @@ class HeaderComponent extends HTMLElement{
     }
 
     connectedCallback(){
+        console.log("connected...");
         this.attachShadow({
             mode: 'open'
         })
@@ -60,29 +63,45 @@ class HeaderComponent extends HTMLElement{
         navBar.appendChild(document.createElement('app-nav-bar'));
 
         navList = this.wrapper.appendChild(document.createElement('div'));
+        
         navList.setAttribute("class","navList");
+
+
         navList.appendChild(document.createElement('app-nav-list'));
         
         
         
         this.shadowRoot.appendChild(this.wrapper);
 
+        if(screen.width <= 800){
+            screenSmall = true;
+        }else{
+            screenSmall = false;
+        }
 
         window.addEventListener('resize', ()=>{
-            if(window.innerWidth > 800){
+            if(screen.width > 800){
                 navList.style.width = "100%";
+                navList.style.opacity = 1;
+                screenSmall = false;
+                toggleOn = false;
             }else{
-                navList.style.width = "0%";
+                if(!screenSmall && !toggleOn){
+                    navList.style.width = "0%";
+                    screenSmall = false;
+                    navList.style.opacity = 0;
+                }
             }
         })
     }
 }
 
 function navListToggle(){
-
+    toggleOn = !toggleOn;
     if(navList.style.width === "100%"){
         navList.style.width = "0%";
     } else{
+        navList.style.opacity = 1;
         navList.style.width = "100%";
     }
 }

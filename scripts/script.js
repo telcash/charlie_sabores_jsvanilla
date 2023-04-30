@@ -1,4 +1,3 @@
-let body;
 let header;
 let sticky;
 let content;
@@ -19,10 +18,10 @@ window.onscroll = () =>{
 }
 
 function toggleScrollBar(){
-    if(body.style.overflow === "hidden"){
-        body.style.overflow = "visible";
+    if(wrapper.style.overflow === "hidden"){
+        wrapper.style.overflow = "visible";
     } else {
-        body.style.overflow = "hidden";
+        wrapper.style.overflow = "hidden";
     }
 }
 

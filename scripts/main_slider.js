@@ -74,7 +74,6 @@ class MainSliderComponent extends HTMLElement{
     }
 
     connectedCallback(){
-        console.log("Callback llamado ...");
         this.attachShadow({
             mode: 'open'
         })
@@ -148,7 +147,6 @@ function showSlide(slideIndex){
 function showNextSlide() {
 
     activeSlide++;
-    console.log(activeSlide);
     if(activeSlide >= items.length){
         activeSlide = 0;
     }
