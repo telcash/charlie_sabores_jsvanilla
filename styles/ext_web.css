@@ -38,14 +38,24 @@ p{
 
 
 @media only screen and (min-width: 800px){
-.wrapper{
-    flex-flow: row nowrap;
+    .wrapper{
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+    }
+    .webSite{
+        flex: 1;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+    }
+    .imgContainer{
+        align-self: flex-start;
+        padding-left: 20px;
+    }
+    p{
+        align-self: flex-start;
+        font-size: 18px;
+    }
 }
-.webSite{
-    flex-flow: column nowrap;
-}
-
-}  
 
 @media only screen and (min-width: 1024px){
     

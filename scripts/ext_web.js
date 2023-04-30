@@ -7,7 +7,9 @@ HTML template:
         <div class="imgContainer">
             <img src="img/ext_web_logo.jpeg" alt="">
         </div>
-        <p>Descripción sitio externo</p>
+        <div class="descripcion">
+            <p>Descripción sitio externo</p>
+        </div>
     </div>
 </div>
 
@@ -79,8 +81,11 @@ class ExtWebComponent extends HTMLElement{
             img.src = web.img;
             img.alt = web.nombre;
 
-            const descripcion = webSite.appendChild(document.createElement('p'));
-            descripcion.innerText = web.descripcion;
+            const descripcion = webSite.appendChild(document.createElement('div'));
+            descripcion.setAttribute("class","descripcion");
+
+            const parrafo = descripcion.appendChild(document.createElement('p'));
+            parrafo.innerText = web.descripcion;
         }        
 
         this.shadowRoot.appendChild(this.wrapper);
