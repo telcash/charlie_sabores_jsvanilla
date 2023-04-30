@@ -3,10 +3,22 @@
 HTML template:
 
 <div class="wrapper">
-    <app-articulo class="articulo"></app-articulo>
+    <div class="titulo">
+        <h2>Titulo del contenedor de articulos</h2>
+    </div>
+    <div class="container">
+        <app-articulo class="articulo"></app-articulo>
+        <app-articulo class="articulo"></app-articulo>
+
+        ...
+
+        <app-articulo class="articulo"></app-articulo>
+    </div>
 </div>
 
  */
+
+const TITULO = "Artículos de interés";
 
 const articulos = [
     {
@@ -66,11 +78,17 @@ class ContainerArticulosComponent extends HTMLElement{
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
 
-
+        const titulo = this.wrapper.appendChild(document.createElement('div'));
+        titulo.setAttribute("class","titulo");
+        const h2 = titulo.appendChild(document.createElement('h2'));
+        h2.innerHTML= TITULO;
         
+        const container = this.wrapper.appendChild(document.createElement('div'));
+        container.setAttribute("class","container");
+
         let i = 0;
         do{
-            const articulo = this.wrapper.appendChild(document.createElement('app-articulo'));
+            const articulo = container.appendChild(document.createElement('app-articulo'));
             articulo.setAttribute("class","articulo");
             articulo.setAttribute("nombre",articulos[i].nombre);
             articulo.setAttribute("descripcion",articulos[i].descripcion);

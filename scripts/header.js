@@ -46,7 +46,6 @@ class HeaderComponent extends HTMLElement{
     }
 
     connectedCallback(){
-        console.log("connected...");
         this.attachShadow({
             mode: 'open'
         })
@@ -73,14 +72,14 @@ class HeaderComponent extends HTMLElement{
         
         this.shadowRoot.appendChild(this.wrapper);
 
-        if(screen.width <= 800){
+        if(window.innerWidth <= 800){
             screenSmall = true;
         }else{
             screenSmall = false;
         }
 
         window.addEventListener('resize', ()=>{
-            if(screen.width > 800){
+            if(window.innerWidth > 800){
                 navList.style.width = "100%";
                 navList.style.opacity = 1;
                 screenSmall = false;

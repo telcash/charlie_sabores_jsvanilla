@@ -9,7 +9,7 @@ Plantilla HTML:
         <h4>Titulo</h4>
         <p>Descripcion</p>
     </div>
-    <div class="autorCard">
+    <div class="autorContainer">
         <app-autor-card></app-autor-card>
     </div>
 </div>   
@@ -65,9 +65,11 @@ class RecetaComponent extends HTMLElement{
         const descripcion = info.appendChild(document.createElement('p'));
         descripcion.innerText = this.hasAttribute("descripcion") ? this.getAttribute("descripcion") : "Disfruta esta receta...";
 
-        const autorCard = this.wrapper.appendChild(document.createElement('div'));
+        const autorContainer = this.wrapper.appendChild(document.createElement('div'));
+        autorContainer.setAttribute("class","autorContainer");
+        
+        const autorCard = autorContainer.appendChild(document.createElement('app-autor-card'));
         autorCard.setAttribute("class","autorCard");
-        autorCard.appendChild(document.createElement('app-autor-card'));
 
         this.shadowRoot.appendChild(this.wrapper);
         

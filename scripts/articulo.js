@@ -5,7 +5,7 @@ Plantilla HTML:
     <div class="imgContainer">
         <img src="img/articulo_test.jpeg" alt="">
     </div>
-    <div class="info">
+    <div class="titulo">
         <h4>Titulo del artículo</h4>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis corporis maiores 
         repudiandae laudantium, possimus, unde delectus quia veritatis nulla quod placeat! 
@@ -59,8 +59,8 @@ class ArticuloComponent extends HTMLElement{
         const nombre = info.appendChild(document.createElement('h4'));
         nombre.innerText = this.hasAttribute("nombre") ? this.getAttribute("nombre") : "Artículo de interés";
         
-        const descripcion = info.appendChild(document.createElement('p'));
-        descripcion.innerText = this.hasAttribute("descripcion") ? this.getAttribute("descripcion") : "Esta info te puede interesar...";
+        /* const descripcion = info.appendChild(document.createElement('p'));
+        descripcion.innerText = this.hasAttribute("descripcion") ? this.getAttribute("descripcion") : "Esta info te puede interesar..."; */
         
         this.shadowRoot.appendChild(this.wrapper);
         this.wrapper.addEventListener("click", () => {

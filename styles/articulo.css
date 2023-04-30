@@ -1,7 +1,6 @@
 .wrapper{
     display: flex;
     flex-flow: row nowrap;
-    max-height: 115px;
     background-color: white;
     cursor: pointer;
 }
@@ -21,22 +20,24 @@
     display: flex;
     flex-flow: column nowrap;
     flex: 1;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 5px;
-    min-height: 0;
 }
 
 h4{
+    padding: 0;
     font-size: 4vw;
-    padding-bottom: 1vw;
+    text-align: left;
+    padding-left:10px;
+    padding-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
 }   
 
-p{
+/* p{
+    display: none;
     font-size: 3vw;
     overflow: hidden;
     white-space:break-spaces;
-}
+} */
 
 @media only screen and (max-width: 800px){
     
@@ -44,8 +45,13 @@ p{
 
 
 @media only screen and (min-width: 800px){
+ /*    p{
+        display: block;
+    } */
 
-
+    h4{
+        font-size: 20px;
+    }
 }  
 
 @media only screen and (min-width: 1024px){

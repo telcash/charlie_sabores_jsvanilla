@@ -8,6 +8,7 @@
 
 .receta{
     max-width: 100%;
+    height: auto;
     margin: 10px;
 }
 
@@ -17,13 +18,17 @@
 
 
 @media only screen and (min-width: 800px){
-
-
+    .wrapper{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .receta{
+        margin: 0;
+    }
 }  
 
 @media only screen and (min-width: 1024px){
     .wrapper{
-        display: inline-grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
 }

@@ -3,22 +3,36 @@
     height: auto;
     margin: 0;
     padding: 0;
-    
+    background-color: white;
+    border-top: 10px solid black;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .articulo{
     width: 100%;
 }
 
+h2{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+}
+
 @media only screen and (max-width: 800px){
-    
+   
 }
 
 
 @media only screen and (min-width: 800px){
-
+    .container{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }  
 
 @media only screen and (min-width: 1024px){
-
+    .container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
