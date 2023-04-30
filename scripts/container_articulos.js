@@ -18,8 +18,6 @@ HTML template:
 
  */
 
-const TITULO = "Artículos de interés";
-
 const articulos = [
     {
         nombre: "Las mejores sartenes antiadherentes de 12 pulgadas",
@@ -50,6 +48,7 @@ class ContainerArticulosComponent extends HTMLElement{
     wrapper;
     impresionesMax;
     MAX_ITEMS;
+    TITULO = "Artículos de interés";
 
     constructor(){
         super();
@@ -64,7 +63,6 @@ class ContainerArticulosComponent extends HTMLElement{
         this.commonCss.setAttribute("rel", "stylesheet");
         this.commonCss.setAttribute("href", "styles/styles.css");
 
-        
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
     }
@@ -81,7 +79,7 @@ class ContainerArticulosComponent extends HTMLElement{
         const titulo = this.wrapper.appendChild(document.createElement('div'));
         titulo.setAttribute("class","titulo");
         const h2 = titulo.appendChild(document.createElement('h2'));
-        h2.innerHTML= TITULO;
+        h2.innerHTML= this.TITULO;
         
         const container = this.wrapper.appendChild(document.createElement('div'));
         container.setAttribute("class","container");

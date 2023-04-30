@@ -26,14 +26,15 @@ section{
     margin-bottom: 80px;
 }
 
+aside{
+    margin-bottom: 80px;
+}
+
 aside, article {
     padding-left: 10px;
     padding-right: 10px;
 }
 
-aside{
-    margin-bottom: 40px;
-}
 
 .sticky{
     z-index: 1;

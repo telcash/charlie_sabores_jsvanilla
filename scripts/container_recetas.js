@@ -3,6 +3,17 @@
 HTML template:
 
 <div class="wrapper">
+    <div class="titulo">
+        <h2>Titulo del contenedor de recetas</h2>
+    </div>
+    <div class="container">
+        <app-receta class="receta"></app-receta>
+        <app-receta class="receta"></app-receta>
+
+        ...
+
+        <app-receta class="receta"></app-receta>
+    </div>
     <app-receta class="receta"></app-receta>
 </div>
 
@@ -84,6 +95,7 @@ class ContainerRecetasComponent extends HTMLElement{
     wrapper;
     impresionesMax;
     MAX_ITEMS;
+    TITULO = "Recetas que te encantarán"
 
     constructor(){
         super();
@@ -98,7 +110,6 @@ class ContainerRecetasComponent extends HTMLElement{
         this.commonCss.setAttribute("rel", "stylesheet");
         this.commonCss.setAttribute("href", "styles/styles.css");
 
-        
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
         
@@ -111,10 +122,18 @@ class ContainerRecetasComponent extends HTMLElement{
         this.impresionesMax = this.hasAttribute("max") ? this.getAttribute("max") : this.MAX_ITEMS;
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
+
+        const titulo = this.wrapper.appendChild(document.createElement('div'));
+        titulo.setAttribute("class","titulo");
+        const h2 = titulo.appendChild(document.createElement('h2'));
+        h2.innerHTML= this.TITULO;
         
+        const container = this.wrapper.appendChild(document.createElement('div'));
+        container.setAttribute("class","container");
+
         let i = 0;
         do{
-            const receta = this.wrapper.appendChild(document.createElement('app-receta'));
+            const receta = container.appendChild(document.createElement('app-receta'));
             receta.setAttribute("class","receta");
             receta.setAttribute("nombre",recetas[i].nombre);
             receta.setAttribute("descripcion",recetas[i].descripcion);

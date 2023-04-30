@@ -52,7 +52,7 @@ class AutorCardComponent extends HTMLElement{
         imgAutor.alt = this.hasAttribute("alt") ? this.getAttribute("alt") : "Autor";
 
         const nombre = this.wrapper.appendChild(document.createElement('h6'));
-        nombre.innerHTML = this.hasAttribute("name") ? this.getAttribute("name") : "Anónimo";
+        nombre.innerHTML = this.hasAttribute("name") ? this.getAttribute("name") : "Charlie";
 
         const bookmark = this.wrapper.appendChild(document.createElement('img'));
         bookmark.setAttribute("src",this.imgUnchecked);
