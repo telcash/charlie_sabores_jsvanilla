@@ -65,6 +65,8 @@ class ContainerArticulosComponent extends HTMLElement{
         this.impresionesMax = this.hasAttribute("max") ? this.getAttribute("max") : this.MAX_ITEMS;
         this.shadowRoot.appendChild(this.css);
         this.shadowRoot.appendChild(this.commonCss);
+
+
         
         let i = 0;
         do{
