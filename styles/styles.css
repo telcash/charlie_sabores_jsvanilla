@@ -24,10 +24,6 @@ header, section, aside, article, footer{
     width: 100%;
 }
 
-@media only screen and (max-width: 800px){
-    
-}
-
 
 @media only screen and (min-width: 800px){
     #wrapper, header, section, aside, article, footer{

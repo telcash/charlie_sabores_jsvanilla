@@ -66,14 +66,14 @@ class HeaderComponent extends HTMLElement{
         
         this.shadowRoot.appendChild(this.wrapper);
 
-        if(window.innerWidth <= 800){
+        if(window.innerWidth < 800){
             screenSmall = true;
         }else{
             screenSmall = false;
         }
 
         window.addEventListener('resize', ()=>{
-            if(window.innerWidth > 800){
+            if(window.innerWidth >= 800){
                 navList.style.width = "100%";
                 navList.style.opacity = 1;
                 screenSmall = false;

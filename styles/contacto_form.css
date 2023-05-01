@@ -27,7 +27,7 @@ h1{
     max-width: 100%;
     display: flex;
     flex-flow: column nowrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 label, input, select, textarea{
