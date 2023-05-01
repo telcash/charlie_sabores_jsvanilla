@@ -14,7 +14,6 @@ HTML template:
 
 class NavListComponent extends HTMLElement{
     css;
-    commonCss;
     wrapper;
     options;
 
@@ -24,10 +23,6 @@ class NavListComponent extends HTMLElement{
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/nav_list.css");
-
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/styles.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -59,7 +54,6 @@ class NavListComponent extends HTMLElement{
         })
 
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
 
         const lista = this.wrapper.appendChild(document.createElement('ul'));
 

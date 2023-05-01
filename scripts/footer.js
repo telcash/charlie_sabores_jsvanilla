@@ -13,7 +13,6 @@ HTML template:
 class FooterComponent extends HTMLElement {
     
     css;
-    commonCss;
     wrapper;
     networks;
 
@@ -25,10 +24,6 @@ class FooterComponent extends HTMLElement {
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/footer.css");
 
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/styles.css");
-
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
     }
@@ -38,7 +33,6 @@ class FooterComponent extends HTMLElement {
             mode: 'open'
         })
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
 
         const socialNetworks = this.wrapper.appendChild(document.createElement('app-social-networks'));
         socialNetworks.setAttribute("class","socialNetworks");

@@ -18,7 +18,6 @@ Plantilla HTML:
 class RecetaComponent extends HTMLElement{
 
     css;
-    commonCss;
     wrapper;
     url;
 
@@ -28,11 +27,6 @@ class RecetaComponent extends HTMLElement{
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/receta.css");
-
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/styles.css");
-
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
 
@@ -46,7 +40,6 @@ class RecetaComponent extends HTMLElement{
         this.url = this.hasAttribute("url") ? this.getAttribute("url") : "#/";
         
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
 
         const imgContainer = this.wrapper.appendChild(document.createElement('div'));
         imgContainer.setAttribute("class","imgContainer");

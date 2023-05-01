@@ -53,7 +53,6 @@ const items = [
 class MainSliderComponent extends HTMLElement{
 
     css;
-    commonCss;
     wrapper;
 
     constructor(){
@@ -62,10 +61,6 @@ class MainSliderComponent extends HTMLElement{
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/main_slider.css");
-
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/styles.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -79,7 +74,6 @@ class MainSliderComponent extends HTMLElement{
         })
 
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
 
         const slide = this.wrapper.appendChild(document.createElement('div'));
         slide.setAttribute("class","slide");

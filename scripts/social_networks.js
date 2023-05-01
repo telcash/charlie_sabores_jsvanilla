@@ -9,7 +9,6 @@ HTML template:
 class SocialNetworksComponent extends HTMLElement{
 
     css;
-    commonCss;
     wrapper;
     networks;
 
@@ -19,10 +18,6 @@ class SocialNetworksComponent extends HTMLElement{
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/social_networks.css");
-
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/styles.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -62,7 +57,6 @@ class SocialNetworksComponent extends HTMLElement{
         })
 
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
 
         for(const network of this.networks){
 

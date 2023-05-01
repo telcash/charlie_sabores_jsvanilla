@@ -22,7 +22,6 @@ HTML template
 class NavBarComponent extends HTMLElement{
 
     css;
-    commonCss;
     wrapper;
     navButtonClicked;
 
@@ -32,10 +31,6 @@ class NavBarComponent extends HTMLElement{
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/nav_bar.css");
-
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/styles.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -48,7 +43,6 @@ class NavBarComponent extends HTMLElement{
             mode: 'open'
         })
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
 
         const nav = this.wrapper.appendChild(document.createElement('nav'));
         nav.setAttribute("class","nav");

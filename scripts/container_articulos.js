@@ -44,7 +44,6 @@ const articulos = [
 
 class ContainerArticulosComponent extends HTMLElement{
     css;
-    commonCss;
     wrapper;
     impresionesMax;
     MAX_ITEMS;
@@ -59,10 +58,6 @@ class ContainerArticulosComponent extends HTMLElement{
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/container_articulos.css");
 
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/styles.css");
-
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
     }
@@ -74,7 +69,6 @@ class ContainerArticulosComponent extends HTMLElement{
         
         this.impresionesMax = this.hasAttribute("max") ? this.getAttribute("max") : this.MAX_ITEMS;
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
 
         const titulo = this.wrapper.appendChild(document.createElement('div'));
         titulo.setAttribute("class","titulo");

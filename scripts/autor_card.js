@@ -13,7 +13,6 @@ HTML template:
 class AutorCardComponent extends HTMLElement{
 
     css;
-    commonCss;
     wrapper;
     checked;
     imgChecked;
@@ -25,10 +24,6 @@ class AutorCardComponent extends HTMLElement{
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/autor_card.css");
-
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/styles.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -44,7 +39,6 @@ class AutorCardComponent extends HTMLElement{
         })
         
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
 
         const imgAutor = this.wrapper.appendChild(document.createElement('img'));
         imgAutor.setAttribute("class","imgAutor");
