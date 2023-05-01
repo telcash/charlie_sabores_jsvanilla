@@ -33,15 +33,7 @@ class FooterComponent extends HTMLElement {
             mode: 'open'
         })
         this.shadowRoot.appendChild(this.css);
-<<<<<<< HEAD
-
-        const socialNetworks = this.wrapper.appendChild(document.createElement('app-social-networks'));
-        socialNetworks.setAttribute("class","socialNetworks");
-
-=======
-        this.shadowRoot.appendChild(this.commonCss);
         
->>>>>>> pagina_contacto
         const navList = this.wrapper.appendChild(document.createElement('app-nav-list'));
         navList.setAttribute("class","navList");
         
