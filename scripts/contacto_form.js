@@ -3,6 +3,7 @@
 HTML template
 
 <div class="wrapper">
+    <h1>Titulo</h1>
     <form id="contacto" action="#/" method="post">
         <div id="nombre">
             <label for="nombre">Nombre:</label>
@@ -67,10 +68,9 @@ HTML template
 
 */
 
-class FormContactoComponent extends HTMLElement{
+class ContactoFormComponent extends HTMLElement{
 
     css;
-    commonCss;
     wrapper;
     
     constructor(){
@@ -78,11 +78,7 @@ class FormContactoComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/header.css");
-
-        this.commonCss = document.createElement('link');
-        this.commonCss.setAttribute("rel", "stylesheet");
-        this.commonCss.setAttribute("href", "styles/form_contacto.css");
+        this.css.setAttribute("href", "styles/contacto_form.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -94,7 +90,9 @@ class FormContactoComponent extends HTMLElement{
         })
         
         this.shadowRoot.appendChild(this.css);
-        this.shadowRoot.appendChild(this.commonCss);
+
+        const titulo = this.wrapper.appendChild(document.createElement('h1'));
+        titulo.innerText = "Si tienes alguna consulta, sugerencia o queja no dudes en escribirnos: ";
 
         const contacto = this.wrapper.appendChild(document.createElement('form'));
         contacto.setAttribute("id","contacto");
@@ -244,4 +242,4 @@ class FormContactoComponent extends HTMLElement{
     }
 }
 
-customElements.define('app-form-contacto', FormContactoComponent);
+customElements.define('app-contacto-form', ContactoFormComponent);

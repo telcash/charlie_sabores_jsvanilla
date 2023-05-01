@@ -8,60 +8,21 @@
     <style>
 
     </style>
+    <script src="scripts/social_networks.js"></script>
 </head>
 <body>
     <div class="wrapper">
-        <form class="contacto" action="#/" method="post">
-            <div id="nombre">
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre">
-            </div>
-            <div id="apellido">
-                <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido">
-            </div>
-            <div id="email">
-                <label for="email">e-mail:</label>
-                <input type="text" name="email">
-            </div>
-            <div id="telefono">
-                <label for="telefono">Teléfono:</label>
-                <input type="text" name="telefono">
-            </div>
-            <div id="direccion">
-                <label for="direccion">Dirección:</label>
-                <input type="text" name="direccion">
-            </div>
-            <div id="sexo">
-                <input type="radio" name="sexo" value="masculino">
-                <label for="masculino">Masculino</label>
-                <input type="radio" name="sexo" value="femenino">
-                <label for="femenino">Femenino</label>
-                <input type="radio" name="sexo" value="otro">
-                <label for="otro">Otro</label>
-            </div>
-            <div id="motivo">
-                <label for="motivo">Motivo</label>
-                <select name="motivo" id="select">
-                    <option value="consulta">Consulta</option>
-                    <option value="sugerencia">Sugerencia</option>
-                    <option value="queja">Queja</option>
-                </select>
-            </div>
-            <div id="comentarions">
-                <textarea name="comentarios" id="textArea" cols="30" rows="10">
-                    Comentarios
-                </textarea>
-            </div>
-            <div id="privacidad">
-                <label for="acepto">Estoy de acuerdo que guarden mis datos</label>
-                <input type="checkbox" name="acepto">
-            </div>
-            <div id="enviar">
-                <input type="button" name="enviar" onclick="alert('Datos enviados')" value="Enviar">
-            </div>
-
-        </form>
+        <div id="titulo">
+            <h1>Contacto</h1>
+        </div>
+        <div id="email">
+            <p>Correo electrónico: <span>charliesabores@gmail.com</span></p>
+        </div>
+        <div id="redesSociales">
+            <h6>Redes sociales</h6>
+            <p>Estamos a tu disposición en:</p>
+            <app-social-networks></app-social-networks>
+        </div>
     </div>
 </body>
 </html>

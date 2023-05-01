@@ -36,7 +36,6 @@ header, section, aside, article, footer{
 }  
 
 @media only screen and (min-width: 1024px){
-
     #wrapper, header, section, aside, article, footer{
         max-width: 1024px;
     }

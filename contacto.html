@@ -12,7 +12,8 @@
     <script src="scripts/nav_list.js"></script>
     <script src="scripts/social_networks.js"></script>
     <script src="scripts/top_bar.js"></script>
-    <script src="scripts/form_contacto.js"></script>
+    <script src="scripts/contacto_form.js"></script>
+    <script src="scripts/contacto_card.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/contacto.css">
     <title>Contacto</title>
@@ -22,9 +23,14 @@
         <header>
             <app-header></app-header>
         </header>
-        <section>
-            <app-form-contacto></app-form-contacto>
-        </section>
+        <div id="contacto">
+            <aside>
+                <app-contacto-card></app-contacto-card>
+            </aside>
+            <section>
+                <app-contacto-form></app-contacto-form>
+            </section>
+        </div>
         <footer>
             <app-footer></app-footer>
         </footer>
