@@ -4,86 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripts/autor_card.js"></script>
     <title>Document</title>
     <style>
-        .wrapper{
-            width: 100%;
-            height: auto;
-            margin:0;
-            padding: 0;
-            display: grid;
-            grid-template-rows: 6fr 4fr 25px;
-            grid-template-columns: 1fr 18fr 1fr;
-        }
-
-        a{
-            all: unset;
-        }
-
-        .img{
-            grid-row-start: 1;
-            grid-row-end: 3;
-            grid-column-start: 1;
-            grid-column-end: 4;
-        }
-        
-        .descripcion{
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: flex-end;
-            grid-row-start: 2;
-            grid-row-end: 3;
-            grid-column-start: 1;
-            grid-column-end: 4;
-            padding: 10px;
-            padding-bottom: 8px;
-            overflow: hidden;
-            white-space:break-spaces;
-            background-image: linear-gradient(to top, rgba(255,255,255,1), 75%, rgba(255,255,255,0));
-            border-bottom: 2px solid black;
-        }
-        
-        img{
-            width: 100%;
-            height: auto;
-        }
-        
-        .left{
-            grid-row-start: 1;
-            grid-row-end: 3;
-            grid-column-start: 1;
-            grid-column-end: 2;
-            align-self: center;
-            justify-self: end;
-        }
-        
-        .right{
-            grid-row-start: 1;
-            grid-row-end: 3;
-            grid-column-start: 3;
-            grid-column-end: 4;
-            align-self: center;
-            justify-self: start;
-        }
-        
-        .autorCard{
-            grid-row-start: 3;
-            grid-row-end: 4;
-            grid-column-start: 1;
-            grid-column-end: 4;
-            padding:10px;
-        }
 
     </style>
+    <script src="scripts/social_networks.js"></script>
 </head>
 <body>
     <div class="wrapper">
-        <a class= "img" href="recetas.html"><img src="img/recetas/chocolate_mousse_cake_vertical.jpeg" alt=""></a>
-        <a class= "desc" href="#/">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos saepe, ullam amet eius inventore nulla assumenda. Iusto debitis in, quos, officiis cum ratione, a tenetur aliquam obcaecati consequatur eligendi?</a>
-        <a class= "left" href="#/">&#10094;</a>
-        <a class= "right" href="index.html">&#10095;</a>
-        <app-autor-card class="autorCard"></app-autor-card>
+        <div id="titulo">
+            <h1>Contacto</h1>
+        </div>
+        <div id="email">
+            <p>Correo electrónico: <span>charliesabores@gmail.com</span></p>
+        </div>
+        <div id="redesSociales">
+            <h6>Redes sociales</h6>
+            <p>Estamos a tu disposición en:</p>
+            <app-social-networks></app-social-networks>
+        </div>
     </div>
 </body>
 </html>

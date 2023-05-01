@@ -1,0 +1,30 @@
+.wrapper{
+    margin: 0;
+    padding: 20px;
+    max-width: 100%;
+    height: auto;
+    background-color: grey;
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+
+
+
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 800px){
+    
+}
+
+@media only screen and (min-width: 800px){
+
+}  
+
+@media only screen and (min-width: 1024px){
+
+}

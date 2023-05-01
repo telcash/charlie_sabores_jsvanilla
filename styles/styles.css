@@ -5,9 +5,6 @@
 }
 
 #wrapper{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
     max-width: 100%;
     margin: auto;
     background-color: rgb(249,239,236);
@@ -19,22 +16,6 @@
 header, section, aside, article, footer{
     max-width: 100%;
 }
-
-section{
-    background-color: white;
-    padding-bottom: 10px;
-    margin-bottom: 80px;
-}
-
-aside{
-    margin-bottom: 80px;
-}
-
-aside, article {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
 
 .sticky{
     z-index: 1;
@@ -55,7 +36,6 @@ aside, article {
 }  
 
 @media only screen and (min-width: 1024px){
-
     #wrapper, header, section, aside, article, footer{
         max-width: 1024px;
     }
