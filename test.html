@@ -4,86 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripts/autor_card.js"></script>
     <title>Document</title>
     <style>
-        .wrapper{
-            width: 100%;
-            height: auto;
-            margin:0;
-            padding: 0;
-            display: grid;
-            grid-template-rows: 6fr 4fr 25px;
-            grid-template-columns: 1fr 18fr 1fr;
-        }
-
-        a{
-            all: unset;
-        }
-
-        .img{
-            grid-row-start: 1;
-            grid-row-end: 3;
-            grid-column-start: 1;
-            grid-column-end: 4;
-        }
-        
-        .descripcion{
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: flex-end;
-            grid-row-start: 2;
-            grid-row-end: 3;
-            grid-column-start: 1;
-            grid-column-end: 4;
-            padding: 10px;
-            padding-bottom: 8px;
-            overflow: hidden;
-            white-space:break-spaces;
-            background-image: linear-gradient(to top, rgba(255,255,255,1), 75%, rgba(255,255,255,0));
-            border-bottom: 2px solid black;
-        }
-        
-        img{
-            width: 100%;
-            height: auto;
-        }
-        
-        .left{
-            grid-row-start: 1;
-            grid-row-end: 3;
-            grid-column-start: 1;
-            grid-column-end: 2;
-            align-self: center;
-            justify-self: end;
-        }
-        
-        .right{
-            grid-row-start: 1;
-            grid-row-end: 3;
-            grid-column-start: 3;
-            grid-column-end: 4;
-            align-self: center;
-            justify-self: start;
-        }
-        
-        .autorCard{
-            grid-row-start: 3;
-            grid-row-end: 4;
-            grid-column-start: 1;
-            grid-column-end: 4;
-            padding:10px;
-        }
 
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <a class= "img" href="recetas.html"><img src="img/recetas/chocolate_mousse_cake_vertical.jpeg" alt=""></a>
-        <a class= "desc" href="#/">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos saepe, ullam amet eius inventore nulla assumenda. Iusto debitis in, quos, officiis cum ratione, a tenetur aliquam obcaecati consequatur eligendi?</a>
-        <a class= "left" href="#/">&#10094;</a>
-        <a class= "right" href="index.html">&#10095;</a>
-        <app-autor-card class="autorCard"></app-autor-card>
+        <form class="contacto" action="#/" method="post">
+            <div id="nombre">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre">
+            </div>
+            <div id="apellido">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido">
+            </div>
+            <div id="email">
+                <label for="email">e-mail:</label>
+                <input type="text" name="email">
+            </div>
+            <div id="telefono">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" name="telefono">
+            </div>
+            <div id="direccion">
+                <label for="direccion">Dirección:</label>
+                <input type="text" name="direccion">
+            </div>
+            <div id="sexo">
+                <input type="radio" name="sexo" value="masculino">
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="sexo" value="femenino">
+                <label for="femenino">Femenino</label>
+                <input type="radio" name="sexo" value="otro">
+                <label for="otro">Otro</label>
+            </div>
+            <div id="motivo">
+                <label for="motivo">Motivo</label>
+                <select name="motivo" id="select">
+                    <option value="consulta">Consulta</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="queja">Queja</option>
+                </select>
+            </div>
+            <div id="comentarions">
+                <textarea name="comentarios" id="textArea" cols="30" rows="10">
+                    Comentarios
+                </textarea>
+            </div>
+            <div id="privacidad">
+                <label for="acepto">Estoy de acuerdo que guarden mis datos</label>
+                <input type="checkbox" name="acepto">
+            </div>
+            <div id="enviar">
+                <input type="button" name="enviar" onclick="alert('Datos enviados')" value="Enviar">
+            </div>
+
+        </form>
     </div>
 </body>
 </html>
