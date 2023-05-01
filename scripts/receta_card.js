@@ -15,7 +15,7 @@ Plantilla HTML:
 </div>   
 */
 
-class RecetaComponent extends HTMLElement{
+class RecetaCardComponent extends HTMLElement{
 
     css;
     wrapper;
@@ -26,7 +26,7 @@ class RecetaComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/receta.css");
+        this.css.setAttribute("href", "styles/receta_card.css");
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
 
@@ -72,4 +72,4 @@ class RecetaComponent extends HTMLElement{
     }
 }
 
-customElements.define('app-receta', RecetaComponent);
+customElements.define('app-receta-card', RecetaCardComponent);

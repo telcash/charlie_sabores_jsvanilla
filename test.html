@@ -13,16 +13,65 @@
 <body>
     <div class="wrapper">
         <div id="titulo">
-            <h1>Contacto</h1>
+            <h1>Titulo de la receta</h1>
         </div>
-        <div id="email">
-            <p>Correo electrónico: <span>charliesabores@gmail.com</span></p>
+        <div id="rating">
+            <a href="#/" class="rating">
+                <img src="img/icons/estrella.png" alt="Icono rating">
+                <h6>rating ...</h6>
+            </a>
+            <a href="#/" class="rating">
+                <img src="img/icons/nube.png" alt="Icono comentario">
+                <h6>número comentarios ...</h6>
+            </a>
         </div>
-        <div id="redesSociales">
-            <h6>Redes sociales</h6>
-            <p>Estamos a tu disposición en:</p>
-            <app-social-networks></app-social-networks>
+        <div id="info">
+            <h6>Porciones</h6>
+            <h6>Tiempo</h6>
         </div>
+        <div id="foto">
+            <img src="" alt="Nombre de la receta">
+        </div>
+        <div id="acciones">
+            <div id="imprimir" class="acciones">
+                <input type="button" name="imprimir" onclick="alert('Receta impresa')" value="Imprimir">
+            </div>
+            <div id="guardar" class="acciones">
+                <input type="button" name="guardar" onclick="alert('Receta guardada')" value="Guardar">
+            </div>
+        </div>
+        <div id="ingredientes">
+            <h3>Lista de ingredientes</h3>
+            <ul>
+                <li>ingrediente 1</li>
+
+                <li>ingrediente n</li>
+            </ul>
+        </div>
+        <div id="instrucciones">
+            <h3>Instrucciones</h3>
+            <ul>
+                <li>instruccion 1</li>
+
+                <li>instruccion 2</li>
+            </ul>
+        </div>
+        <div id="votar">
+            <h3>Mi voto</h3>
+            <div>
+                Aquí va la barra de estrellas de votacion
+            </div>
+        </div>
+        <div id="comentar">
+            <h3>Comentarios</h3>
+            <div>
+                Aquí va un espacio para yo comentar
+            </div>
+            <div>
+                Aquí va un espacio para los comentarios anteriores de otros usuarios
+            </div>
+        </div>
+
     </div>
 </body>
 </html>

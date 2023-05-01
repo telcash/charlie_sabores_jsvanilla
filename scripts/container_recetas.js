@@ -7,12 +7,12 @@ HTML template:
         <h2>Titulo del contenedor de recetas</h2>
     </div>
     <div class="container">
-        <app-receta class="receta"></app-receta>
-        <app-receta class="receta"></app-receta>
+        <app-receta-card class="receta"></app-receta-card>
+        <app-receta-card class="receta"></app-receta-card>
 
         ...
 
-        <app-receta class="receta"></app-receta>
+        <app-receta-card class="receta"></app-receta-card>
     </div>
     <app-receta class="receta"></app-receta>
 </div>
@@ -127,7 +127,7 @@ class ContainerRecetasComponent extends HTMLElement{
 
         let i = 0;
         do{
-            const receta = container.appendChild(document.createElement('app-receta'));
+            const receta = container.appendChild(document.createElement('app-receta-card'));
             receta.setAttribute("class","receta");
             receta.setAttribute("nombre",recetas[i].nombre);
             receta.setAttribute("descripcion",recetas[i].descripcion);
