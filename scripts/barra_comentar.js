@@ -34,6 +34,7 @@ HTML Template
 </div> 
 
 */
+let textArea;
 
 const comentarios = [
     {
@@ -91,13 +92,16 @@ class BarraComentarComponent extends HTMLElement{
         const miTexto = miForm.appendChild(document.createElement('div'));
         miTexto.setAttribute("id","miTexto");
 
-        const textArea = miTexto.appendChild(document.createElement('textarea'));
+        textArea = miTexto.appendChild(document.createElement('textarea'));
         textArea.setAttribute("id","textArea");
         textArea.setAttribute("name","comentar");
-        textArea.setAttribute("cols","30");
-        textArea.setAttribute("rows","1");
+        //textArea.setAttribute("cols","30");
+        //textArea.setAttribute("rows","1");
         textArea.setAttribute("maxlength","600");
-        textArea.setAttribute("placeholder","Comentar...")
+        textArea.setAttribute("placeholder","Comentar...");
+        textArea.addEventListener("focusin",textAreaFocusIn);
+        textArea.addEventListener("focusout",textAreaFocusOut);
+
 
         const publicar = miForm.appendChild(document.createElement('div'));
         publicar.setAttribute("id","publicar");
@@ -120,7 +124,6 @@ class BarraComentarComponent extends HTMLElement{
             const nombre = container.appendChild(document.createElement('div'));
             nombre.setAttribute("class","nombre");
             const h5 = nombre.appendChild(document.createElement('h5'));
-            console.log("nombre: ", comentario.nombre)
             h5.innerText = comentario.nombre;
 
             const fecha = container.appendChild(document.createElement('div'));
@@ -140,3 +143,11 @@ class BarraComentarComponent extends HTMLElement{
 }
 
 customElements.define('app-barra-comentar', BarraComentarComponent);
+
+function textAreaFocusIn(){
+    textArea.setAttribute("rows","12");
+}
+
+function textAreaFocusOut(){
+    textArea.setAttribute("rows","2");
+}

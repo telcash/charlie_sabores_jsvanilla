@@ -1,0 +1,84 @@
+.wrapper{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+#titulo{
+    width: 100%;
+    border-bottom: 1px solid rgb(60,60,60);
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+}
+
+#miForm{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(60,60,60);
+}
+
+#miTexto{
+    width: 100%;
+}
+
+textarea{
+    width: 100%;
+    resize: none;
+    font-size: 16px;
+}
+
+#publicar{
+    text-align: right;
+}
+
+input{
+    margin: 0;
+    appearance: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(60,60,60);
+    width: 30%;
+}
+
+input:hover{
+    background-color: grey;
+}
+
+#otrosComentarios{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.container{
+    background-color: rgb(240,240,240);
+}
+
+h5{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+h6{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+p{
+    font-size: 14px;
+    line-height: 1.5;
+}
