@@ -1,0 +1,57 @@
+.wrapper{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+#encabezado{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid rgb(60,60,60);
+}
+
+#titulo, #vorrarVotoContainer{
+    flex: 1;
+}
+
+#borrarVotoContainer{
+    padding-right: 15px;
+    text-align: right;
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+}
+
+#barra{
+    margin: 0;
+    bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    align-items: center;
+}
+
+#estrellas{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5px;
+}
+
+img{
+    width: 20px;
+    height: 20px;
+}
+
+h6{
+    margin: 0;
+    bottom: 0;
+    font-size: 14px;
+}

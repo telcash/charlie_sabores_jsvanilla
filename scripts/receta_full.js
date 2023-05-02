@@ -47,19 +47,13 @@ HTML template:
             <li>instruccion 2</li>
         </ul>
     </div>
-    <div id="votar">
-        <h3>Mi voto</h3>
-        <div>
-            Aquí va la barra de estrellas de votacion
-        </div>
+    <div id="barraVotar">
+        <app-barra-votar></app-barra-votar>
     </div>
     <div id="comentar">
         <h3>Comentarios</h3>
         <div>
-            Aquí va un espacio para yo comentar
-        </div>
-        <div>
-            Aquí va un espacio para los comentarios anteriores de otros usuarios
+            Aquí va la barra de comentar
         </div>
     </div>
 
@@ -215,13 +209,9 @@ class RecetaFullComponent extends HTMLElement{
             i++;
         }
 
-        const votar = this.wrapper.appendChild(document.createElement('div'));
-        votar.setAttribute("id","votar");
-        h3 = votar.appendChild(document.createElement('h3'));
-        h3.innerText = "Mi voto";
-        const barraVotar = votar.appendChild(document.createElement('div'));
+        const barraVotar = this.wrapper.appendChild(document.createElement('div'));
         barraVotar.setAttribute("id","barraVotar");
-        barraVotar.innerText = "Aqui va el webcomp app-barra-votar";
+        barraVotar.appendChild(document.createElement('app-barra-votar'));
 
         const comentar = this.wrapper.appendChild(document.createElement('div'));
         comentar.setAttribute("id","comentar");
@@ -229,7 +219,7 @@ class RecetaFullComponent extends HTMLElement{
         h3.innerText = "Comentarios";
         const barraComentar = comentar.appendChild(document.createElement('div'));
         barraComentar.setAttribute("id","barraComentar");
-        barraComentar.innerText = "Aqui va el webcomp app-barra-comentar";
+        
 
         this.shadowRoot.appendChild(this.wrapper);
     }
