@@ -68,14 +68,20 @@ HTML template:
  */
 
 const receta = {
-    nombre:"",
-    img:"",
-    rating: "",
-    comentarios:"",
-    porciones:"",
-    tiempo:"",
-    ingredientes:["",""],
-    instrucciones:["",""],
+    nombre:"Tarta de Queso Red Velvet",
+    img:"img/recetas/tarta_queso_red_velvet.jpeg",
+    rating: "4.5 (15 votos",
+    comentarios:"6 comentarios",
+    porciones:"Porciones 14-16",
+    tiempo:"1 1/2 horas + 6 horas de enfriamiento",
+    ingredientes:[
+        "Harina",
+        "Queso"
+    ],
+    instrucciones:[
+        "Batir",
+        "Hornear"
+    ]
 }
 
 class RecetaFullComponent extends HTMLElement{
@@ -135,7 +141,7 @@ class RecetaFullComponent extends HTMLElement{
         const foto = this.wrapper.appendChild(document.createElement('div'));
         foto.setAttribute("id","foto");
         img = foto.appendChild(document.createElement('img'));
-        img.setAttribute("src",receta.foto);
+        img.setAttribute("src",receta.img);
         img.setAttribute("alt",receta.nombre);
 
         const acciones = this.wrapper.appendChild(document.createElement('div'));
@@ -185,7 +191,7 @@ class RecetaFullComponent extends HTMLElement{
         votar.setAttribute("id","votar");
         h3 = votar.appendChild(document.createElement('h3'));
         h3.innerText = "Mi voto";
-        barraVotar = votar.appendChild(document.createElement('div'));
+        const barraVotar = votar.appendChild(document.createElement('div'));
         barraVotar.setAttribute("id","barraVotar");
         barraVotar.innerText = "Aqui va el webcomp app-barra-votar";
 
@@ -193,7 +199,7 @@ class RecetaFullComponent extends HTMLElement{
         comentar.setAttribute("id","comentar");
         h3 = comentar.appendChild(document.createElement('h3'));
         h3.innerText = "Comentarios";
-        barraComentar = comentar.appendChild(document.createElement('div'));
+        const barraComentar = comentar.appendChild(document.createElement('div'));
         barraComentar.setAttribute("id","barraComentar");
         barraComentar.innerText = "Aqui va el webcomp app-barra-comentar";
 

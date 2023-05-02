@@ -17,7 +17,7 @@ class SocialNetworksComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/social_networks.css");
+        this.css.setAttribute("href", "./styles/social_networks.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");

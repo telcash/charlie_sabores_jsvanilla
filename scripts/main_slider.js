@@ -60,7 +60,7 @@ class MainSliderComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/main_slider.css");
+        this.css.setAttribute("href", "./styles/main_slider.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
