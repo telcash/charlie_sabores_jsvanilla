@@ -70,17 +70,28 @@ HTML template:
 const receta = {
     nombre:"Tarta de Queso Red Velvet",
     img:"img/recetas/tarta_queso_red_velvet.jpeg",
-    rating: "4.5 (15 votos",
+    rating: "4.5 (15 votos)",
     comentarios:"6 comentarios",
     porciones:"Porciones 14-16",
-    tiempo:"1 1/2 horas + 6 horas de enfriamiento",
+    tiempo:"Tiempo: 1 1/2 horas + 6 horas de enfriamiento",
     ingredientes:[
-        "Harina",
-        "Queso"
+        "2 rondas de pastel de terciopelo rojo (9 pulgadas)",
+        "2 tazas (8 onzas) de azúcar de confitería",
+        "8 cucharadas de mantequilla sin sal, ablandada",
+        "1 1⁄2 libra de queso crema, ablandado",
+        "3⁄4 cucharadita de extracto de vainilla",
+        "Una pizca de sal",
+        "1 1⁄2 cucharadita de gelatina sin sabor",
+        "1 1⁄2 tazas de crema de leche",
+        "6 onzas de chocolate blanco, picado",
+        "1⁄2 taza (3 1/2 onzas) de azúcar granulada",
+        "Rizos de chocolate blanco"
     ],
     instrucciones:[
-        "Batir",
-        "Hornear"
+        "<strong>PARA EL PASTEL:</strong> Con un cuchillo dentado, divida los pasteles horizontalmente a 1 pulgada de la parte inferior. Con los dedos, desmenuza las tapas en pequeñas migas; deja a un lado las migas en un recipiente hermético. Coloca 1 ronda de pastel restante en un molde de resorte de 9 pulgadas; reserva la segunda ronda de pastel.",
+        "<strong>PARA EL FROSTING:</strong> Usando una batidora de pie equipada con paleta, bata el azúcar y la mantequilla de los confiteros a velocidad media-alta hasta que estén esponjosos, unos 2 minutos. Corte 8 onzas de queso crema en 4 piezas y agregue 1 pieza a la vez, continuando batir hasta que se incorpore, unos 30 segundos. Batir con vainilla y sal. Refrigerar el glaseado hasta que esté listo para usar.",
+        "<strong>PARA EL RELLENO:</strong> Espolvorear la gelatina sobre 1/2 taza de crema espesa en una cacerola pequeña y dejar reposar hasta que la gelatina se ablande, unos 5 minutos. Cocine la mezcla a fuego lento hasta que los bordes estén burbujeando. Agregue el chocolate blanco y continúe cocinando, revolviendo constantemente, hasta que se derrita y quede suave. Deje a un lado para que se enfríe ligeramente, unos 15 minutos. Usando una batidora de pie limpia equipada con un batidor, bata la restante 1 taza de crema espesa a velocidad media-alta a picos suaves, de 1 a 2 minutos; transfiera a un tazón mediano y reserve. Usando una batidora de pie ahora vacía equipada con paleta, bata el resto de 1 libra de queso crema y azúcar granulada a velocidad media-alta hasta que esté ligero y esponjoso, de 2 a 3 minutos. Reduzca la velocidad a media-baja, agregue la mezcla de chocolate blanco y mezcle hasta que se mezcle, raspando los lados del tazón según sea necesario. Con una espátula de goma, dobla suavemente la crema batida hasta que se mezcle.",
+        "<strong>PARA MONTAR:</strong> Extienda el relleno sobre el pastel en la sartén y alise en una capa uniforme. Coloque el pastel restante alrededor, corte el lado hacia abajo, en la parte superior. Cubra con una envoltura de plástico y refrigere hasta que esté listo, unas 6 horas. Pase un cuchillo fino entre el pastel y los lados de la sartén; retire los lados de la sartén. Transfiera el pastel al soporte o plato para pasteles. Extiende el glaseado en una capa uniforme sobre la parte superior y los lados del pastel. Presione suavemente las migas de pastel reservadas sobre los lados del pastel. Coloca un montículo de rizos de chocolate en el centro del pastel. Servir."
     ]
 }
 
@@ -118,7 +129,7 @@ class RecetaFullComponent extends HTMLElement{
         let enlace = rating.appendChild(document.createElement('a'));
         enlace.setAttribute("class","rating");
         let img = enlace.appendChild(document.createElement('img'));
-        img.setAttribute("src","img/icons/estrella.png");
+        img.setAttribute("src","img/icons/estrella_solid.png");
         img.setAttribute("alt","Icono rating");
         let h6 = enlace.appendChild(document.createElement('h6'));
         h6.innerText = receta.rating;
@@ -152,15 +163,17 @@ class RecetaFullComponent extends HTMLElement{
         let input = imprimir.appendChild(document.createElement('input'));
         input.setAttribute("type","button");
         input.setAttribute("name","imprimir");
+        input.setAttribute("value","IMPRIMIR");
         input.onclick = () => {
             alert('Receta impresa');
         }
 
         const guardar = acciones.appendChild(document.createElement('div'));
         guardar.setAttribute("class","acciones");
-        input = imprimir.appendChild(document.createElement('input'));
+        input = guardar.appendChild(document.createElement('input'));
         input.setAttribute("type","button");
         input.setAttribute("name","guardar");
+        input.setAttribute("value","GUARDAR");
         input.onclick = () => {
             alert('Receta guardada');
         }
@@ -170,10 +183,15 @@ class RecetaFullComponent extends HTMLElement{
         let h3 = ingredientes.appendChild(document.createElement('h3'));
         h3.innerText = "Lista de ingredientes: ";
         
-        let ul = ingredientes.appendChild(document.createElement('ul'));
         for (const ingrediente of receta.ingredientes){
-            const li = ul.appendChild(document.createElement('li'));
-            li.innerText = ingrediente;
+            const div = ingredientes.appendChild(document.createElement('div'));
+            div.setAttribute("class","ingrediente");
+            
+            const input = div.appendChild(document.createElement('input'));
+            input.setAttribute("type","checkbox");
+            
+            const h6 = div.appendChild(document.createElement('h6'));
+            h6.innerText = ingrediente;
         }
 
         const instrucciones = this.wrapper.appendChild(document.createElement('div'));
@@ -181,10 +199,20 @@ class RecetaFullComponent extends HTMLElement{
         h3 = instrucciones.appendChild(document.createElement('h3'));
         h3.innerText = "Instrucciones: ";
         
-        ul = instrucciones.appendChild(document.createElement('ul'));
+        let i = 1;
         for (const instruccion of receta.instrucciones){
-            const li = ul.appendChild(document.createElement('li'));
-            li.innerText = instruccion;
+            const div = instrucciones.appendChild(document.createElement('div'));
+            div.setAttribute("class","instruccion");
+
+            const instNum = div.appendChild(document.createElement('div'));
+            instNum.setAttribute("class","instNum");
+
+            const h4 = instNum.appendChild(document.createElement('h4'));
+            h4.innerText = i;
+
+            const h6 = div.appendChild(document.createElement('h6'));
+            h6.innerHTML = instruccion;
+            i++;
         }
 
         const votar = this.wrapper.appendChild(document.createElement('div'));

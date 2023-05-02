@@ -6,7 +6,6 @@
 
 #wrapper{
     max-width: 100%;
-    margin: auto;
     background-color: rgb(249,239,236);
     text-size-adjust: 100%;
     opacity: 0;
@@ -18,10 +17,10 @@ header, section, aside, article, footer{
 }
 
 .sticky{
+    width: 100%;
     z-index: 1;
     position: fixed;
     top: 0;
-    width: 100%;
 }
 
 

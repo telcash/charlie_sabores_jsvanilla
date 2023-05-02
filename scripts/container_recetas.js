@@ -74,7 +74,7 @@ const recetas = [
         descripcion:"Esta ingeniosa tarta combina dos postres clásicos: tarta de terciopelo rojo y tarta de queso.",
         img:"img/recetas/tarta_queso_red_velvet.jpeg",
         alt:"Tarta de Queso Red Velvet",
-        url:"#/"
+        url:"red_velvet_cheesecake.html"
     },
     {
         nombre:"Tarta de mousse de chocolate",

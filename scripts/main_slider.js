@@ -31,16 +31,16 @@ let h6;
 
 const items = [
     {
+        img: "img/recetas/tarta_queso_red_velvet.jpeg",
+        alt: "Tarta de Queso Red Velvet",
+        url: "red_velvet_cheesecake.html",
+        descripcion: "Esta ingeniosa tarta combina dos postres clásicos: tarta de terciopelo rojo y tarta de queso."
+    },
+    {
         img: "img/recetas/tarta_mousse_chocolate.jpeg",
         alt:"Tarta de mousse de chocolate",
         url: "#/",
         descripcion: "Una combinación de mousse, tarta y cobertura de chocolate adornada con merengues."
-    },
-    {
-        img: "img/recetas/tarta_queso_red_velvet.jpeg",
-        alt: "Tarta de Queso Red Velvet",
-        url: "#/",
-        descripcion: "Esta ingeniosa tarta combina dos postres clásicos: tarta de terciopelo rojo y tarta de queso."
     },
     {
         img: "img/articulos/kitchenaid_professional_5_plus.jpg",

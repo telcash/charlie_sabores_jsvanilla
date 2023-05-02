@@ -1,0 +1,154 @@
+.wrapper{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+}
+
+.wrapper > div{
+    max-width: 100%;
+    height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#titulo h1{
+    text-align: center;
+    font-size: 27px;
+}
+
+h6{
+    all: unset;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+#rating, .rating{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+#rating{
+    gap: 30px;
+}
+
+.rating{
+    gap: 10px;
+}
+
+.rating img{
+    width: 20px;
+    height: 20px;
+}
+
+#info{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+}
+
+#foto{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#foto img{
+    max-width: 100%;
+    height: auto;
+}
+
+#acciones, .acciones{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.acciones{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.acciones input{
+    appearance: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(60,60,60);
+    width: 100%;
+}
+
+.acciones input:hover{
+    background-color: grey;
+}
+
+#ingredientes, #instrucciones{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+#ingredientes h3{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(60,60,60);
+    text-transform: uppercase;
+}
+
+.ingrediente{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5px;
+    align-items: baseline;
+}
+
+input[type=checkbox]{
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #999;
+    transition: 0.1s border linear;
+}
+
+input[type=checkbox]:checked{
+    border: 6px solid black;
+}
+
+#instrucciones h3{
+    text-transform: uppercase;
+}
+
+.instruccion{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.instNum{
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgb(60,60,60);
+    border-radius: 50%;
+    background-color: rgb(60,60,60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instruccion h4{
+    color: white;
+    font-size: 14px; 
+}
+
+.instruccion h6{
+    padding-top: 10px;
+    border-top: 1px solid rgb(60,60,60);
+    line-height: 1.5;
+}
