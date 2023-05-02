@@ -50,11 +50,8 @@ HTML template:
     <div id="barraVotar">
         <app-barra-votar></app-barra-votar>
     </div>
-    <div id="comentar">
-        <h3>Comentarios</h3>
-        <div>
-            Aquí va la barra de comentar
-        </div>
+    <div id="barraComentar">
+        <app-barra-comentar></app-barra-comentar>
     </div>
 
 </div>
@@ -65,7 +62,7 @@ const receta = {
     nombre:"Tarta de Queso Red Velvet",
     img:"img/recetas/tarta_queso_red_velvet.jpeg",
     rating: "4.5 (15 votos)",
-    comentarios:"6 comentarios",
+    comentarios:"3 comentarios",
     porciones:"Porciones 14-16",
     tiempo:"Tiempo: 1 1/2 horas + 6 horas de enfriamiento",
     ingredientes:[
@@ -213,13 +210,9 @@ class RecetaFullComponent extends HTMLElement{
         barraVotar.setAttribute("id","barraVotar");
         barraVotar.appendChild(document.createElement('app-barra-votar'));
 
-        const comentar = this.wrapper.appendChild(document.createElement('div'));
-        comentar.setAttribute("id","comentar");
-        h3 = comentar.appendChild(document.createElement('h3'));
-        h3.innerText = "Comentarios";
-        const barraComentar = comentar.appendChild(document.createElement('div'));
+        const barraComentar = this.wrapper.appendChild(document.createElement('div'));
         barraComentar.setAttribute("id","barraComentar");
-        
+        barraComentar.appendChild(document.createElement('app-barra-comentar'));
 
         this.shadowRoot.appendChild(this.wrapper);
     }

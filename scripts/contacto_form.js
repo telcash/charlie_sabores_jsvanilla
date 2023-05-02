@@ -50,7 +50,7 @@ HTML template
                 <option value="queja">Queja</option>
             </select>
         </div>
-        <div id="comentarions">
+        <div id="comentarios">
             <textarea name="comentarios" id="comentarios" cols="30" rows="10">
                 Comentarios
             </textarea>
@@ -96,8 +96,8 @@ class ContactoFormComponent extends HTMLElement{
 
         const contacto = this.wrapper.appendChild(document.createElement('form'));
         contacto.setAttribute("id","contacto");
-        contacto.setAttribute("method","post")
-        contacto.setAttribute("action","#/")
+        contacto.setAttribute("method","post");
+        contacto.setAttribute("action","#/");
 
         const nombre = contacto.appendChild(document.createElement('div'))
         nombre.setAttribute("id","nombre");
