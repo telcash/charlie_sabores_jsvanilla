@@ -18,6 +18,7 @@ HTML template:
 
  */
 
+
 const articulos = [
     {
         nombre: "Las mejores sartenes antiadherentes de 12 pulgadas",
@@ -98,7 +99,7 @@ class ContainerArticulosComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/container_articulos.css");
+        this.css.setAttribute("href", "styles/web_components/container_articulos.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");

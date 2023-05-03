@@ -58,7 +58,7 @@ class BarraVotarComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/barra_votar.css");
+        this.css.setAttribute("href", "styles/web_components/barra_votar.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");

@@ -8,7 +8,7 @@ HTML template
             <img src="img/nav_logo.png" alt="Icono barra de navegacion">
         </div>
         <div class="mainLogo">
-            <a href="index.html"><img src="img/main_logo.jpeg" alt="Logo principal"></a>
+            <a href="index.html"><img src="img/main_logo.png" alt="Logo principal"></a>
         </div>
         <form name="searchForm" class="searchBar">
             <button type="submit" onclick="notImplemented()"><img src="img/search_icon.png"></button>
@@ -30,7 +30,7 @@ class NavBarComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "./styles/nav_bar.css");
+        this.css.setAttribute("href", "./styles/web_components/nav_bar.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -61,7 +61,7 @@ class NavBarComponent extends HTMLElement{
         a.setAttribute("href","index.html");
 
         img = a.appendChild(document.createElement('img'));
-        img.src = "img/icons/main_logo.jpeg";
+        img.src = "img/icons/main_logo.png";
         img.alt = "Logo principal";
 
         const form = nav.appendChild(document.createElement('form'));

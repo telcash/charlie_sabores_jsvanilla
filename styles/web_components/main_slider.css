@@ -118,7 +118,7 @@ img{
         grid-row-end: 4;
         grid-column-start: 5;
         grid-column-end: 6;
-        background-image: none;
+        background-image: unset;
         background-color: grey;
     }
 
@@ -179,6 +179,24 @@ img{
     .vacio3{
         grid-row-start: 1;
         grid-row-end: 3;
+        grid-column-start: 5;
+        grid-column-end: 6;
+    }
+
+    .vacio4, .vacio5{
+        display: block;
+        background-color: rgb(249,239,236);
+    }
+
+    .vacio4{
+        grid-row-start: 5;
+        grid-row-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .vacio5{
+        grid-row-start: 5;
+        grid-row-end: 6;
         grid-column-start: 5;
         grid-column-end: 6;
     }

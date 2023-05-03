@@ -28,7 +28,7 @@ class ContactoCardComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/contacto_card.css");
+        this.css.setAttribute("href", "styles/web_components/contacto_card.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");

@@ -60,7 +60,7 @@ class MainSliderComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "./styles/main_slider.css");
+        this.css.setAttribute("href", "./styles/web_components/main_slider.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -108,6 +108,10 @@ class MainSliderComponent extends HTMLElement{
         vacio2.setAttribute("class","vacio2");
         const vacio3 = slide.appendChild(document.createElement('div'));
         vacio3.setAttribute("class","vacio3");
+        const vacio4 = slide.appendChild(document.createElement('div'));
+        vacio4.setAttribute("class","vacio4");
+        const vacio5 = slide.appendChild(document.createElement('div'));
+        vacio5.setAttribute("class","vacio5");
         
         
         this.shadowRoot.appendChild(this.wrapper);

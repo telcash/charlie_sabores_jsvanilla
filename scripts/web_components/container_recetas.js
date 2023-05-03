@@ -103,7 +103,7 @@ class ContainerRecetasComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/container_recetas.css");
+        this.css.setAttribute("href", "styles/web_components/container_recetas.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");

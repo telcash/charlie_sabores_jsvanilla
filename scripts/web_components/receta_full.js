@@ -99,7 +99,7 @@ class RecetaFullComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/receta_full.css");
+        this.css.setAttribute("href", "styles/web_components/receta_full.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -228,7 +228,6 @@ class RecetaFullComponent extends HTMLElement{
 customElements.define('app-receta-full',RecetaFullComponent);
 
 function ubicarFoto(){
-    console.log(foto.style.left);
     if(window.innerWidth >= 1024){
         left = 604 + (window.innerWidth - 1024)/2;
         foto.style.left = left + "px";

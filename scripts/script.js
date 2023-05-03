@@ -3,7 +3,6 @@ let sticky;
 let content;
 
 window.onload = () =>{
-    console.log(window.location.href);
     wrapper = document.querySelector("#wrapper");
     wrapper.style.opacity = 1;
     header = document.querySelector("header");
