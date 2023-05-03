@@ -1,0 +1,52 @@
+.wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: white;
+    cursor: pointer;
+}
+
+.imgContainer{
+    padding: 5px;
+}
+
+.imgContainer img{
+    border-radius: 50%;
+    max-width: 95px;
+    height: auto;
+    padding: 5px;
+}
+
+.info{
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+}
+
+h4{
+    padding: 0;
+    font-size: 4vw;
+    text-align: left;
+    padding-left:10px;
+    padding-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}   
+
+@media only screen and (max-width: 800px){
+    
+}
+
+
+@media only screen and (min-width: 800px){
+    .imgContainer img{
+        max-width: 120px;
+        height: auto;
+    }
+    h4{
+        font-size: 20px;
+    }
+}  
+
+@media only screen and (min-width: 1024px){
+
+}

@@ -64,7 +64,9 @@ input:hover{
 
 .container{
     background-color: rgb(240,240,240);
+    padding: 15px;
 }
+
 
 h5{
     margin: 0;

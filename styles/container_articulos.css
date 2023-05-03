@@ -10,7 +10,7 @@
 }
 
 .articulo{
-    width: 100%;
+    max-width: 100%;
 }
 
 h2{
@@ -28,6 +28,7 @@ h2{
     .container{
         display: inline-grid;
         grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
     }
 }  
 

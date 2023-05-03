@@ -14,7 +14,7 @@ Plantilla HTML:
 </div> 
 */
 
-class ArticuloComponent extends HTMLElement{
+class ArticuloCardComponent extends HTMLElement{
 
     css;
     wrapper;
@@ -25,7 +25,7 @@ class ArticuloComponent extends HTMLElement{
 
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
-        this.css.setAttribute("href", "styles/articulo.css");
+        this.css.setAttribute("href", "styles/articulo_card.css");
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -63,4 +63,4 @@ class ArticuloComponent extends HTMLElement{
     }
 }
 
-customElements.define('app-articulo', ArticuloComponent);
+customElements.define('app-articulo-card', ArticuloCardComponent);

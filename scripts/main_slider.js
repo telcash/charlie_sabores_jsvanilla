@@ -46,7 +46,7 @@ const items = [
         img: "img/articulos/kitchenaid_professional_5_plus.jpg",
         alt: "Kitchenaid Professional 5 plus",
         url: "#/",
-        descripcion: "Un versátil ayudante para todas tus preparaciones. Descubre todas sus funciones."
+        descripcion: "KitchenAid Pro 5 Plus. Un versátil ayudante en la cocina"
     }
 ]
 

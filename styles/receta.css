@@ -3,3 +3,8 @@
     flex-flow: column wrap;
     justify-content: center;
 }
+
+section{
+    padding-top: 25px;
+    padding-bottom: 50px;
+}

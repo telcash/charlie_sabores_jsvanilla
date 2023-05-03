@@ -5,10 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/script.js"></script>
+    <script src="scripts/articulo_card.js"></script>
+    <script src="scripts/container_articulos.js"></script>
+    <script src="scripts/ext_web.js"></script>
     <script src="scripts/footer.js"></script>
-    <script src="scripts/main_slider.js"></script>
     <script src="scripts/header.js"></script>
+    <script src="scripts/main_slider.js"></script>
+    <script src="scripts/nav_bar.js"></script>
+    <script src="scripts/nav_list.js"></script>
+    <script src="scripts/social_networks.js"></script>
+    <script src="scripts/top_bar.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/articulo.css">
     <title>Artículos</title>
 </head>
 <body>
@@ -16,9 +24,9 @@
         <header>
             <app-header></app-header>
         </header>
-        <article>
-            ...... ARTICULOS .......
-        </article>
+        <section>
+            <app-container-articulos max="9"></app-container-articulos>
+        </section>
         <footer>
             <app-footer></app-footer>
         </footer>

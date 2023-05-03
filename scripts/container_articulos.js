@@ -39,6 +39,48 @@ const articulos = [
         img: "img/articulos/refrigerar_salsa_soja.jpg",
         alt: "¿Deberías Refrigerar La Salsa De Soja?",
         url: "#/"
+    },
+    {
+        nombre: "KitchenAid Pro 5 Plus. Un versátil ayudante en la cocina",
+        descripcion: "",
+        img: "img/articulos/kitchenaid_professional_5_plus.jpg",
+        alt: "KitchenAid Pro 5 Plus",
+        url: "#/"
+    },
+    {
+        nombre: "Los mejores aceites en spray para hornear",
+        descripcion: "",
+        img: "img/articulos/spray_hornear.jpg",
+        alt: "Aceites en spray",
+        url: "#/"
+    },
+    {
+        nombre: "¿Es necesario un multiccoker?",
+        descripcion: "",
+        img: "img/articulos/multicookers.jpg",
+        alt: "Multicookers",
+        url: "#/"
+    },
+    {
+        nombre: "Las mejores batidoras de inmersión",
+        descripcion: "",
+        img: "img/articulos/batidoras_inmersion.jpg",
+        alt: "Batidoras de inmersion",
+        url: "#/"
+    },
+    {
+        nombre: "¿Por qué amamos los air fryers?",
+        descripcion: "",
+        img: "img/articulos/air_fryers.jpg",
+        alt: "Air fryers",
+        url: "#/"
+    },
+    {
+        nombre: "Vainilla molida y en polvo",
+        descripcion: "",
+        img: "img/articulos/vainilla_molida_polvo.jpg",
+        alt: "Vainilla molida y en polvo",
+        url: "#/"
     }
 ]
 
@@ -80,7 +122,7 @@ class ContainerArticulosComponent extends HTMLElement{
 
         let i = 0;
         do{
-            const articulo = container.appendChild(document.createElement('app-articulo'));
+            const articulo = container.appendChild(document.createElement('app-articulo-card'));
             articulo.setAttribute("class","articulo");
             articulo.setAttribute("nombre",articulos[i].nombre);
             articulo.setAttribute("descripcion",articulos[i].descripcion);
