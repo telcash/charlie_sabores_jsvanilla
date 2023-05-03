@@ -37,17 +37,17 @@ const items = [
         descripcion: "Esta ingeniosa tarta combina dos postres clásicos: tarta de terciopelo rojo y tarta de queso."
     },
     {
+        img: "img/articulos/kitchenaid_professional_5_plus.jpg",
+        alt: "KitchenAid Pro 5 Plus",
+        url: "#/",
+        descripcion: "KitchenAid Pro 5 Plus. Un versátil ayudante en la cocina. Descubre todas las posibilidades"
+    },
+    {
         img: "img/recetas/tarta_mousse_chocolate.jpeg",
         alt:"Tarta de mousse de chocolate",
         url: "#/",
         descripcion: "Una combinación de mousse, tarta y cobertura de chocolate adornada con merengues."
-    },
-    {
-        img: "img/articulos/kitchenaid_professional_5_plus.jpg",
-        alt: "Kitchenaid Professional 5 plus",
-        url: "#/",
-        descripcion: "KitchenAid Pro 5 Plus. Un versátil ayudante en la cocina"
-    }
+    } 
 ]
 
 class MainSliderComponent extends HTMLElement{
@@ -112,19 +112,10 @@ class MainSliderComponent extends HTMLElement{
         vacio4.setAttribute("class","vacio4");
         const vacio5 = slide.appendChild(document.createElement('div'));
         vacio5.setAttribute("class","vacio5");
-        
-        
+                
         this.shadowRoot.appendChild(this.wrapper);
 
-        
         showSlide(activeSlide);
-        
-        // para que es esto?????
-        // es para responsive ....
-        /* window.addEventListener("resize",() =>{
-            showSlide(activeSlide);
-        }) */
-        
     }
     
 }
