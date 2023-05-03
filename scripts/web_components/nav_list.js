@@ -1,17 +1,3 @@
-/*
-
-HTML template:
-
-<div class="wrapper">
-    <ul>
-        <li><a href="">Navegar a ...</a></li>
-        <li><a href="">Navegar a ...</a></li>
-        <li><a href="">Navegar a ...</a></li>
-    </ul>
-</div>
-
-*/
-
 class NavListComponent extends HTMLElement{
     css;
     wrapper;

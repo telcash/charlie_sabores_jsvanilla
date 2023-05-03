@@ -1,15 +1,3 @@
-/*
-
-HTML template:
-
-<div class="wrapper">
-    <app-social-networks class="socialNetworks"></app-social-networks>
-    <app-nav-list class="navList"></app-nav-list>
-    <app-ext-web class="extWeb"></app-ext-web>
-</div> 
-
-*/
-
 class FooterComponent extends HTMLElement {
     
     css;

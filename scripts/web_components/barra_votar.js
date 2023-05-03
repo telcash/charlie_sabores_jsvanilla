@@ -1,57 +1,11 @@
-/*
-
-HTML template:
-
-<div class="wrapper">
-    <div id="encabezado">
-        <div id="titulo">
-            <h2>Mi voto</h2>
-        </div>
-        <div id="miVoto">
-            <h6></h6>
-        </div>
-    </div>
-    <div id="barra">
-        <div id="estrellas">
-            <div class="iconContainer">
-                <img src="img/icons/estrella.png"></img>
-            </div>
-            <div class="iconContainer">
-                <img src="img/icons/estrella.png"></img>
-            </div>
-            <div class="iconContainer">
-                <img src="img/icons/estrella.png"></img>
-            </div>
-            <div class="iconContainer">
-                <img src="img/icons/estrella.png"></img>
-            </div>
-            <div class="iconContainer">
-                <img src="img/icons/estrella.png"></img>
-            </div>
-        </div>
-        <div id="texto">
-            <h6></h6>
-        </div>
-    </div>
-</div>
-
-*/
-
-let iconos;
-let rating;
-let borrarVoto;
-let miRating = -1;
-const textos = [
-    "No es para mí",
-    "Solo OK",
-    "Buena",
-    "Muy buena",
-    "La adoré!!!"
-]
-
 class BarraVotarComponent extends HTMLElement{
+    iconos;
+    rating;
+    borrarVoto;
+    miRating;
     css;
     wrapper;
+    textos;
 
     constructor(){
         super();
@@ -59,6 +13,15 @@ class BarraVotarComponent extends HTMLElement{
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/web_components/barra_votar.css");
+
+        this.miRating = -1;
+        this.textos = [
+            "No es para mí",
+            "Solo OK",
+            "Buena",
+            "Muy buena",
+            "La adoré!!!"
+        ]
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -81,9 +44,9 @@ class BarraVotarComponent extends HTMLElement{
         
         const borrarVotoContainer = encabezado.appendChild(document.createElement('div'));
         borrarVotoContainer.setAttribute("id","borrarVotoContainer");
-        borrarVoto = borrarVotoContainer.appendChild(document.createElement('h6'));
-        borrarVoto.addEventListener("click",() =>{
-            borrarMiVoto();
+        this.borrarVoto = borrarVotoContainer.appendChild(document.createElement('h6'));
+        this.borrarVoto.addEventListener("click",() =>{
+            this.borrarMiVoto();
         })
 
         const barra = this.wrapper.appendChild(document.createElement('div'));
@@ -99,78 +62,79 @@ class BarraVotarComponent extends HTMLElement{
             img.setAttribute("src","img/icons/estrella.png");
             img.setAttribute("alt","Icono estrella");
             img.addEventListener("mouseenter",() =>{
-                iconMouseEnter(i);
+                this.iconMouseEnter(i);
             });
             img.addEventListener("mouseleave",() =>{
-                iconMouseLeave();
+                this.iconMouseLeave();
             });
             img.addEventListener("click",() =>{
-                iconClicked(i);
+                this.iconClicked(i);
             })
         }
 
         const texto = barra.appendChild(document.createElement('div'));
         texto.setAttribute("id","texto");
-        rating = texto.appendChild(document.createElement('h6'));
-        rating.innerText = "";
+        this.rating = texto.appendChild(document.createElement('h6'));
+        this.rating.innerText = "";
         this.shadowRoot.appendChild(this.wrapper);
 
-        iconos = this.shadowRoot.querySelectorAll("img");
+        this.iconos = this.shadowRoot.querySelectorAll("img");
+    }
+
+    iconMouseEnter(n){
+        let i = 0;
+    
+        for(const icon of this.iconos){
+            if(i <= n){
+                icon.setAttribute("src","img/icons/estrella_solid.png");
+            }else{
+                icon.setAttribute("src","img/icons/estrella.png");
+            }
+            i++;
+        }
+        this.rating.innerText = this.textos[n];
+    }
+    
+    iconMouseLeave(){
+        let i = 0;
+        for(const icon of this.iconos){
+            if(i <= this.miRating){
+                icon.setAttribute("src","img/icons/estrella_solid.png");
+            }else{
+                icon.setAttribute("src","img/icons/estrella.png");
+            }
+            i++;
+        }
+        if(this.miRating <0){
+            this.rating.innerText = "";
+        }else{
+            this.rating.innerText = this.textos[this.miRating];
+        }
+    }
+    
+    iconClicked(n){
+        this.miRating = n;
+        let i = 0;
+        for(const icon of this.iconos){
+            if(i <= n){
+                icon.setAttribute("src","img/icons/estrella_solid.png");
+            }else{
+                icon.setAttribute("src","img/icons/estrella.png");
+            }
+            i++;
+        }
+        this.borrarVoto.innerText = "Borrar voto";
+    }
+    
+    borrarMiVoto(){
+        this.miRating = -1;
+        this.borrarVoto.innerText = "";
+        this.rating.innerText = "";
+        for(const icon of this.iconos){
+            icon.setAttribute("src","img/icons/estrella.png");
+        }
     }
 }
 
 customElements.define('app-barra-votar', BarraVotarComponent);
 
-function iconMouseEnter(n){
-    let i = 0;
-
-    for(icon of iconos){
-        if(i <= n){
-            icon.setAttribute("src","img/icons/estrella_solid.png");
-        }else{
-            icon.setAttribute("src","img/icons/estrella.png");
-        }
-        i++;
-    }
-    rating.innerText = textos[n];
-}
-
-function iconMouseLeave(){
-    let i = 0;
-    for(icon of iconos){
-        if(i <= miRating){
-            icon.setAttribute("src","img/icons/estrella_solid.png");
-        }else{
-            icon.setAttribute("src","img/icons/estrella.png");
-        }
-        i++;
-    }
-    if(miRating <0){
-        rating.innerText = "";
-    }else{
-        rating.innerText = textos[miRating];
-    }
-}
-
-function iconClicked(n){
-    miRating = n;
-    let i = 0;
-    for(icon of iconos){
-        if(i <= n){
-            icon.setAttribute("src","img/icons/estrella_solid.png");
-        }else{
-            icon.setAttribute("src","img/icons/estrella.png");
-        }
-        i++;
-    }
-    borrarVoto.innerText = "Borrar voto";
-}
-
-function borrarMiVoto(){
-    miRating = -1;
-    borrarVoto.innerText = "";
-    rating.innerText = "";
-    for(icon of iconos){
-        icon.setAttribute("src","img/icons/estrella.png");
-    }
-}

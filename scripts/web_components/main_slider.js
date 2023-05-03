@@ -1,34 +1,3 @@
-/*
-
-HTML template:
-
-<div class="wrapper">
-    <div class="slide">
-        <a class= "img" href="#/">
-            <img src="" alt="">
-        </a>
-        <a class= "descripcion" href="#/">
-            <h6>Un texto descriptivo corto que explique un poco la imagen</h6>
-        </a>
-        <a class= "left" href="#/">&#10094;</a>
-        <a class= "right" href="index.html">&#10095</a>
-        <div class="autorCard">
-            <app-autor-card class="autorCard"></app-autor-card>
-        </div>
-    </div>
-</div>
-
-*/
-
-
-let activeSlide = 0;
-let timeoutId;
-let slides;
-let enlace;
-let img;
-let descripcion;
-let h6;
-
 const items = [
     {
         img: "img/recetas/tarta_queso_red_velvet.jpeg",
@@ -52,6 +21,12 @@ const items = [
 
 class MainSliderComponent extends HTMLElement{
 
+    activeSlide;
+    timeoutId;
+    enlace;
+    img;
+    descripcion;
+    h6;
     css;
     wrapper;
 
@@ -61,6 +36,8 @@ class MainSliderComponent extends HTMLElement{
         this.css = document.createElement('link');
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "./styles/web_components/main_slider.css");
+
+        this.activeSlide = 0;
 
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
@@ -78,24 +55,29 @@ class MainSliderComponent extends HTMLElement{
         const slide = this.wrapper.appendChild(document.createElement('div'));
         slide.setAttribute("class","slide");
 
-        enlace = slide.appendChild(document.createElement('a'));
-        enlace.setAttribute("class","img");
+        this.enlace = slide.appendChild(document.createElement('a'));
+        this.enlace.setAttribute("class","img");
         
-        img = enlace.appendChild(document.createElement('img'));
+        this.img = this.enlace.appendChild(document.createElement('img'));
         
-        descripcion = slide.appendChild(document.createElement('a'));
-        descripcion.setAttribute("class","descripcion");
-        h6 = descripcion.appendChild(document.createElement('h6'));
+        this.descripcion = slide.appendChild(document.createElement('a'));
+        this.descripcion.setAttribute("class","descripcion");
+        this.h6 = this.descripcion.appendChild(document.createElement('h6'));
         
         const left = slide.appendChild(document.createElement('a'));
         left.setAttribute("class","left");
         left.innerHTML = "&#10094;";
-        left.addEventListener("click", showPrevSlide);
+        left.addEventListener("click", () =>{
+            this.showPrevSlide();
+        });
         
         const right = slide.appendChild(document.createElement('a'));
         right.setAttribute("class","right");
         right.innerHTML = "&#10095;";
-        right.addEventListener("click", showNextSlide);
+
+        right.addEventListener("click",() =>{
+            this.showNextSlide();
+        });
         
         
         const autorCard = slide.appendChild(document.createElement('div'));
@@ -115,39 +97,43 @@ class MainSliderComponent extends HTMLElement{
                 
         this.shadowRoot.appendChild(this.wrapper);
 
-        showSlide(activeSlide);
+        this.showSlide(this.activeSlide);
+    }
+
+    showSlide(slideIndex){
+    
+        clearTimeout(this.timeoutId);
+        this.enlace.setAttribute("href",items[slideIndex].url);
+        this.img.setAttribute("src", items[slideIndex].img);
+        this.img.setAttribute("alt", items[slideIndex].alt);
+        this.descripcion.setAttribute("href",items[slideIndex].url);
+        this.h6.innerText = items[slideIndex].descripcion;
+        
+        this.timeoutId = setTimeout(() =>{
+            this.showNextSlide();
+        }, 5000)
+    
+    }
+    
+    showNextSlide() {
+    
+        this.activeSlide++;
+        if(this.activeSlide >= items.length){
+            this.activeSlide = 0;
+        }
+        this.showSlide(this.activeSlide);
+    }
+    
+    showPrevSlide(){
+        this.activeSlide--;
+        if(this.activeSlide < 0){
+            this.activeSlide = (items.length) - 1;
+        }
+        this.showSlide(this.activeSlide);
     }
     
 }
 
-function showSlide(slideIndex){
-    
-    clearTimeout(timeoutId);
-    enlace.setAttribute("href",items[slideIndex].url);
-    img.setAttribute("src", items[slideIndex].img);
-    img.setAttribute("alt", items[slideIndex].alt);
-    descripcion.setAttribute("href",items[slideIndex].url);
-    h6.innerText = items[slideIndex].descripcion;
-    
-    timeoutId = setTimeout(showNextSlide, 5000)
 
-}
-
-function showNextSlide() {
-
-    activeSlide++;
-    if(activeSlide >= items.length){
-        activeSlide = 0;
-    }
-    showSlide(activeSlide);
-}
-
-function showPrevSlide(){
-    activeSlide--;
-    if(activeSlide < 0){
-        activeSlide = (items.length) - 1;
-    }
-    showSlide(activeSlide);
-}
 
 customElements.define('app-main-slider', MainSliderComponent);

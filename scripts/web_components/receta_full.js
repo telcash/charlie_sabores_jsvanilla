@@ -1,65 +1,3 @@
-/*
-
-HTML template:
-
-<div class="wrapper">
-    <div id="header">
-        <div id="titulo">
-            <h1>Titulo de la receta</h1>
-        </div>
-        <div id="rating">
-            <a href="#/" class="rating">
-                <img src="img/icons/estrella.png" alt="Icono rating">
-                <h6>rating ...</h6>
-            </a>
-            <a href="#/" class="rating">
-                <img src="img/icons/nube.png" alt="Icono comentario">
-                <h6>número comentarios ...</h6>
-            </a>
-        </div>
-        <div id="info">
-            <h6>Porciones</h6>
-            <h6>Tiempo</h6>
-        </div>
-        <div id="foto">
-            <img src="" alt="Nombre de la receta">
-        </div>
-        <div id="acciones">
-            <div id="imprimir" class="acciones">
-                <input type="button" name="imprimir" onclick="alert('Receta impresa')" value="Imprimir">
-            </div>
-            <div id="guardar" class="acciones">
-                <input type="button" name="guardar" onclick="alert('Receta guardada')" value="Guardar">
-            </div>
-        </div>
-    </div>
-    <div id="ingredientes">
-        <h3>Lista de ingredientes</h3>
-        <ul>
-            <li>ingrediente 1</li>
-
-            <li>ingrediente n</li>
-        </ul>
-    </div>
-    <div id="instrucciones">
-        <h3>Instrucciones</h3>
-        <ul>
-            <li>instruccion 1</li>
-
-            <li>instruccion 2</li>
-        </ul>
-    </div>
-    <div id="barraVotar">
-        <app-barra-votar></app-barra-votar>
-    </div>
-    <div id="barraComentar">
-        <app-barra-comentar></app-barra-comentar>
-    </div>
-
-</div>
-
- */
-
 const receta = {
     nombre:"Tarta de Queso Red Velvet",
     img:"img/recetas/tarta_queso_red_velvet.jpeg",
@@ -88,9 +26,9 @@ const receta = {
     ]
 }
 
-let foto;
 let left;
 class RecetaFullComponent extends HTMLElement{
+    foto;
     css;
     wrapper;
 
@@ -144,9 +82,9 @@ class RecetaFullComponent extends HTMLElement{
         h6 = info.appendChild(document.createElement('h6'));
         h6.innerText = receta.tiempo;
 
-        foto = this.wrapper.appendChild(document.createElement('div'));
-        foto.setAttribute("id","foto");
-        img = foto.appendChild(document.createElement('img'));
+        this.foto = this.wrapper.appendChild(document.createElement('div'));
+        this.foto.setAttribute("id","foto");
+        img = this.foto.appendChild(document.createElement('img'));
         img.setAttribute("src",receta.img);
         img.setAttribute("alt",receta.nombre);
 
@@ -220,19 +158,22 @@ class RecetaFullComponent extends HTMLElement{
 
         this.shadowRoot.appendChild(this.wrapper);
 
-        ubicarFoto();
-        window.addEventListener("resize", ubicarFoto);
+        this.ubicarFoto();
+        window.addEventListener("resize", () =>{
+            this.ubicarFoto();
+        });
+    }
+
+    ubicarFoto(){
+        if(window.innerWidth >= 1024){
+            left = 604 + (window.innerWidth - 1024)/2;
+            this.foto.style.left = left + "px";
+        }else{
+            left = 460 + (window.innerWidth - 800)/2;
+            this.foto.style.left = left + "px";
+        }
     }
 }
 
 customElements.define('app-receta-full',RecetaFullComponent);
 
-function ubicarFoto(){
-    if(window.innerWidth >= 1024){
-        left = 604 + (window.innerWidth - 1024)/2;
-        foto.style.left = left + "px";
-    }else{
-        left = 460 + (window.innerWidth - 800)/2;
-        foto.style.left = left + "px";
-    }
-}

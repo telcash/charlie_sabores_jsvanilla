@@ -1,24 +1,3 @@
-/*
-
-HTML template
-
-<div class="wrapper">
-    <nav class="nav">
-        <div class="navButton">
-            <img src="img/nav_logo.png" alt="Icono barra de navegacion">
-        </div>
-        <div class="mainLogo">
-            <a href="index.html"><img src="img/main_logo.png" alt="Logo principal"></a>
-        </div>
-        <form name="searchForm" class="searchBar">
-            <button type="submit" onclick="notImplemented()"><img src="img/search_icon.png"></button>
-            <input type="text" placeholder="Buscar..">
-        </form>
-    </nav>
-</div>
-
-*/
-
 class NavBarComponent extends HTMLElement{
 
     css;

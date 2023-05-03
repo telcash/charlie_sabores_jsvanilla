@@ -1,19 +1,3 @@
-/* 
-Plantilla HTML:
-
-<div class="wrapper">
-    <div class="imgContainer">
-        <img src="img/articulo_test.jpeg" alt="">
-    </div>
-    <div class="titulo">
-        <h4>Titulo del artículo</h4>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis corporis maiores 
-        repudiandae laudantium, possimus, unde delectus quia veritatis nulla quod placeat! 
-        In cumque dolor voluptas, corporis nemo adipisci? Aspernatur, architecto</p>
-    </div>
-</div> 
-*/
-
 class ArticuloCardComponent extends HTMLElement{
 
     css;

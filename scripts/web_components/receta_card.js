@@ -1,20 +1,3 @@
-/* 
-Plantilla HTML: 
-
-<div class="wrapper">
-    <div class="imgContainer">
-        <img src="img/receta_test.jpeg">
-    </div>
-    <div class="info">
-        <h4>Titulo</h4>
-        <p>Descripcion</p>
-    </div>
-    <div class="autorContainer">
-        <app-autor-card></app-autor-card>
-    </div>
-</div>   
-*/
-
 class RecetaCardComponent extends HTMLElement{
 
     css;

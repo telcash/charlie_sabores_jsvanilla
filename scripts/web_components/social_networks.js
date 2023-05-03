@@ -1,11 +1,3 @@
-/* 
-HTML template:
-
-<div class="wrapper">
-    <a href=""><img src="" alt=""></a>
-</div> 
-*/
-
 class SocialNetworksComponent extends HTMLElement{
 
     css;

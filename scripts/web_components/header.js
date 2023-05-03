@@ -1,29 +1,10 @@
-/*
-
-HTML template
-
-<div class="wrapper">
-    <div class="topBar">
-        <app-top-bar></app-top-bar>
-    </div>
-    <div class="navBar">
-        <app-nav-bar></app-nav-bar>
-    </div>
-    <div class="navList">
-        <app-nav-list></app-nav-list>
-    </div>
-</div>
-
-*/
-
-let navList; 
-let navBar;
-let topBar;
-let screenSmall;
-let toggleOn = false;
-
 class HeaderComponent extends HTMLElement{
     
+    navList;
+    navBar;
+    topBar;
+    screenSmall;
+    toggleOn;
     css;
     wrapper;
     
@@ -34,10 +15,14 @@ class HeaderComponent extends HTMLElement{
         this.css.setAttribute("rel", "stylesheet");
         this.css.setAttribute("href", "styles/web_components/header.css");
 
+        this.toggleOn = false;
+
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute("class","wrapper");
 
-        this.addEventListener('navButtonClicked', navListToggle);
+        this.addEventListener('navButtonClicked',() =>{
+           this.navListToggle(); 
+        });
     }
 
     connectedCallback(){
@@ -47,55 +32,55 @@ class HeaderComponent extends HTMLElement{
         
         this.shadowRoot.appendChild(this.css);
 
-        topBar = this.wrapper.appendChild(document.createElement('div'));
-        topBar.setAttribute("class","topBar");
-        topBar.appendChild(document.createElement('app-top-bar'));
+        this.topBar = this.wrapper.appendChild(document.createElement('div'));
+        this.topBar.setAttribute("class","topBar");
+        this.topBar.appendChild(document.createElement('app-top-bar'));
 
-        navBar = this.wrapper.appendChild(document.createElement('div'));
-        navBar.setAttribute("class","navBar");
-        navBar.appendChild(document.createElement('app-nav-bar'));
+        this.navBar = this.wrapper.appendChild(document.createElement('div'));
+        this.navBar.setAttribute("class","navBar");
+        this.navBar.appendChild(document.createElement('app-nav-bar'));
 
-        navList = this.wrapper.appendChild(document.createElement('div'));
+        this.navList = this.wrapper.appendChild(document.createElement('div'));
         
-        navList.setAttribute("class","navList");
+        this.navList.setAttribute("class","navList");
 
 
-        navList.appendChild(document.createElement('app-nav-list'));
+        this.navList.appendChild(document.createElement('app-nav-list'));
         
         
         
         this.shadowRoot.appendChild(this.wrapper);
 
         if(window.innerWidth < 800){
-            screenSmall = true;
+            this.screenSmall = true;
         }else{
-            screenSmall = false;
+            this.screenSmall = false;
         }
 
         window.addEventListener('resize', ()=>{
             if(window.innerWidth >= 800){
-                navList.style.width = "100%";
-                navList.style.opacity = 1;
-                screenSmall = false;
-                toggleOn = false;
+                this.navList.style.width = "100%";
+                this.navList.style.opacity = 1;
+                this.screenSmall = false;
+                this.toggleOn = false;
             }else{
-                if(!screenSmall && !toggleOn){
-                    navList.style.width = "0%";
-                    screenSmall = false;
-                    navList.style.opacity = 0;
+                if(!this.screenSmall && !this.toggleOn){
+                    this.navList.style.width = "0%";
+                    this.screenSmall = false;
+                    this.navList.style.opacity = 0;
                 }
             }
         })
     }
-}
 
-function navListToggle(){
-    toggleOn = !toggleOn;
-    if(navList.style.width === "100%"){
-        navList.style.width = "0%";
-    } else{
-        navList.style.opacity = 1;
-        navList.style.width = "100%";
+    navListToggle(){
+        this.toggleOn = !this.toggleOn;
+        if(this.navList.style.width === "100%"){
+            this.navList.style.width = "0%";
+        } else{
+            this.navList.style.opacity = 1;
+            this.navList.style.width = "100%";
+        }
     }
 }
 

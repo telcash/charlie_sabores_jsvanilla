@@ -1,14 +1,3 @@
-/*
-
-HTML template:
-
-<div class="wrapper">
-    <a href="#/"></a>
-    <a href="#/"></a>
-</div>
-
-*/
-
 class TopBarComponent extends HTMLElement{
 
     css;

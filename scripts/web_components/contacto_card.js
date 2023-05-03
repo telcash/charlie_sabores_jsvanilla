@@ -1,23 +1,3 @@
-/*
-
-HTML template
-
-<div class="wrapper">
-    <div id="titulo">
-        <h1>Contacto</h1>
-    </div>
-    <div id="email">
-        <p>Correo electrónico: <span>charliesabores@gmail.com</span></p>
-    </div>
-    <div id="redesSociales">
-        <h3>Redes sociales</h3>
-        <p>Estamos a tu disposición en:</p>
-        <app-social-networks></app-social-networks>
-    </div>
-</div>
-
-*/
-
 class ContactoCardComponent extends HTMLElement{
 
     css;

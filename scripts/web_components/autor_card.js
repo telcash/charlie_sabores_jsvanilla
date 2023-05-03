@@ -1,15 +1,3 @@
-/*
-
-HTML template:
-
-<div id="wrapper">
-    <img class="imgAutor" src="" alt="">
-    <h5>Nombre Autor</h5>
-    <img src="" alt="">
-</div>
-
-*/
-
 class AutorCardComponent extends HTMLElement{
 
     css;

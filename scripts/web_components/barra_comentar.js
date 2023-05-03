@@ -1,41 +1,3 @@
-/* 
-
-HTML Template
-
-<div class="wrapper">
-    <div id="titulo">
-        <h2>Titulo</h2>
-    </div>
-    <div id="miComentario">
-        <form id="miForm" action="#/" method="post">
-            <div id="miTexto">
-                <textarea name="miTexto" id="miTexto" cols="30" rows="1">
-                    Comentarios
-                </textarea>
-            </div>
-            <div id="publicar">
-                <input type="button" name="publicar" onclick="alert('Comentario enviado)" value="Publicar">
-            </div>
-        </form>
-    </div>
-    <div id="otrosComentarios">
-        <div class="container">
-            <div class="nombre">
-                <h5>Nombre usuario</h5>
-            </div>
-            <div class="fecha">
-                <h6>Fecha</h6>
-            </div>
-            <div class="texto">
-                <p>Comentario del usuario</p>
-            </div>
-        </div>
-    </div>
-</div> 
-
-*/
-let textArea;
-
 const comentarios = [
     {
         nombre:"Luis Campos",
@@ -57,6 +19,7 @@ const comentarios = [
 class BarraComentarComponent extends HTMLElement{
     css;
     wrapper;
+    textArea;
 
     constructor(){
         super();
@@ -92,15 +55,18 @@ class BarraComentarComponent extends HTMLElement{
         const miTexto = miForm.appendChild(document.createElement('div'));
         miTexto.setAttribute("id","miTexto");
 
-        textArea = miTexto.appendChild(document.createElement('textarea'));
-        textArea.setAttribute("id","textArea");
-        textArea.setAttribute("name","comentar");
-        //textArea.setAttribute("cols","30");
-        //textArea.setAttribute("rows","1");
-        textArea.setAttribute("maxlength","600");
-        textArea.setAttribute("placeholder","Comentar...");
-        textArea.addEventListener("focusin",textAreaFocusIn);
-        textArea.addEventListener("focusout",textAreaFocusOut);
+        this.textArea = miTexto.appendChild(document.createElement('textarea'));
+        this.textArea.setAttribute("id","textArea");
+        this.textArea.setAttribute("name","comentar");
+        this.textArea.setAttribute("maxlength","600");
+        this.textArea.setAttribute("placeholder","Comentar...");
+
+        this.textArea.addEventListener("focusin",() =>{
+            this.textAreaFocusIn();
+        });
+        this.textArea.addEventListener("focusout",() =>{
+            this.textAreaFocusOut();
+        });
 
 
         const publicar = miForm.appendChild(document.createElement('div'));
@@ -140,14 +106,14 @@ class BarraComentarComponent extends HTMLElement{
         this.shadowRoot.appendChild(this.wrapper);
     }
 
+    textAreaFocusIn(){
+        console.log(this.textArea);
+        this.textArea.setAttribute("rows","12");
+    }
+    
+    textAreaFocusOut(){
+        this.textArea.setAttribute("rows","2");
+    }
 }
 
 customElements.define('app-barra-comentar', BarraComentarComponent);
-
-function textAreaFocusIn(){
-    textArea.setAttribute("rows","12");
-}
-
-function textAreaFocusOut(){
-    textArea.setAttribute("rows","2");
-}

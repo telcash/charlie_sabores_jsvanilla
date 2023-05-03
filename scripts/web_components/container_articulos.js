@@ -1,24 +1,3 @@
-/*
-
-HTML template:
-
-<div class="wrapper">
-    <div class="titulo">
-        <h2>Titulo del contenedor de articulos</h2>
-    </div>
-    <div class="container">
-        <app-articulo class="articulo"></app-articulo>
-        <app-articulo class="articulo"></app-articulo>
-
-        ...
-
-        <app-articulo class="articulo"></app-articulo>
-    </div>
-</div>
-
- */
-
-
 const articulos = [
     {
         nombre: "Las mejores sartenes antiadherentes de 12 pulgadas",

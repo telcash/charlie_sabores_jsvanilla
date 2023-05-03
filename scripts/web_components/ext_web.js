@@ -1,20 +1,3 @@
-/*
-
-HTML template:
-
-<div class="wrapper">
-    <div class="webSite">
-        <div class="imgContainer">
-            <img src="img/ext_web_logo.jpeg" alt="">
-        </div>
-        <div class="descripcion">
-            <p>Descripción sitio externo</p>
-        </div>
-    </div>
-</div>
-
- */
-
 class ExtWebComponent extends HTMLElement{
 
     css;
