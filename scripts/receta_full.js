@@ -3,32 +3,34 @@
 HTML template:
 
 <div class="wrapper">
-    <div id="titulo">
-        <h1>Titulo de la receta</h1>
-    </div>
-    <div id="rating">
-        <a href="#/" class="rating">
-            <img src="img/icons/estrella.png" alt="Icono rating">
-            <h6>rating ...</h6>
-        </a>
-        <a href="#/" class="rating">
-            <img src="img/icons/nube.png" alt="Icono comentario">
-            <h6>número comentarios ...</h6>
-        </a>
-    </div>
-    <div id="info">
-        <h6>Porciones</h6>
-        <h6>Tiempo</h6>
-    </div>
-    <div id="foto">
-        <img src="" alt="Nombre de la receta">
-    </div>
-    <div id="acciones">
-        <div id="imprimir" class="acciones">
-            <input type="button" name="imprimir" onclick="alert('Receta impresa')" value="Imprimir">
+    <div id="header">
+        <div id="titulo">
+            <h1>Titulo de la receta</h1>
         </div>
-        <div id="guardar" class="acciones">
-            <input type="button" name="guardar" onclick="alert('Receta guardada')" value="Guardar">
+        <div id="rating">
+            <a href="#/" class="rating">
+                <img src="img/icons/estrella.png" alt="Icono rating">
+                <h6>rating ...</h6>
+            </a>
+            <a href="#/" class="rating">
+                <img src="img/icons/nube.png" alt="Icono comentario">
+                <h6>número comentarios ...</h6>
+            </a>
+        </div>
+        <div id="info">
+            <h6>Porciones</h6>
+            <h6>Tiempo</h6>
+        </div>
+        <div id="foto">
+            <img src="" alt="Nombre de la receta">
+        </div>
+        <div id="acciones">
+            <div id="imprimir" class="acciones">
+                <input type="button" name="imprimir" onclick="alert('Receta impresa')" value="Imprimir">
+            </div>
+            <div id="guardar" class="acciones">
+                <input type="button" name="guardar" onclick="alert('Receta guardada')" value="Guardar">
+            </div>
         </div>
     </div>
     <div id="ingredientes">
@@ -86,6 +88,8 @@ const receta = {
     ]
 }
 
+let foto;
+let left;
 class RecetaFullComponent extends HTMLElement{
     css;
     wrapper;
@@ -140,7 +144,7 @@ class RecetaFullComponent extends HTMLElement{
         h6 = info.appendChild(document.createElement('h6'));
         h6.innerText = receta.tiempo;
 
-        const foto = this.wrapper.appendChild(document.createElement('div'));
+        foto = this.wrapper.appendChild(document.createElement('div'));
         foto.setAttribute("id","foto");
         img = foto.appendChild(document.createElement('img'));
         img.setAttribute("src",receta.img);
@@ -215,7 +219,21 @@ class RecetaFullComponent extends HTMLElement{
         barraComentar.appendChild(document.createElement('app-barra-comentar'));
 
         this.shadowRoot.appendChild(this.wrapper);
+
+        ubicarFoto();
+        window.addEventListener("resize", ubicarFoto);
     }
 }
 
 customElements.define('app-receta-full',RecetaFullComponent);
+
+function ubicarFoto(){
+    console.log(foto.style.left);
+    if(window.innerWidth >= 1024){
+        left = 604 + (window.innerWidth - 1024)/2;
+        foto.style.left = left + "px";
+    }else{
+        left = 460 + (window.innerWidth - 800)/2;
+        foto.style.left = left + "px";
+    }
+}
