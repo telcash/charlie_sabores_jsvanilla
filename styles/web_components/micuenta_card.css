@@ -1,8 +1,17 @@
 .wrapper{
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-flow: column nowrap;
+    background-color: white;
+}
+
+.titulo{
+    text-align: center;
+    border-bottom: 1px solid rgb(60, 60, 60);
+    margin-bottom: 20px;
 }
 
 .main{
@@ -11,6 +20,7 @@
 }
 
 .lista{
+    flex: 38%;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -21,8 +31,20 @@
 }
 
 .card{
+    flex: 60%;
     display: flex;
     flex-flow: column nowrap;
+    border: solid 1px rgb(60, 60, 60);
+}
+
+.cardTitulo{
+    background-color: grey;
+}
+
+.cardTitulo h4{
+    color: white;
+    text-transform: uppercase;
+    padding-left: 20px;
 }
 
 .cardBody{
