@@ -161,7 +161,7 @@ class ContactoFormComponent extends HTMLElement{
         const enviar = contacto.appendChild(document.createElement('div'))
         enviar.setAttribute("id","enviar");
         input = enviar.appendChild(document.createElement('input'));
-        input.setAttribute("type","button");
+        input.setAttribute("type","submit");
         input.setAttribute("name","enviar");
         input.setAttribute("value","Enviar");
         input.onclick = () => {

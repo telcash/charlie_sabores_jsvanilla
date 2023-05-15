@@ -5,22 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/script.js"></script>
-    <script src="scripts/web_components/articulo_card.js"></script>
-    <script src="scripts/web_components/autor_card.js"></script>
-    <script src="scripts/web_components/container_articulos.js"></script>
-    <script src="scripts/web_components/container_recetas.js"></script>
     <script src="scripts/web_components/ext_web.js"></script>
     <script src="scripts/web_components/footer.js"></script>
     <script src="scripts/web_components/header.js"></script>
-    <script src="scripts/web_components/main_slider.js"></script>
     <script src="scripts/web_components/nav_bar.js"></script>
     <script src="scripts/web_components/nav_list.js"></script>
-    <script src="scripts/web_components/receta_card.js"></script>
     <script src="scripts/web_components/social_networks.js"></script>
     <script src="scripts/web_components/top_bar.js"></script>
+    <script src="scripts/web_components/micuenta_card.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/web_pages/index.css">
-    <title>Home</title>
+    <title>Mi cuenta</title>
 </head>
 <body>
     <div id="wrapper">
@@ -28,19 +22,11 @@
             <app-header></app-header>
         </header>
         <section>
-            <app-main-slider></app-main-slider>
+            <app-micuenta-card></app-micuenta-card>
         </section>
-        <aside>
-            <app-container-articulos></app-container-articulos>
-        </aside>
-        <article>
-            <app-container-recetas max="3"></app-container-receta>
-        </article>
         <footer>
             <app-footer></app-footer>
         </footer>
-
     </div>
-
 </body>
 </html>

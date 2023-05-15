@@ -34,7 +34,8 @@ class HeaderComponent extends HTMLElement{
 
         this.topBar = this.wrapper.appendChild(document.createElement('div'));
         this.topBar.setAttribute("class","topBar");
-        this.topBar.appendChild(document.createElement('app-top-bar'));
+        const appTopBar = this.topBar.appendChild(document.createElement('app-top-bar'));
+        appTopBar.setAttribute("urlCuenta","micuenta.html")
 
         this.navBar = this.wrapper.appendChild(document.createElement('div'));
         this.navBar.setAttribute("class","navBar");

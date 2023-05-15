@@ -23,7 +23,7 @@ const recetas = [
     {
         nombre:"Muffins de plátano con coco y macadamia",
         descripcion:"En busca de magdalenas de plátano con un sabor potente, añadimos mucho puré de plátanos a nuestra masa.",
-        img:"img/muffin_platano_coco_macadamia.jpg",
+        img:"img/recetas/muffin_platano_coco_macadamia.jpg",
         alt: "Muffins de plátano con coco y macadamia",
         url:"#/"
     },
@@ -96,7 +96,7 @@ class ContainerRecetasComponent extends HTMLElement{
         const titulo = this.wrapper.appendChild(document.createElement('div'));
         titulo.setAttribute("class","titulo");
         const h2 = titulo.appendChild(document.createElement('h2'));
-        h2.innerHTML= this.TITULO;
+        h2.innerText= this.TITULO;
         
         const container = this.wrapper.appendChild(document.createElement('div'));
         container.setAttribute("class","container");

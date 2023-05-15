@@ -1,0 +1,36 @@
+.wrapper{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.main{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.lista{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.itemsLista{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.cardBody{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.card img{
+    width: 30px;
+    height: 30px;
+}
