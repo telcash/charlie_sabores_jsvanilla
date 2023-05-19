@@ -39,7 +39,7 @@ a{
 .descripcion h6{
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 100px;
+    padding-top: 90px;
     margin-block-start: 0;
     margin-block-end: 0;
     font-size: 4vw;
@@ -127,7 +127,7 @@ img{
     .descripcion h6{
         color: white;
         padding-top: 0;
-        font-size: 2.5vw;
+        font-size: 2.1vw;
     }
 
     img{
