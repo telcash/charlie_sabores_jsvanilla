@@ -1,0 +1,10 @@
+#wrapper{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: white;
+}
+
+section{
+    margin-bottom: 40px;
+}

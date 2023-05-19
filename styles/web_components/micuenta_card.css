@@ -11,18 +11,38 @@
 .titulo{
     text-align: center;
     border-bottom: 1px solid rgb(60, 60, 60);
-    margin-bottom: 20px;
+    border-top: 1px solid rgb(60, 60, 60);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .main{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .lista{
     flex: 38%;
     display: flex;
     flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.tituloLista{
+    text-transform: uppercase;
+}
+
+a{
+    cursor: pointer;
+}
+
+a:hover{
+    color: red;
 }
 
 .itemsLista{
@@ -50,9 +70,38 @@
 .cardBody{
     display: flex;
     flex-flow: row nowrap;
+    gap: 10px;
 }
 
 .card img{
+    padding: 5px;
     width: 30px;
     height: 30px;
+}
+
+.descContainer{
+    padding: 5px;
+    padding-top: 10px;
+}
+
+h5, h6{
+    all: unset;
+    font-weight: bold;  
+}
+
+@media only screen and (max-width: 800px){
+    
+}
+
+
+@media only screen and (min-width: 800px){
+    .main{
+        flex-flow: row nowrap;
+        gap: 0;
+        padding-right: 0;
+    }
+}  
+
+@media only screen and (min-width: 1024px){
+    
 }

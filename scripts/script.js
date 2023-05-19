@@ -33,7 +33,7 @@ function stickyHeader(){
         header.classList.remove("sticky");
     }
     if (header.classList.contains("sticky")){
-        content.style.paddingTop = "80px";
+        content.style.paddingTop = "40px";
     } else {
         content.style.paddingTop = "0";
     }
